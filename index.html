@@ -1,0 +1,3568 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần mềm môn Điền Kinh - NMQ</title>
+    <!-- Logo nhỏ trên tab trình duyệt (Favicon) -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,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">
+    <!-- Font tiếng Việt chuẩn, sắc nét -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap" rel="stylesheet">
+    <!-- Thư viện Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <style>
+        :root {
+            --navy-dark: #0a192f;
+            --navy-mid: #122c54;
+            --primary-color: #1557b0;
+            --track-red: #c83333;
+            --secondary-color: #1e9e49;
+            --danger-color: #d93025;
+            --warning-color: #f59e0b;
+            --text-color: #1e293b;
+            --border-soft: #dce4f0;
+            --app-font: 'Be Vietnam Pro', 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        /* Đồng bộ font tiếng Việt cho toàn bộ thẻ form, đặc biệt là select và option */
+        body, input, select, option, textarea, button {
+            font-family: var(--app-font);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Khóa phần trên và chỉ cuộn phần bảng danh sách */
+        body {
+            color: var(--text-color);
+            margin: 0;
+            padding: 12px;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--navy-dark);
+            background-image:
+                radial-gradient(circle at 12% 15%, rgba(21, 87, 176, 0.55) 0%, transparent 45%),
+                radial-gradient(circle at 88% 85%, rgba(200, 51, 51, 0.35) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='3'%3E%3Cpath d='M-100,720 Q450,520 900,760 T1750,620'/%3E%3Cpath d='M-100,755 Q450,555 900,795 T1750,655'/%3E%3Cpath d='M-100,790 Q450,590 900,830 T1750,690'/%3E%3Cpath d='M-100,825 Q450,625 900,865 T1750,725'/%3E%3Cpath d='M-100,860 Q450,660 900,900 T1750,760'/%3E%3Ccircle cx='1420' cy='150' r='220' stroke-dasharray='12 10'/%3E%3Ccircle cx='1420' cy='150' r='160'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            padding: 12px 18px 8px 18px;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .top-section {
+            flex-shrink: 0;
+        }
+        
+        /* ================= HEADER BANNER PHONG CÁCH GIẢI ĐẤU ================= */
+        .header-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            gap: 15px;
+            overflow: hidden;
+            background: linear-gradient(115deg, #0b2247 0%, #14438a 52%, #9e222e 100%);
+            box-shadow: 0 6px 18px rgba(11, 34, 71, 0.28);
+            border-bottom: 3px solid #f5b700;
+        }
+
+        .header-bg-art {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .header-bg-art svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-left, .header-right {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        /* Ô chứa Logo - canh giữa tuyệt đối & tự động vẽ viền trắng đều quanh logo xóa nền */
+        .logo-box {
+            width: 88px;
+            height: 88px;
+            flex-shrink: 0;
+            border: 2px dashed rgba(255, 255, 255, 0.55);
+            border-radius: 12px;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s, border-color 0.2s, background 0.2s;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+        .logo-box:hover {
+            transform: scale(1.04);
+            border-color: #ffd700;
+        }
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            display: block;
+            margin: auto;
+        }
+
+        /* Khi logo có nền đặc (JPG / PNG không xóa nền) */
+        .logo-box.has-solid-logo {
+            background: #ffffff;
+            border: 2px solid #ffffff;
+            overflow: hidden;
+            padding: 3px;
+        }
+        .logo-box.has-solid-logo img {
+            border-radius: 8px;
+            filter: none;
+        }
+
+        /* Khi logo đã xóa nền (PNG/SVG/WebP trong suốt) -> Bỏ khung vuông, hiển thị ảnh đã canh giữa & viền trắng đều từ Canvas */
+        .logo-box.has-transparent-logo {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            border-radius: 50%;
+        }
+        .logo-box.has-transparent-logo:hover {
+            background: rgba(255, 255, 255, 0.1);
+            outline: 1.5px dashed rgba(255, 215, 0, 0.75);
+        }
+        .logo-box.has-transparent-logo img {
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.38));
+        }
+
+        .header-text-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+        }
+
+        /* Hàng 1: Màu đỏ nổi bật, sắc nét trên nền xanh */
+        .header-title {
+            margin: 0;
+            color: #ff2e2e;
+            text-transform: uppercase;
+            font-size: 25px;
+            padding: 2px 6px;
+            display: inline-block;
+            font-weight: 900;
+            letter-spacing: 0.4px;
+            -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.55);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.25), 0 2px 6px rgba(0, 0, 0, 0.55);
+            line-height: 1.2;
+            min-width: 280px;
+        }
+        .header-title:empty::before {
+            content: attr(data-placeholder);
+            color: rgba(255, 78, 78, 0.88);
+            font-style: italic;
+            font-weight: 800;
+        }
+
+        /* Hàng 2: Màu trắng như hiện tại */
+        .header-content-line {
+            margin: 1px 0 0 0;
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 700;
+            padding: 2px 6px;
+            display: inline-block;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+            line-height: 1.25;
+            min-width: 220px;
+        }
+        .header-content-line:empty::before {
+            content: attr(data-placeholder);
+            color: rgba(255, 255, 255, 0.78);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* Hàng 3: Thay thế vị trí cũ của dòng Design by -> Tên môn thi đấu, tăng 20% kích thước (14px -> 17px) */
+        .event-title-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 2px;
+            padding-left: 4px;
+        }
+
+        .sport-emblem {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.18);
+            border: 1.5px solid rgba(255, 215, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .sport-emblem svg {
+            width: 19px;
+            height: 19px;
+            fill: #ffd700;
+        }
+
+        .header-subtitle {
+            margin: 0;
+            color: #ffd700;
+            text-transform: uppercase;
+            font-size: 17px;
+            padding: 2px 6px;
+            display: inline-block;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+            line-height: 1.25;
+        }
+
+        .header-title[contenteditable="true"]:hover, .header-title[contenteditable="true"]:focus,
+        .header-content-line[contenteditable="true"]:hover, .header-content-line[contenteditable="true"]:focus,
+        .header-subtitle[contenteditable="true"]:hover, .header-subtitle[contenteditable="true"]:focus {
+            background-color: rgba(255, 255, 255, 0.16);
+            border-radius: 6px;
+            outline: 1px dashed #ffd700;
+            cursor: text;
+        }
+
+        /* Cụm bên phải: Chấm trạng thái + Nút In + Chọn môn */
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            min-width: 315px;
+        }
+        .action-top-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        
+        /* Chấm tròn báo trạng thái kết nối */
+        .status-dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            display: inline-block;
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .status-dot.online {
+            background-color: #22c55e;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.95);
+        }
+        .status-dot.offline {
+            background-color: #ef4444;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.95);
+        }
+
+        .sport-selector-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(6px);
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: space-between;
+        }
+        .sport-selector-box label {
+            font-weight: 800;
+            color: #ffffff;
+            font-size: 12.5px;
+            white-space: nowrap;
+            letter-spacing: 0.4px;
+        }
+        /* Sửa triệt để lỗi font tiếng Việt khi chọn môn thi */
+        .sport-selector-box select {
+            flex: 1;
+            font-family: var(--app-font);
+            font-weight: 700;
+            color: #0b2247;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #ffffff;
+            font-size: 13.5px;
+            line-height: 1.4;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+        }
+        .sport-selector-box select option {
+            font-family: var(--app-font);
+            font-weight: 600;
+            color: #0f172a;
+            background-color: #ffffff;
+        }
+        
+        /* ================= KHU VỰC NHẬP LIỆU ================= */
+        .input-panels-wrapper {
+            transition: all 0.25s ease;
+        }
+        .input-panels-wrapper.collapsed {
+            display: none;
+        }
+        .panel {
+            border: 1px solid var(--border-soft);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 9px 13px;
+            margin-bottom: 9px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafd 100%);
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+        .panel.panel-smart {
+            border-left-color: var(--secondary-color);
+        }
+        .panel h4 {
+            margin: 0 0 6px 0;
+            color: var(--navy-mid);
+            font-size: 13.5px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .flex-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start; }
+        
+        .form-group input, .form-group select, button, textarea {
+            padding: 7px 10px;
+            font-size: 13.5px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-family: var(--app-font);
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(21, 87, 176, 0.14);
+        }
+        textarea {
+            width: 100%;
+            height: 44px;
+            resize: vertical;
+            box-sizing: border-box;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #1557b0, #0d3f85);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            box-shadow: 0 2px 5px rgba(13, 63, 133, 0.22);
+        }
+        button:hover { filter: brightness(1.08); transform: translateY(-1px); }
+        button:active { transform: translateY(0); }
+        .btn-green { background: linear-gradient(135deg, #22a74f, #17803a); box-shadow: 0 2px 5px rgba(23, 128, 58, 0.25); }
+        .btn-red { background: linear-gradient(135deg, #e03a2f, #b91c1c); box-shadow: 0 2px 5px rgba(185, 28, 28, 0.25); }
+        .btn-orange { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #fff;
+            box-shadow: none;
+        }
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.25); }
+        .btn-print {
+            background: linear-gradient(135deg, #f5b700, #d99100);
+            color: #0b2247;
+            font-size: 13.5px;
+            font-weight: 800;
+            padding: 8px 16px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(245, 183, 0, 0.35);
+        }
+        
+        /* ================= BẢNG TOP 3 VINH DANH KIỂU PODIUM ================= */
+        .top3-container {
+            margin-bottom: 9px;
+            background: linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 8px 12px;
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .top3-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 7px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .top3-title {
+            margin: 0;
+            color: #b91c1c;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 0.4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .rule-hint {
+            font-size: 11.5px;
+            color: #475569;
+            background: #e2e8f0;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .top3-card {
+            flex: 1;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 7px 10px;
+            text-align: center;
+            background-color: #fff;
+            min-width: 180px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+            transition: transform 0.2s;
+        }
+        .top3-card:hover { transform: translateY(-2px); }
+        .top3-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--medal-accent, #cbd5e1);
+        }
+        .top3-card.empty {
+            opacity: 0.65;
+            border-style: dashed;
+            background: #f8fafc;
+            box-shadow: none;
+        }
+        .top3-card.empty::before { display: none; }
+        .top3-rank { font-weight: 900; font-size: 13px; margin-bottom: 2px; letter-spacing: 0.6px; }
+        .top3-name { font-weight: 800; font-size: 15.5px; color: #0f172a; margin-bottom: 1px; text-transform: uppercase; }
+        .top3-unit { font-size: 12px; color: #475569; margin-bottom: 2px; font-weight: 600; }
+        .top3-score { font-size: 19px; font-weight: 900; color: #c83333; line-height: 1.15; }
+
+        /* ================= THANH LỌC & ĐIỀU KHIỂN ================= */
+        .filter-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #0f294d 0%, #174482 100%);
+            padding: 7px 14px;
+            border-radius: 8px;
+            color: white;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 3px 8px rgba(15, 41, 77, 0.2);
+        }
+        .filter-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-size: 13.5px;
+        }
+        .filter-section select {
+            font-family: var(--app-font);
+            font-weight: 700;
+            padding: 5px 9px;
+            font-size: 13px;
+            border-radius: 6px;
+            border: none;
+            color: #0f172a;
+            background-color: #ffffff;
+        }
+        .filter-section select option {
+            font-family: var(--app-font);
+            font-weight: 600;
+            color: #0f172a;
+        }
+        
+        /* ================= KHU VỰC CUỘN BẢNG ĐIỂM ================= */
+        .table-container {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: auto;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260'%3E%3Cg fill='none' stroke='%231557b0' stroke-opacity='0.04' stroke-width='2'%3E%3Cpath d='M0,220 Q200,140 600,200'/%3E%3Cpath d='M0,235 Q200,155 600,215'/%3E%3Cpath d='M0,250 Q200,170 600,230'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            box-shadow: inset 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 0; }
+        th, td { border: 1px solid #e2e8f0; padding: 8px 6px; text-align: center; vertical-align: middle; font-size: 13.5px; }
+        th {
+            background: linear-gradient(180deg, #1b3b6f 0%, #132c54 100%);
+            color: #ffffff;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            border-color: #294c82;
+        }
+        tbody tr { transition: background-color 0.15s; }
+        tbody tr:nth-child(even) { background-color: #f8fafd; }
+        tbody tr:hover { background-color: #eef5ff; }
+        
+        .jump-input {
+            width: 68px;
+            padding: 5px;
+            text-align: center;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13.5px;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            background: #fff;
+        }
+        .jump-input.hj-input { width: 56px; }
+        .jump-input.lane-input { width: 58px; font-weight: 700; color: #1557b0; }
+        .jump-input:focus { border-color: var(--primary-color); background-color: #eff6ff; }
+        
+        .bar-header-input {
+            width: 52px;
+            padding: 3px;
+            text-align: center;
+            font-weight: 800;
+            border: 1.5px solid #ffd700;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0b2247;
+            font-size: 12.5px;
+            margin-top: 3px;
+        }
+        .best-score { font-weight: 800; color: #c83333; font-size: 1.12em; }
+        .rank { font-weight: 800; color: #1557b0; font-size: 1.15em; }
+
+        .rank-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-weight: 900;
+            font-size: 13.5px;
+        }
+        .rank-badge-1 { background: linear-gradient(135deg, #ffd700, #e6a800); color: #5c3d00; box-shadow: 0 2px 6px rgba(230, 168, 0, 0.45); }
+        .rank-badge-2 { background: linear-gradient(135deg, #e2e8f0, #94a3b8); color: #1e293b; box-shadow: 0 2px 6px rgba(148, 163, 184, 0.45); }
+        .rank-badge-3 { background: linear-gradient(135deg, #f3a668, #c26a27); color: #ffffff; box-shadow: 0 2px 6px rgba(194, 106, 39, 0.45); }
+        
+        .rank-1 { background-color: #fffbeb !important; }
+        .rank-2 { background-color: #f1f5f9 !important; }
+        .rank-3 { background-color: #fff7ed !important; }
+
+        /* Nổi bật toàn bộ hàng ngang VĐV khi thư ký ấn vào nhập số liệu */
+        #scoreTable tbody tr.row-active-entry,
+        #scoreTable tbody tr:focus-within {
+            background: linear-gradient(90deg, #dbeafe 0%, #bfdbfe 50%, #dbeafe 100%) !important;
+            box-shadow: inset 0 2px 0 #1557b0, inset 0 -2px 0 #1557b0, 0 3px 10px rgba(21, 87, 176, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        #scoreTable tbody tr.row-active-entry td,
+        #scoreTable tbody tr:focus-within td {
+            border-top-color: #1557b0 !important;
+            border-bottom-color: #1557b0 !important;
+        }
+        #scoreTable tbody tr.row-active-entry td:first-child,
+        #scoreTable tbody tr:focus-within td:first-child {
+            box-shadow: inset 5px 0 0 #ea580c;
+        }
+        #scoreTable tbody tr.row-active-entry td:nth-child(2),
+        #scoreTable tbody tr:focus-within td:nth-child(2) {
+            color: #0b3d91 !important;
+            font-weight: 800 !important;
+        }
+        #scoreTable tbody tr.row-active-entry .jump-input:focus,
+        #scoreTable tbody tr:focus-within .jump-input:focus {
+            border-color: #ea580c !important;
+            background-color: #fffbeb !important;
+            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.28) !important;
+            transform: scale(1.06);
+        }
+        
+        .help-text { font-size: 11.5px; color: #64748b; margin-top: 3px; }
+        .print-subtitle { display: none; }
+
+        /* Dòng bản quyền nhỏ gọn (80% cỡ cũ) nằm góc phải bên dưới */
+        .footer-signature {
+            flex-shrink: 0;
+            text-align: right;
+            font-style: italic;
+            font-size: 9.5px;
+            font-weight: 500;
+            color: #64748b;
+            padding-top: 6px;
+            letter-spacing: 0.2px;
+        }
+
+        .table-container::-webkit-scrollbar { width: 8px; height: 8px; }
+        .table-container::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        .table-container::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+        .table-container::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+
+        /* ================= MÀN HÌNH CHỌN CHẾ ĐỘ & ĐĂNG NHẬP ================= */
+        .auth-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background-color: rgba(10, 25, 47, 0.92);
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(21, 87, 176, 0.55) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(200, 51, 51, 0.4) 0%, transparent 50%);
+            backdrop-filter: blur(8px);
+            overflow-y: auto;
+        }
+        .auth-overlay.hidden {
+            display: none !important;
+        }
+        .auth-modal {
+            width: 100%;
+            max-width: 920px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        .auth-header {
+            background: linear-gradient(115deg, #0b2247 0%, #14438a 55%, #9e222e 100%);
+            padding: 18px 24px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            border-bottom: 3px solid #f5b700;
+        }
+        .auth-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .auth-header-title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            color: #ffd700;
+        }
+        .auth-header-sub {
+            margin: 3px 0 0 0;
+            font-size: 12.5px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+        }
+        .auth-body {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 22px;
+            padding: 22px 24px;
+            background: #f8fafd;
+        }
+        @media (max-width: 768px) {
+            .auth-body { grid-template-columns: 1fr; }
+        }
+        .auth-section {
+            background: #ffffff;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .auth-section h3 {
+            margin: 0 0 6px 0;
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--navy-mid);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .auth-section-desc {
+            margin: 0 0 14px 0;
+            font-size: 12.5px;
+            color: #64748b;
+            line-height: 1.45;
+        }
+        .guest-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+        .guest-card {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 16px;
+            border-radius: 10px;
+            border: 2px solid #cbd5e1;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f7ff 100%);
+            color: #0f172a;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+        }
+        .guest-card:hover:not(.occupied) {
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(21, 87, 176, 0.18);
+            filter: none;
+        }
+        .guest-card.occupied {
+            background: linear-gradient(135deg, #fff5f5 0%, #fee2e2 100%);
+            border-color: #f87171;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none !important;
+        }
+        .guest-card-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .guest-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: #e0edff;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .guest-card.occupied .guest-icon {
+            background: #fecaca;
+            color: #dc2626;
+        }
+        .guest-name {
+            font-size: 15px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+        .guest-sub {
+            font-size: 11.5px;
+            color: #64748b;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        .guest-status-text {
+            font-size: 13px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .guest-status-text.available {
+            color: #15803d;
+            background: #dcfce7;
+        }
+        .guest-status-text.occupied {
+            color: #dc2626;
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+        }
+        .auth-form-group {
+            margin-bottom: 12px;
+        }
+        .auth-form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #334155;
+            margin-bottom: 5px;
+        }
+        .auth-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .auth-input-wrap input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 38px 10px 12px;
+            font-size: 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+        }
+        .auth-eye-btn {
+            position: absolute;
+            right: 6px;
+            background: transparent !important;
+            box-shadow: none !important;
+            color: #64748b !important;
+            padding: 4px 6px !important;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .auth-eye-btn:hover { color: #0f172a !important; transform: none !important; }
+        .auth-error {
+            min-height: 18px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #dc2626;
+            margin: 6px 0 10px 0;
+        }
+        .btn-login-submit {
+            width: 100%;
+            padding: 11px 16px;
+            font-size: 14.5px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #1557b0, #0b2e66);
+        }
+        .auth-footer {
+            background: #f1f5f9;
+            padding: 10px 24px;
+            font-size: 11.5px;
+            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        /* ================= THẺ NGƯỜI DÙNG & NÚT ADMIN TRÊN HEADER ================= */
+        .user-role-badge {
+            font-size: 12px;
+            font-weight: 700;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 5px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            max-width: 190px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .btn-admin-perm {
+            background: linear-gradient(135deg, #7c3aed, #5b21b6);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 7px 12px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(91, 33, 182, 0.35);
+            display: none;
+        }
+        .btn-logout {
+            background: rgba(239, 68, 68, 0.88);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 7px 11px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(185, 28, 28, 0.3);
+        }
+        .btn-logout:hover { background: #dc2626; }
+
+        /* ================= MODAL CẤP QUYỀN & QUẢN LÝ TÀI KHOẢN (ADMIN) ================= */
+        .admin-modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9500;
+            background: rgba(10, 25, 47, 0.72);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .admin-modal-overlay.open {
+            display: flex;
+        }
+        .admin-modal {
+            width: 100%;
+            max-width: 1020px;
+            max-height: 90vh;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .admin-modal-header {
+            background: linear-gradient(115deg, #0b2247 0%, #312e81 60%, #5b21b6 100%);
+            color: #fff;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #f5b700;
+        }
+        .admin-modal-header h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .admin-modal-body {
+            padding: 16px 20px;
+            overflow-y: auto;
+            flex: 1;
+            background: #f8fafd;
+        }
+        .admin-card {
+            background: #fff;
+            border: 1px solid var(--border-soft);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+        }
+        .admin-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--navy-mid);
+            font-size: 14.5px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .admin-form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            align-items: end;
+        }
+        .admin-form-grid label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 4px;
+        }
+        .admin-form-grid input, .admin-form-grid select {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px 10px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 13.5px;
+        }
+        .admin-msg {
+            margin-top: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            min-height: 18px;
+        }
+        .admin-msg.ok { color: #15803d; }
+        .admin-msg.err { color: #dc2626; }
+        .pwd-cell {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-weight: 700;
+            color: #b91c1c;
+            background: #fff5f5;
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .role-pill {
+            display: inline-block;
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .role-pill.admin { background: #ede9fe; color: #5b21b6; }
+        .role-pill.teacher { background: #dbeafe; color: #1d4ed8; }
+        .status-pill {
+            display: inline-block;
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .status-pill.active { background: #dcfce7; color: #15803d; }
+        .status-pill.locked { background: #fee2e2; color: #dc2626; }
+        .admin-guest-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        @media (max-width: 700px) {
+            .admin-guest-grid { grid-template-columns: 1fr; }
+        }
+        .admin-guest-box {
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 12px;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .admin-guest-box.occupied {
+            border-color: #fca5a5;
+            background: #fff5f5;
+        }
+
+        /* ================= CẤU HÌNH BẢN IN A4 CHUẨN SẠCH ================= */
+        @media print {
+            @page { size: A4 landscape; margin: 12mm; }
+            body, .container {
+                background: #fff !important;
+                background-image: none !important;
+                height: auto !important;
+                overflow: visible !important;
+                display: block !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+            .top-section { display: block; }
+            .table-container {
+                overflow: visible !important;
+                height: auto !important;
+                border: none !important;
+                background-image: none !important;
+                box-shadow: none !important;
+            }
+            
+            .auth-overlay, .admin-modal-overlay, .input-panels-wrapper, .panel, .top3-container, .filter-section, .header-right, .header-bg-art, .sport-emblem, .no-print, th:last-child, td:last-child {
+                display: none !important;
+            }
+            
+            .header-container {
+                background: #fff !important;
+                box-shadow: none !important;
+                border-bottom: 2px solid #000 !important;
+                border-radius: 0 !important;
+                display: flex;
+                align-items: center;
+                margin-bottom: 8px;
+                padding: 0 0 8px 0 !important;
+            }
+            .header-title {
+                font-size: 22px;
+                padding: 0;
+                border: none;
+                color: #000 !important;
+                -webkit-text-stroke: 0 !important;
+                text-shadow: none !important;
+            }
+            .header-content-line {
+                font-size: 14px;
+                padding: 0;
+                color: #000 !important;
+                text-shadow: none !important;
+            }
+            .header-title:empty, .header-content-line:empty { display: none; }
+            .header-subtitle {
+                font-size: 15px;
+                padding: 0;
+                border: none;
+                color: #000 !important;
+                text-shadow: none !important;
+            }
+            .logo-box, .logo-box.has-transparent-logo, .logo-box.has-solid-logo {
+                border: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                padding: 0 !important;
+            }
+            .logo-box img { filter: none !important; }
+            
+            .print-subtitle {
+                display: block;
+                text-align: center;
+                font-size: 16px;
+                font-weight: 800;
+                text-transform: uppercase;
+                margin: 12px 0;
+                color: #000;
+            }
+
+            table { width: 100%; border-collapse: collapse; }
+            th, td { border: 1px solid #000 !important; color: #000 !important; padding: 6px !important; }
+            th { background: #eee !important; color: #000 !important; -webkit-print-color-adjust: exact; position: static; box-shadow: none; }
+            
+            .jump-input, .bar-header-input { border: none !important; background: transparent !important; color: #000 !important; padding: 0; width: 100%; }
+            .rank-1, .rank-2, .rank-3, #scoreTable tbody tr.row-active-entry, #scoreTable tbody tr:focus-within {
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+            #scoreTable tbody tr.row-active-entry td:first-child, #scoreTable tbody tr:focus-within td:first-child {
+                box-shadow: none !important;
+            }
+            .rank-badge { background: none !important; color: #000 !important; box-shadow: none !important; width: auto; height: auto; }
+            .footer-signature { color: #333 !important; margin-top: 10px; font-size: 9.5px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================= MÀN HÌNH CHỌN CHẾ ĐỘ & ĐĂNG NHẬP ================= -->
+<div id="authOverlay" class="auth-overlay">
+    <div class="auth-modal">
+        <div class="auth-header">
+            <div class="auth-header-left">
+                <div>
+                    <h2 class="auth-header-title">🏃 Phần mềm Thi đấu Điền kinh Đa môn</h2>
+                    <p class="auth-header-sub">Chọn chế độ Khách (1 - 3) hoặc Đăng nhập tài khoản Admin / Giáo viên</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span id="authCloudStatus" class="status-dot offline" title="Trạng thái kết nối Firebase"></span>
+            </div>
+        </div>
+
+        <div class="auth-body">
+            <!-- CỘT TRÁI: 3 CHẾ ĐỘ KHÁCH -->
+            <div class="auth-section">
+                <h3>🎫 Chế độ Khách (Dùng ngay)</h3>
+                <p class="auth-section-desc">
+                    Mỗi phòng Khách có dữ liệu độc lập. Khi có người đang dùng sẽ báo màu đỏ 
+                    <strong style="color:#dc2626;">(Đã có người dùng)</strong>. Khi thoát hoặc tắt trình duyệt sẽ tự động trả phòng và xóa sạch toàn bộ dữ liệu.
+                </p>
+                <div class="guest-list">
+                    <button type="button" id="guestCard_guest1" class="guest-card" onclick="enterGuestMode('guest1')">
+                        <div class="guest-card-left">
+                            <div class="guest-icon">1</div>
+                            <div>
+                                <div class="guest-name">Khách 1</div>
+                                <div class="guest-sub">Phòng thi đấu độc lập số 1</div>
+                            </div>
+                        </div>
+                        <span id="guestStatus_guest1" class="guest-status-text available">(Sẵn sàng)</span>
+                    </button>
+
+                    <button type="button" id="guestCard_guest2" class="guest-card" onclick="enterGuestMode('guest2')">
+                        <div class="guest-card-left">
+                            <div class="guest-icon">2</div>
+                            <div>
+                                <div class="guest-name">Khách 2</div>
+                                <div class="guest-sub">Phòng thi đấu độc lập số 2</div>
+                            </div>
+                        </div>
+                        <span id="guestStatus_guest2" class="guest-status-text available">(Sẵn sàng)</span>
+                    </button>
+
+                    <button type="button" id="guestCard_guest3" class="guest-card" onclick="enterGuestMode('guest3')">
+                        <div class="guest-card-left">
+                            <div class="guest-icon">3</div>
+                            <div>
+                                <div class="guest-name">Khách 3</div>
+                                <div class="guest-sub">Phòng thi đấu độc lập số 3</div>
+                            </div>
+                        </div>
+                        <span id="guestStatus_guest3" class="guest-status-text available">(Sẵn sàng)</span>
+                    </button>
+                </div>
+                <div id="guestErrorMsg" class="auth-error"></div>
+            </div>
+
+            <!-- CỘT PHẢI: ĐĂNG NHẬP ADMIN & GIÁO VIÊN -->
+            <div class="auth-section">
+                <h3>🔐 Đăng nhập (Admin / Giáo viên)</h3>
+                <p class="auth-section-desc">
+                    Đăng nhập bằng tài khoản được cấp để lưu trữ dữ liệu riêng theo tài khoản hoặc quản lý cấp quyền (Admin).
+                </p>
+                <div class="auth-form-group">
+                    <label for="loginUsername">Tên đăng nhập</label>
+                    <div class="auth-input-wrap">
+                        <input type="text" id="loginUsername" placeholder="Nhập tên đăng nhập..." autocomplete="username">
+                    </div>
+                </div>
+                <div class="auth-form-group">
+                    <label for="loginPassword">Mật khẩu</label>
+                    <div class="auth-input-wrap">
+                        <input type="password" id="loginPassword" placeholder="Nhập mật khẩu..." autocomplete="current-password">
+                        <button type="button" class="auth-eye-btn" onclick="toggleLoginPwd()" title="Hiện/Ẩn mật khẩu">👁️</button>
+                    </div>
+                </div>
+                <div id="loginErrorMsg" class="auth-error"></div>
+                <button type="button" id="btnLoginSubmit" class="btn-login-submit" onclick="handleAccountLogin()">🔓 Đăng nhập vào phần mềm</button>
+            </div>
+        </div>
+
+        <div class="auth-footer">
+            <span>Phần mềm MIỄN PHÍ hỗ trợ Thầy/Cô ạ !</span>
+            <span style="font-style: italic;">Design by Nguyễn Minh Quân - 0937.707.001</span>
+        </div>
+    </div>
+</div>
+
+<!-- ================= MODAL CẤP QUYỀN & QUẢN LÝ TÀI KHOẢN (CHỈ ADMIN) ================= -->
+<div id="adminModalOverlay" class="admin-modal-overlay" onclick="if(event.target === this) closeAdminModal()">
+    <div class="admin-modal">
+        <div class="admin-modal-header">
+            <h3>🔐 Quản lý Cấp quyền, Tài khoản & Phòng Khách (Admin)</h3>
+            <button type="button" class="btn-red" style="padding: 6px 12px; font-size: 13px;" onclick="closeAdminModal()">✕ Đóng</button>
+        </div>
+
+        <div class="admin-modal-body">
+            <!-- Form Cấp / Sửa tài khoản -->
+            <div class="admin-card">
+                <h4>
+                    <span id="adminFormTitle">➕ Cấp tài khoản mới (Giáo viên / Admin)</span>
+                    <button type="button" id="btnCancelEditAcc" class="btn-orange" style="display:none; padding: 4px 10px; font-size: 12px;" onclick="resetAccountForm()">Hủy chỉnh sửa</button>
+                </h4>
+                <div class="admin-form-grid">
+                    <div>
+                        <label for="accUsername">Tên đăng nhập *</label>
+                        <input type="text" id="accUsername" placeholder="VD: gv_hoa">
+                    </div>
+                    <div>
+                        <label for="accPassword">Mật khẩu *</label>
+                        <input type="text" id="accPassword" placeholder="VD: 123456">
+                    </div>
+                    <div>
+                        <label for="accFullName">Họ và tên</label>
+                        <input type="text" id="accFullName" placeholder="VD: Cô Hoa - Thể chất">
+                    </div>
+                    <div>
+                        <label for="accRole">Vai trò</label>
+                        <select id="accRole">
+                            <option value="teacher">Giáo viên</option>
+                            <option value="admin">Admin (Toàn quyền)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="accActive">Trạng thái</label>
+                        <select id="accActive">
+                            <option value="true">Cho phép hoạt động</option>
+                            <option value="false">Tạm khóa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="button" class="btn-green" style="width: 100%; padding: 9px 12px;" onclick="saveAccountFromAdmin()">💾 Lưu / Cấp quyền</button>
+                    </div>
+                </div>
+                <div id="adminMsg" class="admin-msg"></div>
+            </div>
+
+            <!-- Danh sách tài khoản (Admin xem được mật khẩu) -->
+            <div class="admin-card">
+                <h4>
+                    <span>📋 Danh sách tài khoản đã cấp</span>
+                    <button type="button" id="btnToggleAllPwds" class="btn-orange" style="padding: 5px 11px; font-size: 12.5px;" onclick="toggleAllAdminPasswords()">🙈 Ẩn tất cả mật khẩu</button>
+                </h4>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="5%">STT</th>
+                                <th width="16%">Tên đăng nhập</th>
+                                <th width="21%">Họ và tên</th>
+                                <th width="12%">Vai trò</th>
+                                <th width="18%">Mật khẩu</th>
+                                <th width="12%">Trạng thái</th>
+                                <th width="16%">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminAccountsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Giám sát 3 chế độ Khách -->
+            <div class="admin-card" style="margin-bottom: 0;">
+                <h4>🎫 Trạng thái 3 chế độ Khách (Thời gian thực)</h4>
+                <div id="adminGuestGrid" class="admin-guest-grid"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- VÙNG CỐ ĐỊNH TRÊN CÙNG -->
+    <div class="top-section">
+        <!-- Cụm Header Banner có hình ảnh các môn điền kinh & đường chạy -->
+        <div class="header-container">
+            <div class="header-bg-art" aria-hidden="true">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#ffffff" stroke-opacity="0.12" stroke-width="2" fill="none">
+                        <path d="M0,98 Q380,68 780,98 T1200,82"/>
+                        <path d="M0,106 Q380,76 780,106 T1200,90"/>
+                        <path d="M0,114 Q380,84 780,114 T1200,98"/>
+                    </g>
+                    <polygon points="560,0 640,0 590,120 510,120" fill="#ffffff" fill-opacity="0.04"/>
+                    <polygon points="665,0 695,0 645,120 615,120" fill="#ffd700" fill-opacity="0.06"/>
+
+                    <!-- Chạy nước rút -->
+                    <g transform="translate(530, 14) scale(0.85)" fill="#ffffff" fill-opacity="0.13">
+                        <circle cx="58" cy="14" r="8"/>
+                        <path d="M48,25 L66,30 L56,52 L74,64 L68,72 L47,58 L38,68 L22,86 L14,80 L30,58 L41,46 L31,38 L16,44 L13,36 L33,28 Z"/>
+                        <path d="M64,34 L84,26 L87,33 L67,42 Z"/>
+                        <line x1="2" y1="30" x2="22" y2="30" stroke="#ffd700" stroke-opacity="0.35" stroke-width="2"/>
+                        <line x1="-6" y1="48" x2="18" y2="48" stroke="#ffd700" stroke-opacity="0.25" stroke-width="2"/>
+                    </g>
+
+                    <!-- Nhảy xa / Bật xa -->
+                    <g transform="translate(650, 16) scale(0.85)" fill="#ffffff" fill-opacity="0.12">
+                        <circle cx="62" cy="14" r="8"/>
+                        <path d="M52,24 L68,32 L54,50 L80,58 L90,74 L82,78 L72,64 L44,58 L24,66 L10,58 L14,50 L26,56 L42,45 L32,30 L18,22 L23,15 L40,24 Z"/>
+                        <path d="M12,86 Q55,70 98,86" fill="none" stroke="#ffd700" stroke-opacity="0.3" stroke-width="2" stroke-dasharray="4 4"/>
+                    </g>
+
+                    <!-- Nhảy cao -->
+                    <g transform="translate(770, 12) scale(0.85)" fill="#ffffff" fill-opacity="0.12">
+                        <rect x="8" y="30" width="3" height="65" fill="#ffd700" fill-opacity="0.28"/>
+                        <rect x="92" y="30" width="3" height="65" fill="#ffd700" fill-opacity="0.28"/>
+                        <line x1="8" y1="42" x2="95" y2="42" stroke="#ffd700" stroke-opacity="0.45" stroke-width="2.5"/>
+                        <circle cx="30" cy="28" r="7"/>
+                        <path d="M36,24 Q55,14 72,28 L84,48 L76,52 L66,34 Q54,25 40,32 L24,42 L19,36 Z"/>
+                    </g>
+
+                    <!-- Đẩy tạ / Ném bóng -->
+                    <g transform="translate(885, 14) scale(0.82)" fill="#ffffff" fill-opacity="0.11">
+                        <circle cx="48" cy="18" r="8"/>
+                        <circle cx="72" cy="12" r="5" fill="#ffd700" fill-opacity="0.45"/>
+                        <path d="M40,28 L58,28 L68,16 L74,21 L60,38 L52,54 L66,84 L57,87 L45,62 L32,84 L23,80 L38,52 L28,42 L14,48 L10,40 L30,31 Z"/>
+                        <path d="M76,12 Q96,4 114,22" fill="none" stroke="#ffd700" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="4 3"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="header-left">
+                <input type="file" id="logoUpload" accept="image/*" style="display: none;" onchange="loadLogo(event)">
+                <div id="logoBox" class="logo-box" onclick="document.getElementById('logoUpload').click()" title="Click để tải logo (Tự động tạo viền trắng nếu là logo xóa nền)">
+                    <img id="logoPreview" data-placeholder="true" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='20' font-weight='bold' font-family='sans-serif' fill='%231557b0'>LOGO</text></svg>" alt="Logo">
+                </div>
+                <div class="header-text-group">
+                    <!-- Hàng 1: Tên giải đấu -->
+                    <h2 id="tournamentTitle" class="header-title" contenteditable="true" spellcheck="false" oninput="cleanEditableEmpty(this)" onblur="saveMetaTitle()" data-placeholder="Điền thông tin giải">GIẢI ĐIỀN KINH CẤP TRƯỜNG NĂM HỌC 2026-2027</h2>
+                    <!-- Hàng 2: Vị trí tên môn thi cũ -> nay để giáo viên điền nội dung, kích thước tăng 20% -->
+                    <div id="customContent" class="header-content-line" contenteditable="true" spellcheck="false" oninput="cleanEditableEmpty(this)" onblur="saveMetaTitle()" data-placeholder="Điền nội dung"></div>
+                    <!-- Hàng 3: Vị trí cũ của dòng Design by -> nay là Tên môn thi đấu, kích thước tăng 20% -->
+                    <div class="event-title-row">
+                        <span id="sportEmblem" class="sport-emblem" title="Biểu tượng môn thi"></span>
+                        <h3 id="eventTitle" class="header-subtitle" contenteditable="true" spellcheck="false">MÔN THI: BẬT XA TẠI CHỖ</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khu vực Chấm kết nối + Nút In ở trên và Chọn Môn Thi ở ngay phía dưới -->
+            <div class="header-right">
+                <div class="action-top-row">
+                    <span id="cloudStatus" class="status-dot offline" title="Mất kết nối"></span>
+                    <span id="currentUserBadge" class="user-role-badge" title="Tài khoản / Chế độ hiện tại">Chưa đăng nhập</span>
+                    <button id="btnAdminPanel" class="btn-admin-perm" onclick="openAdminModal()">🔐 Cấp quyền</button>
+                    <button class="btn-print" onclick="window.print()">🖨️ In kết quả</button>
+                    <button id="btnLogout" class="btn-logout" onclick="logoutSession()" title="Thoát ra màn hình chọn chế độ">🚪 Thoát</button>
+                </div>
+                <div class="sport-selector-box">
+                    <label for="sportSelect">🏃 MÔN THI:</label>
+                    <select id="sportSelect" onchange="switchSport(this.value)">
+                        <option value="bat_xa">1. Bật xa tại chỗ</option>
+                        <option value="nhay_cao">2. Nhảy cao</option>
+                        <option value="nhay_xa">3. Nhảy xa</option>
+                        <option value="day_ta">4. Đẩy tạ</option>
+                        <option value="nem_bong">5. Ném bóng</option>
+                        <option value="chay_30m">6. Chạy 30m</option>
+                        <option value="chay_60m">7. Chạy 60m</option>
+                        <option value="chay_100m">8. Chạy 100m</option>
+                        <option value="chay_200m">9. Chạy 200m</option>
+                        <option value="chay_400m">10. Chạy 400m</option>
+                        <option value="chay_800m">11. Chạy 800m</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="printSub" class="print-subtitle">KẾT QUẢ THI ĐẤU</div>
+        
+        <!-- Khu vực nhập liệu VĐV (Có thể thu gọn khi chấm điểm) -->
+        <div id="inputPanelsWrapper" class="input-panels-wrapper">
+            <div class="flex-row">
+                <div class="panel form-group" style="flex: 1; min-width: 340px;">
+                    <h4>➕ Thêm VĐV thủ công (<span id="currentSportLabel1">Bật xa tại chỗ</span>)</h4>
+                    <div class="flex-row">
+                        <input type="text" id="athleteName" placeholder="Họ và tên VĐV" style="flex:2;">
+                        <input type="text" id="athleteUnit" placeholder="Đơn vị/Lớp" style="flex:1;">
+                        <input type="text" id="athleteCategory" placeholder="Nội dung (VD: Nam K4)" style="flex:1;">
+                        <button onclick="addAthleteManual()">+ Thêm</button>
+                    </div>
+                </div>
+
+                <div class="panel panel-smart" style="flex: 1; min-width: 340px;">
+                    <h4>📋 Nhập Danh sách thông minh (Copy từ Excel)</h4>
+                    <textarea id="smartListInput" placeholder="Copy 3 cột: Họ Tên [Tab] Đơn vị [Tab] Nội dung thi và dán vào đây..."></textarea>
+                    <div class="flex-row" style="justify-content: space-between; align-items: center; margin-top: 4px;">
+                        <div class="help-text">Dữ liệu nạp vào sẽ được lưu riêng cho môn đang chọn</div>
+                        <button class="btn-green" onclick="importSmartList()">Nạp danh sách</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bảng xếp hạng TOP 3 trực tiếp -->
+        <div class="top3-container">
+            <div class="top3-header-bar">
+                <h4 class="top3-title">🏆 BẢNG XẾP HẠNG TẠM THỜI (TOP 3 - <span id="top3SportName">BẬT XA TẠI CHỖ</span>)</h4>
+                <span id="ruleHintText" class="rule-hint">Luật xếp hạng: Lấy thành tích cao nhất; nếu bằng nhau xét lượt tốt tiếp theo.</span>
+            </div>
+            <div id="top3Content" class="flex-row">
+                <!-- Nội dung TOP 3 sẽ render vào đây -->
+            </div>
+        </div>
+
+        <!-- Thanh lọc nội dung thi & Lựa chọn thể thức số lượt thi của Giáo viên -->
+        <div class="filter-section">
+            <div class="filter-left">
+                <div>
+                    <strong>Nội dung: </strong>
+                    <select id="categoryFilter" onchange="renderSystem()">
+                        <option value="ALL">-- Tất cả nội dung --</option>
+                    </select>
+                </div>
+                <div>
+                    <strong>Chế độ / Số lượt thi: </strong>
+                    <select id="modeSelect" onchange="changeSportMode(this.value)">
+                        <!-- Tùy chọn tự động nạp theo từng môn -->
+                    </select>
+                </div>
+                <div id="highJumpExtraBtns" style="display: none; gap: 6px;">
+                    <button class="btn-orange" style="padding: 5px 10px; font-size: 12.5px;" onclick="addHighJumpBar()">+ Thêm mức xà</button>
+                    <button class="btn-red" style="padding: 5px 10px; font-size: 12.5px;" onclick="removeHighJumpBar()" title="Xóa cột mức xà cuối">- Bớt mức xà</button>
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <div id="statsCount" style="font-weight: 800; font-size: 13.5px; background: rgba(255,255,255,0.14); padding: 4px 10px; border-radius: 20px;">Tổng số: 0</div>
+                <button id="toggleInputBtn" class="btn-ghost" style="padding: 5px 10px; font-size: 12.5px;" onclick="toggleInputPanels()" title="Ẩn/hiện khu vực thêm VĐV để xem bảng rộng hơn">▲ Thu gọn nhập</button>
+                <button class="btn-red" style="padding: 5px 10px; font-size: 12.5px;" onclick="deleteAllAthletes()">✕ Xóa môn này</button>
+            </div>
+        </div>
+    </div> <!-- Hết vùng cố định -->
+
+    <!-- VÙNG CUỘN ĐƯỢC: Bảng điểm danh sách -->
+    <div class="table-container">
+        <table id="scoreTable">
+            <thead id="tableHead">
+                <!-- Tiêu đề cột động theo môn thi -->
+            </thead>
+            <tbody id="tableBody">
+                <!-- Dữ liệu VĐV render tại đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Dòng tác giả chuyển xuống góc phải bên dưới, nhỏ lại 80% -->
+    <div class="footer-signature">
+        Phần mềm Thi đấu Điền kinh Đa môn | Design by Nguyễn Minh Quân - 0937.707.001
+    </div>
+
+</div>
+
+<script>
+    /* =========================================================================
+       1. CẤU HÌNH FIREBASE & ĐÈN TRẠNG THÁI KẾT NỐI (XANH / ĐỎ)
+       ========================================================================= */
+    const firebaseConfig = {
+        apiKey: "AIzaSyAjOBlGUQokPZno9KKYaZgp7wbhyGezOKw",
+        authDomain: "tkd-giahao.firebaseapp.com",
+        databaseURL: "https://tkd-giahao-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "tkd-giahao",
+        storageBucket: "tkd-giahao.firebasestorage.app",
+        messagingSenderId: "68989473878",
+        appId: "1:68989473878:web:f3592c8b26c59c7a92d7f7",
+        measurementId: "G-51X8SGETYR"
+    };
+
+    const DEFAULT_LOGO_PLACEHOLDER = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='20' font-weight='bold' font-family='sans-serif' fill='%231557b0'>LOGO</text></svg>";
+
+    const APP_ROOT = "athletics_app_nmq";
+    const DEFAULT_TOURNAMENT_TITLE = "GIẢI ĐIỀN KINH CẤP TRƯỜNG NĂM HỌC 2026-2027";
+    const GUEST_SLOTS = [
+        { key: "guest1", label: "Khách 1" },
+        { key: "guest2", label: "Khách 2" },
+        { key: "guest3", label: "Khách 3" }
+    ];
+    const GUEST_STALE_MS = 90000; // 90 giây không có heartbeat coi như đã thoát đột ngột
+    const DEFAULT_ADMIN_ACCOUNT = {
+        username: "admin",
+        password: "admin123",
+        fullName: "Nguyễn Minh Quân (Admin)",
+        role: "admin",
+        active: true,
+        createdAt: 1700000000000
+    };
+
+    let fbDb = null;
+    let dbRef = null; // Workspace ref đang hoạt động (tách biệt theo Admin / Giáo viên / Khách 1-3)
+    let accountsRef = null;
+    let guestPresenceRef = null;
+    let activeGuestPresenceRef = null;
+    let guestHeartbeatTimer = null;
+    let serverTimeOffset = 0;
+
+    let isCloudConnected = false;
+    let isRemoteUpdating = false;
+    let rawLogoBase64 = DEFAULT_LOGO_PLACEHOLDER;
+
+    let currentSession = null; // { role: 'admin'|'teacher'|'guest', username, usernameKey, fullName, guestSlot, sessionId, workspaceId }
+    let accountsCache = {};
+    let guestPresenceState = {};
+    let adminShowAllPasswords = true;
+    let editingAccountKey = null;
+
+    function getServerNow() {
+        return Date.now() + serverTimeOffset;
+    }
+
+    function sanitizeKey(str) {
+        return String(str || "").trim().toLowerCase().replace(/[.#$\[\]\/\s]/g, "_");
+    }
+
+    function escapeHtml(str) {
+        return String(str || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+    }
+
+    function updateConnectionDot(connected) {
+        isCloudConnected = connected && navigator.onLine;
+        const dots = [document.getElementById("cloudStatus"), document.getElementById("authCloudStatus")];
+        dots.forEach(dot => {
+            if (!dot) return;
+            dot.textContent = "";
+            if (isCloudConnected) {
+                dot.className = "status-dot online";
+                dot.title = "Đang kết nối trực tuyến";
+            } else {
+                dot.className = "status-dot offline";
+                dot.title = "Mất kết nối";
+            }
+        });
+
+        // Nếu đang ở chế độ Khách và vừa kết nối lại mạng -> đăng ký lại tự động xóa cả khóa phòng lẫn toàn bộ dữ liệu khi ngắt kết nối
+        if (isCloudConnected && currentSession && currentSession.role === "guest") {
+            if (dbRef) {
+                dbRef.onDisconnect().remove();
+            }
+            if (activeGuestPresenceRef) {
+                activeGuestPresenceRef.onDisconnect().remove();
+                activeGuestPresenceRef.once("value").then(snap => {
+                    const v = snap.val();
+                    if (!v || v.sessionId === currentSession.sessionId) {
+                        activeGuestPresenceRef.set({
+                            active: true,
+                            sessionId: currentSession.sessionId,
+                            label: currentSession.fullName,
+                            startedAt: (v && v.startedAt) ? v.startedAt : firebase.database.ServerValue.TIMESTAMP,
+                            lastHeartbeat: firebase.database.ServerValue.TIMESTAMP
+                        });
+                    }
+                }).catch(() => {});
+            }
+        }
+    }
+
+    /* Tự động nhận diện logo xóa nền, cắt bỏ viền thừa trong suốt, canh giữa tuyệt đối và vẽ viền trắng đều 4 phía */
+    function applyLogoVisualStyle(src) {
+        const img = document.getElementById("logoPreview");
+        const box = document.getElementById("logoBox");
+        if (!img || !box) return;
+
+        if (!src || src === DEFAULT_LOGO_PLACEHOLDER || src.includes(">LOGO</text>")) {
+            rawLogoBase64 = DEFAULT_LOGO_PLACEHOLDER;
+            box.classList.remove("has-transparent-logo", "has-solid-logo");
+            img.dataset.placeholder = "true";
+            img.src = DEFAULT_LOGO_PLACEHOLDER;
+            return;
+        }
+
+        rawLogoBase64 = src;
+        img.dataset.placeholder = "false";
+
+        const tempImg = new Image();
+        tempImg.crossOrigin = "anonymous";
+        tempImg.onload = function() {
+            processAndCenterLogo(tempImg, img, box, src);
+        };
+        tempImg.onerror = function() {
+            box.classList.remove("has-transparent-logo");
+            box.classList.add("has-solid-logo");
+            img.src = src;
+        };
+        tempImg.src = src;
+    }
+
+    function processAndCenterLogo(sourceImg, targetImgEl, boxEl, originalSrc) {
+        if (!sourceImg.naturalWidth || !sourceImg.naturalHeight) {
+            targetImgEl.src = originalSrc;
+            return;
+        }
+        try {
+            // Bước 1: Phân tích vùng nội dung thực tế & kiểm tra độ trong suốt
+            const scanSize = 256;
+            const scanCanvas = document.createElement("canvas");
+            const sScale = Math.min(scanSize / sourceImg.naturalWidth, scanSize / sourceImg.naturalHeight);
+            const sw = Math.max(1, Math.round(sourceImg.naturalWidth * sScale));
+            const sh = Math.max(1, Math.round(sourceImg.naturalHeight * sScale));
+            scanCanvas.width = sw;
+            scanCanvas.height = sh;
+            const sCtx = scanCanvas.getContext("2d", { willReadFrequently: true });
+            sCtx.clearRect(0, 0, sw, sh);
+            sCtx.drawImage(sourceImg, 0, 0, sw, sh);
+
+            const pixels = sCtx.getImageData(0, 0, sw, sh).data;
+            let transparentPixels = 0;
+            const totalPixels = sw * sh;
+            let minX = sw, minY = sh, maxX = -1, maxY = -1;
+
+            for (let y = 0; y < sh; y++) {
+                for (let x = 0; x < sw; x++) {
+                    const a = pixels[(y * sw + x) * 4 + 3];
+                    if (a < 245) transparentPixels++;
+                    if (a > 15) {
+                        if (x < minX) minX = x;
+                        if (x > maxX) maxX = x;
+                        if (y < minY) minY = y;
+                        if (y > maxY) maxY = y;
+                    }
+                }
+            }
+
+            const isTransparentLogo = (transparentPixels / totalPixels) > 0.015 && maxX >= minX && maxY >= minY;
+
+            if (!isTransparentLogo) {
+                boxEl.classList.add("has-solid-logo");
+                boxEl.classList.remove("has-transparent-logo");
+                targetImgEl.src = originalSrc;
+                return;
+            }
+
+            // Bước 2: Quy đổi khung cắt chính xác về tọa độ ảnh gốc để không bị lệch tâm
+            const srcX = Math.max(0, Math.floor((minX / sw) * sourceImg.naturalWidth));
+            const srcY = Math.max(0, Math.floor((minY / sh) * sourceImg.naturalHeight));
+            const srcW = Math.min(sourceImg.naturalWidth - srcX, Math.max(1, Math.ceil(((maxX - minX + 1) / sw) * sourceImg.naturalWidth)));
+            const srcH = Math.min(sourceImg.naturalHeight - srcY, Math.max(1, Math.ceil(((maxY - minY + 1) / sh) * sourceImg.naturalHeight)));
+
+            // Bước 3: Dựng ảnh 320x320 canh giữa tuyệt đối + viền trắng đều 360 độ
+            const outSize = 320;
+            const outlineRadius = 11;
+            const safePad = outlineRadius + 6;
+            const innerBox = outSize - safePad * 2;
+            const fitScale = Math.min(innerBox / srcW, innerBox / srcH);
+            const drawW = srcW * fitScale;
+            const drawH = srcH * fitScale;
+            const drawX = (outSize - drawW) / 2;
+            const drawY = (outSize - drawH) / 2;
+
+            // Tạo bóng trắng (silhouette) của logo đã canh giữa
+            const silCanvas = document.createElement("canvas");
+            silCanvas.width = outSize;
+            silCanvas.height = outSize;
+            const silCtx = silCanvas.getContext("2d");
+            silCtx.drawImage(sourceImg, srcX, srcY, srcW, srcH, drawX, drawY, drawW, drawH);
+            silCtx.globalCompositeOperation = "source-in";
+            silCtx.fillStyle = "#ffffff";
+            silCtx.fillRect(0, 0, outSize, outSize);
+
+            // Vẽ viền trắng đối xứng tròn đều quanh tâm (không bị lệch như drop-shadow CSS)
+            const outCanvas = document.createElement("canvas");
+            outCanvas.width = outSize;
+            outCanvas.height = outSize;
+            const outCtx = outCanvas.getContext("2d");
+            const steps = 36;
+            for (const rad of [outlineRadius, outlineRadius * 0.55]) {
+                for (let i = 0; i < steps; i++) {
+                    const angle = (i * 2 * Math.PI) / steps;
+                    outCtx.drawImage(silCanvas, Math.cos(angle) * rad, Math.sin(angle) * rad);
+                }
+            }
+            // Vẽ logo gốc canh giữa đè lên trên lớp viền trắng
+            outCtx.drawImage(sourceImg, srcX, srcY, srcW, srcH, drawX, drawY, drawW, drawH);
+
+            boxEl.classList.add("has-transparent-logo");
+            boxEl.classList.remove("has-solid-logo");
+            targetImgEl.src = outCanvas.toDataURL("image/png");
+        } catch (err) {
+            boxEl.classList.remove("has-transparent-logo");
+            boxEl.classList.add("has-solid-logo");
+            targetImgEl.src = originalSrc;
+        }
+    }
+
+    function loadAccountsCacheLocal() {
+        try {
+            const raw = localStorage.getItem("athletics_accounts_cache_nmq");
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                if (parsed && typeof parsed === "object") {
+                    accountsCache = parsed;
+                }
+            }
+        } catch (e) {}
+        if (!Object.values(accountsCache).some(a => a && a.role === "admin")) {
+            accountsCache["admin"] = Object.assign({}, DEFAULT_ADMIN_ACCOUNT);
+        }
+    }
+
+    function saveAccountsCacheLocal() {
+        try {
+            localStorage.setItem("athletics_accounts_cache_nmq", JSON.stringify(accountsCache));
+        } catch (e) {}
+    }
+
+    function isGuestSlotOccupied(slotData) {
+        if (!slotData || !slotData.active) return false;
+        const ts = slotData.lastHeartbeat || slotData.startedAt || 0;
+        if (!ts) return true;
+        return (getServerNow() - ts) < GUEST_STALE_MS;
+    }
+
+    function renderGuestStatusUI() {
+        GUEST_SLOTS.forEach(slot => {
+            const data = guestPresenceState[slot.key];
+            const occupied = isGuestSlotOccupied(data);
+            const card = document.getElementById("guestCard_" + slot.key);
+            const badge = document.getElementById("guestStatus_" + slot.key);
+            if (card && badge) {
+                if (occupied) {
+                    card.classList.add("occupied");
+                    badge.className = "guest-status-text occupied";
+                    badge.textContent = "(Đã có người dùng)";
+                } else {
+                    card.classList.remove("occupied");
+                    badge.className = "guest-status-text available";
+                    badge.textContent = "(Sẵn sàng)";
+                }
+            }
+        });
+        renderAdminGuestStatus();
+    }
+
+    function initFirebase() {
+        loadAccountsCacheLocal();
+        try {
+            if (firebaseConfig.apiKey && firebaseConfig.databaseURL) {
+                if (!firebase.apps.length) {
+                    firebase.initializeApp(firebaseConfig);
+                }
+                fbDb = firebase.database();
+                accountsRef = fbDb.ref(APP_ROOT + "/accounts");
+                guestPresenceRef = fbDb.ref(APP_ROOT + "/guest_presence");
+
+                // Đồng bộ lệch giờ server để kiểm tra trạng thái Khách chính xác tuyệt đối
+                fbDb.ref(".info/serverTimeOffset").on("value", snap => {
+                    serverTimeOffset = snap.val() || 0;
+                    renderGuestStatusUI();
+                });
+
+                fbDb.ref(".info/connected").on("value", (snap) => {
+                    updateConnectionDot(snap.val() === true);
+                });
+
+                window.addEventListener("online", () => {
+                    fbDb.ref(".info/connected").once("value", s => updateConnectionDot(s.val() === true));
+                });
+                window.addEventListener("offline", () => updateConnectionDot(false));
+
+                // Lắng nghe trạng thái 3 chế độ Khách thời gian thực
+                guestPresenceRef.on("value", (snapshot) => {
+                    guestPresenceState = snapshot.val() || {};
+                    renderGuestStatusUI();
+                });
+
+                // Lắng nghe danh sách tài khoản thời gian thực & tự tạo tài khoản Admin mặc định nếu chưa có
+                accountsRef.on("value", (snapshot) => {
+                    const val = snapshot.val();
+                    if (!val || !Object.values(val).some(a => a && a.role === "admin")) {
+                        const seed = Object.assign({}, DEFAULT_ADMIN_ACCOUNT);
+                        accountsCache["admin"] = seed;
+                        saveAccountsCacheLocal();
+                        accountsRef.child("admin").set(seed).catch(err => console.warn("Không thể tự tạo admin mặc định:", err));
+                    } else {
+                        accountsCache = val;
+                        saveAccountsCacheLocal();
+                    }
+                    if (currentSession && currentSession.role === "admin") {
+                        renderAdminAccountsTable();
+                    }
+                });
+
+                // Kiểm tra định kỳ mỗi 10 giây để tự nhả giao diện nếu có phiên khách bị quá hạn
+                setInterval(renderGuestStatusUI, 10000);
+            } else {
+                updateConnectionDot(false);
+            }
+        } catch (err) {
+            console.warn("Lỗi kết nối Firebase, sử dụng LocalStorage:", err);
+            updateConnectionDot(false);
+        }
+    }
+
+    /* =========================================================================
+       1B. QUẢN LÝ CHẾ ĐỘ KHÁCH (1-3), ĐĂNG NHẬP & CẤP QUYỀN ADMIN
+       ========================================================================= */
+    function toggleLoginPwd() {
+        const inp = document.getElementById("loginPassword");
+        inp.type = (inp.type === "password") ? "text" : "password";
+    }
+
+    let isJoiningGuest = false;
+
+    async function enterGuestMode(slotKey) {
+        if (isJoiningGuest) return;
+        const errEl = document.getElementById("guestErrorMsg");
+        errEl.textContent = "";
+        const slotInfo = GUEST_SLOTS.find(s => s.key === slotKey);
+        if (!slotInfo) return;
+
+        // Kiểm tra nhanh trên giao diện trước
+        if (isGuestSlotOccupied(guestPresenceState[slotKey])) {
+            errEl.textContent = `⚠ ${slotInfo.label} đã có người dùng! Vui lòng chọn chế độ khác.`;
+            return;
+        }
+
+        const mySessionId = "guest_" + Date.now() + "_" + Math.random().toString(36).slice(2, 9);
+
+        if (guestPresenceRef && navigator.onLine) {
+            isJoiningGuest = true;
+            const slotRef = guestPresenceRef.child(slotKey);
+            try {
+                const txResult = await Promise.race([
+                    slotRef.transaction((currentData) => {
+                    if (currentData && currentData.active) {
+                        const ts = currentData.lastHeartbeat || currentData.startedAt || 0;
+                        if (!ts || (getServerNow() - ts) < GUEST_STALE_MS) {
+                            return; // Hủy giao dịch vì đã có người dùng
+                        }
+                    }
+                    return {
+                        active: true,
+                        sessionId: mySessionId,
+                        label: slotInfo.label,
+                        startedAt: firebase.database.ServerValue.TIMESTAMP,
+                        lastHeartbeat: firebase.database.ServerValue.TIMESTAMP
+                    };
+                    }),
+                    new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), 5000))
+                ]);
+
+                if (!txResult.committed) {
+                    errEl.textContent = `⚠ ${slotInfo.label} đã có người dùng! Vui lòng chọn chế độ khác.`;
+                    renderGuestStatusUI();
+                    return;
+                }
+
+                // QUAN TRỌNG: Tự động xóa khóa phòng & dọn sạch dữ liệu cũ (nếu có) trước khi bắt đầu phiên Khách mới
+                activeGuestPresenceRef = slotRef;
+                await activeGuestPresenceRef.onDisconnect().remove();
+                if (fbDb) {
+                    const guestWsRef = fbDb.ref(`${APP_ROOT}/workspaces/${slotKey}`);
+                    await guestWsRef.remove().catch(() => {});
+                    await guestWsRef.onDisconnect().remove().catch(() => {});
+                }
+
+                // Duy trì heartbeat mỗi 15 giây
+                if (guestHeartbeatTimer) clearInterval(guestHeartbeatTimer);
+                guestHeartbeatTimer = setInterval(() => {
+                    if (activeGuestPresenceRef && currentSession && currentSession.role === "guest" && isCloudConnected) {
+                        activeGuestPresenceRef.child("lastHeartbeat").set(firebase.database.ServerValue.TIMESTAMP).catch(() => {});
+                    }
+                }, 15000);
+
+                // Theo dõi nếu Admin giải phóng cưỡng bức slot này
+                activeGuestPresenceRef.on("value", (snap) => {
+                    if (!currentSession || currentSession.role !== "guest") return;
+                    const v = snap.val();
+                    if (!v || v.sessionId !== currentSession.sessionId) {
+                        alert(`Phiên ${slotInfo.label} đã được giải phóng. Hệ thống quay về màn hình chọn chế độ.`);
+                        logoutSession(true);
+                    }
+                });
+            } catch (err) {
+                console.warn("Lỗi khóa phòng khách trên Firebase:", err);
+                errEl.textContent = "Không thể kết nối Firebase để khóa phòng Khách. Đang vào chế độ Offline.";
+            } finally {
+                isJoiningGuest = false;
+            }
+        }
+
+        // Đảm bảo xóa sạch dữ liệu cục bộ cũ của phòng Khách này để luôn bắt đầu mới hoàn toàn
+        try {
+            localStorage.removeItem(`athletics_multi_sport_nmq_${slotKey}`);
+        } catch (e) {}
+
+        activateSession({
+            role: "guest",
+            username: slotKey,
+            usernameKey: slotKey,
+            fullName: slotInfo.label,
+            guestSlot: slotKey,
+            sessionId: mySessionId,
+            workspaceId: slotKey
+        });
+    }
+
+    function releaseGuestPresence(isUnloading = false) {
+        if (guestHeartbeatTimer) {
+            clearInterval(guestHeartbeatTimer);
+            guestHeartbeatTimer = null;
+        }
+        if (activeGuestPresenceRef) {
+            const refToRelease = activeGuestPresenceRef;
+            refToRelease.off();
+            if (isUnloading) {
+                // Giữ onDisconnect().remove() làm bảo hiểm phía server và gọi remove() ngay lập tức
+                try { refToRelease.remove(); } catch (e) {}
+            } else {
+                activeGuestPresenceRef = null;
+                refToRelease.onDisconnect().cancel().catch(() => {});
+                refToRelease.remove().catch(() => {});
+            }
+        }
+    }
+
+    function wipeGuestWorkspaceData(slotKey, isUnloading = false) {
+        if (!slotKey) return;
+        try {
+            localStorage.removeItem(`athletics_multi_sport_nmq_${slotKey}`);
+        } catch (e) {}
+
+        if (fbDb) {
+            const wsRef = fbDb.ref(`${APP_ROOT}/workspaces/${slotKey}`);
+            if (isUnloading) {
+                // Giữ onDisconnect().remove() trên server và gọi remove() ngay lập tức
+                try { wsRef.remove(); } catch (e) {}
+            } else {
+                wsRef.onDisconnect().cancel().catch(() => {});
+                wsRef.remove().catch(() => {});
+            }
+        }
+    }
+
+    // Tự động thoát, giải phóng phòng & xóa sạch toàn bộ dữ liệu (kể cả logo, 2 tiêu đề) khi Khách tắt trình duyệt hoặc đóng tab
+    window.addEventListener("beforeunload", () => {
+        if (currentSession && currentSession.role === "guest") {
+            wipeGuestWorkspaceData(currentSession.guestSlot, true);
+            releaseGuestPresence(true);
+        }
+    });
+    window.addEventListener("pagehide", () => {
+        if (currentSession && currentSession.role === "guest") {
+            wipeGuestWorkspaceData(currentSession.guestSlot, true);
+            releaseGuestPresence(true);
+        }
+    });
+
+    async function handleAccountLogin() {
+        const errEl = document.getElementById("loginErrorMsg");
+        const btn = document.getElementById("btnLoginSubmit");
+        errEl.textContent = "";
+
+        const rawUser = document.getElementById("loginUsername").value.trim();
+        const rawPass = document.getElementById("loginPassword").value;
+
+        if (!rawUser || !rawPass) {
+            errEl.textContent = "Vui lòng nhập đầy đủ Tên đăng nhập và Mật khẩu!";
+            return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "⏳ Đang kiểm tra...";
+
+        try {
+            // Tải danh sách tài khoản mới nhất từ Firebase (có timeout dự phòng nếu offline)
+            if (accountsRef && navigator.onLine) {
+                try {
+                    const snap = await Promise.race([
+                        accountsRef.once("value"),
+                        new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), 4500))
+                    ]);
+                    const val = snap.val();
+                    if (val && typeof val === "object") {
+                        accountsCache = val;
+                        saveAccountsCacheLocal();
+                    }
+                } catch (fetchErr) {
+                    console.warn("Dùng danh sách tài khoản cục bộ do mạng chậm/offline:", fetchErr);
+                }
+            }
+
+            if (!Object.values(accountsCache).some(a => a && a.role === "admin")) {
+                accountsCache["admin"] = Object.assign({}, DEFAULT_ADMIN_ACCOUNT);
+            }
+
+            const key = sanitizeKey(rawUser);
+            let matched = accountsCache[key];
+
+            // Trường hợp key khác chữ hoa/thường
+            if (!matched) {
+                const lower = rawUser.toLowerCase();
+                matched = Object.values(accountsCache).find(a => a && String(a.username || "").trim().toLowerCase() === lower);
+            }
+
+            if (!matched || String(matched.password) !== String(rawPass)) {
+                errEl.textContent = "❌ Sai tên đăng nhập hoặc mật khẩu!";
+                return;
+            }
+
+            if (matched.active === false) {
+                errEl.textContent = "🔒 Tài khoản này đang bị Admin tạm khóa!";
+                return;
+            }
+
+            const sessionObj = {
+                role: matched.role === "admin" ? "admin" : "teacher",
+                username: matched.username || rawUser,
+                usernameKey: sanitizeKey(matched.username || rawUser),
+                fullName: matched.fullName || matched.username || rawUser,
+                guestSlot: null,
+                sessionId: "acc_" + Date.now(),
+                workspaceId: matched.role === "admin" ? "admin" : ("teacher_" + sanitizeKey(matched.username || rawUser))
+            };
+
+            try {
+                sessionStorage.setItem("athletics_active_session_nmq", JSON.stringify(sessionObj));
+            } catch (e) {}
+
+            document.getElementById("loginPassword").value = "";
+            activateSession(sessionObj);
+        } finally {
+            btn.disabled = false;
+            btn.textContent = "🔓 Đăng nhập vào phần mềm";
+        }
+    }
+
+    function getWorkspaceFirebasePath(session) {
+        if (!session) return null;
+        if (session.role === "admin") return "athletics_tournament_nmq"; // Giữ nguyên dữ liệu gốc của Admin
+        if (session.role === "guest") return `${APP_ROOT}/workspaces/${session.guestSlot}`;
+        return `${APP_ROOT}/workspaces/teacher_${session.usernameKey}`;
+    }
+
+    function getWorkspaceLocalKey(session) {
+        if (!session || session.role === "admin") return "athletics_multi_sport_nmq";
+        return `athletics_multi_sport_nmq_${session.workspaceId}`;
+    }
+
+    function cleanEditableEmpty(el) {
+        if (el && el.innerText.trim() === "") {
+            el.innerHTML = "";
+        }
+    }
+
+    function setHeaderText(el, val) {
+        if (!el) return;
+        const txt = String(val || "").trim();
+        if (!txt) {
+            el.innerHTML = "";
+        } else {
+            el.innerText = val;
+        }
+    }
+
+    function resetWorkspaceUI(role = "guest") {
+        sportsData = {};
+        ensureDataIntegrity();
+        const titleEl = document.getElementById("tournamentTitle");
+        const contentEl = document.getElementById("customContent");
+        titleEl.setAttribute("data-placeholder", "Điền thông tin giải");
+        contentEl.setAttribute("data-placeholder", "Điền nội dung");
+
+        if (role === "guest") {
+            // Chế độ Khách: xóa trống để hiển thị tiêu đề mẫu "Điền thông tin giải" và "Điền nội dung"
+            setHeaderText(titleEl, "");
+            setHeaderText(contentEl, "");
+        } else {
+            setHeaderText(titleEl, DEFAULT_TOURNAMENT_TITLE);
+            setHeaderText(contentEl, "");
+        }
+
+        applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
+        document.getElementById("categoryFilter").value = "ALL";
+        document.getElementById("sportSelect").value = "bat_xa";
+    }
+
+    function activateSession(session) {
+        // Ngắt listener của workspace cũ (nếu có) trước khi gắn workspace mới
+        if (dbRef) {
+            dbRef.off();
+            dbRef = null;
+        }
+
+        currentSession = session;
+        resetWorkspaceUI(session.role);
+
+        // Cập nhật giao diện theo vai trò
+        const userBadge = document.getElementById("currentUserBadge");
+        const adminBtn = document.getElementById("btnAdminPanel");
+
+        if (session.role === "admin") {
+            userBadge.textContent = `👑 Admin: ${session.fullName}`;
+            adminBtn.style.display = "inline-flex";
+        } else if (session.role === "teacher") {
+            userBadge.textContent = `👤 GV: ${session.fullName}`;
+            adminBtn.style.display = "none";
+        } else {
+            userBadge.textContent = `🎫 ${session.fullName}`;
+            adminBtn.style.display = "none";
+        }
+
+        // Ẩn màn hình đăng nhập
+        document.getElementById("authOverlay").classList.add("hidden");
+        document.getElementById("guestErrorMsg").textContent = "";
+        document.getElementById("loginErrorMsg").textContent = "";
+
+        // Admin / Giáo viên tải dữ liệu cục bộ; chế độ Khách luôn khởi tạo trắng hoàn toàn
+        if (session.role !== "guest") {
+            loadStateFromLocal();
+        }
+        switchSport("bat_xa");
+
+        // Kết nối dữ liệu Realtime của đúng workspace này trên Firebase
+        if (fbDb) {
+            const path = getWorkspaceFirebasePath(session);
+            dbRef = fbDb.ref(path);
+            if (session.role === "guest") {
+                // Tự động xóa sạch dữ liệu phòng Khách trên Firebase khi tắt trình duyệt / rớt kết nối
+                dbRef.onDisconnect().remove();
+            }
+            dbRef.on("value", (snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    isRemoteUpdating = true;
+                    sportsData = data.sportsData || {};
+                    if (data.tournamentTitle !== undefined) {
+                        setHeaderText(document.getElementById("tournamentTitle"), data.tournamentTitle);
+                    }
+                    if (data.customContent !== undefined) {
+                        setHeaderText(document.getElementById("customContent"), data.customContent);
+                    }
+                    if (data.logoBase64) {
+                        applyLogoVisualStyle(data.logoBase64);
+                    } else {
+                        applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
+                    }
+                    ensureDataIntegrity();
+                    updateSystemData(true, false);
+                    isRemoteUpdating = false;
+                }
+            });
+        }
+    }
+
+    function logoutSession(skipConfirm = false) {
+        if (!currentSession) return;
+        const isGuest = currentSession.role === "guest";
+        const confirmMsg = isGuest
+            ? "Bạn muốn thoát chế độ Khách?\nToàn bộ dữ liệu thi đấu, logo và 2 tiêu đề của phiên này sẽ tự động bị xóa sạch."
+            : "Bạn muốn thoát về màn hình chọn chế độ / đăng nhập?";
+        if (!skipConfirm && !confirm(confirmMsg)) return;
+
+        closeAdminModal();
+
+        const exitingGuestSlot = isGuest ? currentSession.guestSlot : null;
+
+        if (dbRef) {
+            dbRef.off();
+            dbRef = null;
+        }
+
+        if (isGuest) {
+            wipeGuestWorkspaceData(exitingGuestSlot, false);
+            releaseGuestPresence(false);
+        }
+
+        try {
+            sessionStorage.removeItem("athletics_active_session_nmq");
+        } catch (e) {}
+
+        currentSession = null;
+        resetWorkspaceUI("guest");
+        switchSport("bat_xa");
+
+        document.getElementById("btnAdminPanel").style.display = "none";
+        document.getElementById("currentUserBadge").textContent = "Chưa đăng nhập";
+        document.getElementById("authOverlay").classList.remove("hidden");
+        renderGuestStatusUI();
+    }
+
+    /* ---------------- CHỨC NĂNG QUẢN TRỊ CẤP QUYỀN CỦA ADMIN ---------------- */
+    function openAdminModal() {
+        if (!currentSession || currentSession.role !== "admin") return;
+        resetAccountForm();
+        document.getElementById("adminMsg").textContent = "";
+        renderAdminAccountsTable();
+        renderAdminGuestStatus();
+        document.getElementById("adminModalOverlay").classList.add("open");
+    }
+
+    function closeAdminModal() {
+        document.getElementById("adminModalOverlay").classList.remove("open");
+    }
+
+    function setAdminMsg(text, isOk = true) {
+        const el = document.getElementById("adminMsg");
+        el.textContent = text;
+        el.className = "admin-msg " + (isOk ? "ok" : "err");
+    }
+
+    function resetAccountForm() {
+        editingAccountKey = null;
+        document.getElementById("adminFormTitle").textContent = "➕ Cấp tài khoản mới (Giáo viên / Admin)";
+        document.getElementById("btnCancelEditAcc").style.display = "none";
+        const uInp = document.getElementById("accUsername");
+        uInp.value = "";
+        uInp.disabled = false;
+        document.getElementById("accPassword").value = "";
+        document.getElementById("accFullName").value = "";
+        document.getElementById("accRole").value = "teacher";
+        document.getElementById("accActive").value = "true";
+    }
+
+    function editAccountInAdmin(accKey) {
+        const acc = accountsCache[accKey];
+        if (!acc) return;
+        editingAccountKey = accKey;
+        document.getElementById("adminFormTitle").textContent = `✏️ Chỉnh sửa tài khoản: ${acc.username}`;
+        document.getElementById("btnCancelEditAcc").style.display = "inline-flex";
+        const uInp = document.getElementById("accUsername");
+        uInp.value = acc.username || accKey;
+        uInp.disabled = true;
+        document.getElementById("accPassword").value = acc.password || "";
+        document.getElementById("accFullName").value = acc.fullName || "";
+        document.getElementById("accRole").value = acc.role === "admin" ? "admin" : "teacher";
+        document.getElementById("accActive").value = acc.active === false ? "false" : "true";
+        setAdminMsg("Đang chỉnh sửa tài khoản. Nhấn 'Lưu / Cấp quyền' để cập nhật.", true);
+    }
+
+    async function saveAccountFromAdmin() {
+        if (!currentSession || currentSession.role !== "admin") return;
+        const username = document.getElementById("accUsername").value.trim();
+        const password = document.getElementById("accPassword").value.trim();
+        const fullName = document.getElementById("accFullName").value.trim() || username;
+        const role = document.getElementById("accRole").value === "admin" ? "admin" : "teacher";
+        const active = document.getElementById("accActive").value === "true";
+
+        if (!username || !password) {
+            setAdminMsg("⚠ Vui lòng nhập đầy đủ Tên đăng nhập và Mật khẩu!", false);
+            return;
+        }
+
+        const key = editingAccountKey || sanitizeKey(username);
+        if (!key) {
+            setAdminMsg("⚠ Tên đăng nhập không hợp lệ!", false);
+            return;
+        }
+
+        if (!editingAccountKey && accountsCache[key]) {
+            if (!confirm(`Tài khoản "${username}" đã tồn tại. Bạn có muốn ghi đè mật khẩu và quyền mới không?`)) {
+                return;
+            }
+        }
+
+        // Không cho phép tự khóa tài khoản Admin duy nhất đang dùng
+        if (key === currentSession.usernameKey && (role !== "admin" || !active)) {
+            setAdminMsg("⚠ Không thể tự khóa hoặc hạ quyền tài khoản Admin đang đăng nhập!", false);
+            return;
+        }
+
+        const existing = accountsCache[key];
+        const accObj = {
+            username: username,
+            password: password,
+            fullName: fullName,
+            role: role,
+            active: active,
+            createdAt: (existing && existing.createdAt) ? existing.createdAt : Date.now(),
+            updatedAt: Date.now()
+        };
+
+        accountsCache[key] = accObj;
+        saveAccountsCacheLocal();
+
+        if (accountsRef) {
+            try {
+                await accountsRef.child(key).set(accObj);
+                setAdminMsg(`✅ Đã lưu tài khoản "${username}" thành công lên Firebase!`, true);
+            } catch (err) {
+                console.error("Lỗi lưu tài khoản Firebase:", err);
+                setAdminMsg(`⚠ Đã lưu cục bộ nhưng lỗi ghi Firebase (${err.message}). Kiểm tra lại Firebase Rules!`, false);
+            }
+        } else {
+            setAdminMsg(`✅ Đã lưu tài khoản "${username}" (Chế độ cục bộ).`, true);
+        }
+
+        resetAccountForm();
+        renderAdminAccountsTable();
+    }
+
+    async function toggleAccountActive(accKey) {
+        if (!currentSession || currentSession.role !== "admin") return;
+        const acc = accountsCache[accKey];
+        if (!acc) return;
+        if (accKey === currentSession.usernameKey) {
+            setAdminMsg("⚠ Không thể tự khóa tài khoản đang đăng nhập!", false);
+            return;
+        }
+        const newState = acc.active === false ? true : false;
+        acc.active = newState;
+        saveAccountsCacheLocal();
+        if (accountsRef) {
+            try {
+                await accountsRef.child(accKey).child("active").set(newState);
+                setAdminMsg(`✅ Đã ${newState ? "mở khóa" : "tạm khóa"} tài khoản "${acc.username}".`, true);
+            } catch (err) {
+                setAdminMsg(`⚠ Lỗi cập nhật Firebase: ${err.message}`, false);
+            }
+        }
+        renderAdminAccountsTable();
+    }
+
+    async function deleteAccountInAdmin(accKey) {
+        if (!currentSession || currentSession.role !== "admin") return;
+        const acc = accountsCache[accKey];
+        if (!acc) return;
+        if (accKey === currentSession.usernameKey) {
+            setAdminMsg("⚠ Không thể xóa tài khoản Admin đang đăng nhập!", false);
+            return;
+        }
+        const remainingAdmins = Object.entries(accountsCache).filter(([k, v]) => k !== accKey && v && v.role === "admin" && v.active !== false);
+        if (acc.role === "admin" && remainingAdmins.length === 0) {
+            setAdminMsg("⚠ Cần giữ lại ít nhất 1 tài khoản Admin đang hoạt động!", false);
+            return;
+        }
+        if (!confirm(`Bạn có chắc chắn muốn XÓA tài khoản "${acc.username}" (${acc.fullName})?`)) return;
+
+        delete accountsCache[accKey];
+        saveAccountsCacheLocal();
+        if (accountsRef) {
+            try {
+                await accountsRef.child(accKey).remove();
+                setAdminMsg(`✅ Đã xóa tài khoản "${acc.username}".`, true);
+            } catch (err) {
+                setAdminMsg(`⚠ Lỗi xóa trên Firebase: ${err.message}`, false);
+            }
+        }
+        renderAdminAccountsTable();
+    }
+
+    function toggleAllAdminPasswords() {
+        adminShowAllPasswords = !adminShowAllPasswords;
+        const btn = document.getElementById("btnToggleAllPwds");
+        btn.textContent = adminShowAllPasswords ? "🙈 Ẩn tất cả mật khẩu" : "👁️ Hiện tất cả mật khẩu";
+        renderAdminAccountsTable();
+    }
+
+    function toggleSinglePwd(spanId, accKey) {
+        const el = document.getElementById(spanId);
+        const acc = accountsCache[accKey];
+        if (!el || !acc) return;
+        if (el.dataset.shown === "true") {
+            el.textContent = "••••••••";
+            el.dataset.shown = "false";
+        } else {
+            el.textContent = String(acc.password || "");
+            el.dataset.shown = "true";
+        }
+    }
+
+    function renderAdminAccountsTable() {
+        const tbody = document.getElementById("adminAccountsBody");
+        if (!tbody) return;
+        const entries = Object.entries(accountsCache).filter(([_, v]) => v && typeof v === "object");
+        entries.sort((a, b) => {
+            if (a[1].role !== b[1].role) return a[1].role === "admin" ? -1 : 1;
+            return String(a[1].username || a[0]).localeCompare(String(b[1].username || b[0]));
+        });
+
+        if (entries.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="7" style="color:#64748b; padding:14px;">Chưa có tài khoản nào.</td></tr>`;
+            return;
+        }
+
+        tbody.innerHTML = entries.map(([key, acc], idx) => {
+            const isSelf = currentSession && key === currentSession.usernameKey;
+            const isAdmin = acc.role === "admin";
+            const isActive = acc.active !== false;
+            const pwdId = "pwd_row_" + idx;
+            const safePwd = escapeHtml(acc.password || "");
+            const pwdDisplay = adminShowAllPasswords ? safePwd : "••••••••";
+            const safeKeyAttr = escapeHtml(key).replace(/'/g, "\\'");
+
+            return `
+                <tr>
+                    <td style="font-weight:700;">${idx + 1}</td>
+                    <td style="text-align:left; font-weight:800; color:#0f172a;">
+                        ${escapeHtml(acc.username || key)} ${isSelf ? '<span style="font-size:11px; color:#15803d;">(Bạn)</span>' : ''}
+                    </td>
+                    <td style="text-align:left; font-weight:600;">${escapeHtml(acc.fullName || "-")}</td>
+                    <td><span class="role-pill ${isAdmin ? 'admin' : 'teacher'}">${isAdmin ? '👑 Admin' : '👤 Giáo viên'}</span></td>
+                    <td>
+                        <span class="pwd-cell">
+                            <span id="${pwdId}" data-shown="${adminShowAllPasswords ? 'true' : 'false'}">${pwdDisplay}</span>
+                            <button type="button" style="background:none; box-shadow:none; color:#475569; padding:0 2px; font-size:13px;"
+                                onclick="toggleSinglePwd('${pwdId}', '${safeKeyAttr}')" title="Hiện/Ẩn mật khẩu">👁️</button>
+                        </span>
+                    </td>
+                    <td><span class="status-pill ${isActive ? 'active' : 'locked'}">${isActive ? 'Đang mở' : 'Đã khóa'}</span></td>
+                    <td>
+                        <div style="display:flex; gap:4px; justify-content:center; flex-wrap:wrap;">
+                            <button type="button" style="padding:4px 8px; font-size:12px;" onclick="editAccountInAdmin('${safeKeyAttr}')" title="Sửa mật khẩu / thông tin">✏️</button>
+                            ${!isSelf ? `<button type="button" class="${isActive ? 'btn-orange' : 'btn-green'}" style="padding:4px 8px; font-size:12px;" onclick="toggleAccountActive('${safeKeyAttr}')" title="${isActive ? 'Tạm khóa' : 'Mở khóa'}">${isActive ? '🔒' : '🔓'}</button>` : ''}
+                            ${!isSelf ? `<button type="button" class="btn-red" style="padding:4px 8px; font-size:12px;" onclick="deleteAccountInAdmin('${safeKeyAttr}')" title="Xóa tài khoản">🗑️</button>` : ''}
+                        </div>
+                    </td>
+                </tr>
+            `;
+        }).join("");
+    }
+
+    function renderAdminGuestStatus() {
+        const grid = document.getElementById("adminGuestGrid");
+        if (!grid) return;
+        grid.innerHTML = GUEST_SLOTS.map(slot => {
+            const data = guestPresenceState[slot.key];
+            const occupied = isGuestSlotOccupied(data);
+            return `
+                <div class="admin-guest-box ${occupied ? 'occupied' : ''}">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <strong style="font-size:14px; color:#0f172a;">🎫 ${slot.label}</strong>
+                        <span class="guest-status-text ${occupied ? 'occupied' : 'available'}" style="font-size:11.5px; padding:2px 8px;">
+                            ${occupied ? '(Đã có người dùng)' : '(Đang trống)'}
+                        </span>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end; margin-top:4px;">
+                        <button type="button" class="btn-orange" style="padding:4px 10px; font-size:12px; ${occupied ? '' : 'opacity:0.45;'}"
+                            onclick="forceReleaseGuest('${slot.key}')">🔓 Giải phóng</button>
+                    </div>
+                </div>
+            `;
+        }).join("");
+    }
+
+    async function forceReleaseGuest(slotKey) {
+        if (!currentSession || currentSession.role !== "admin") return;
+        if (!guestPresenceRef) return;
+        try {
+            await guestPresenceRef.child(slotKey).remove();
+            if (fbDb) {
+                await fbDb.ref(`${APP_ROOT}/workspaces/${slotKey}`).remove().catch(() => {});
+            }
+            setAdminMsg(`✅ Đã giải phóng & xóa sạch dữ liệu phòng ${slotKey.replace('guest', 'Khách ')}!`, true);
+        } catch (err) {
+            setAdminMsg(`⚠ Lỗi giải phóng: ${err.message}`, false);
+        }
+    }
+
+    /* =========================================================================
+       2. BIỂU TƯỢNG SVG CHO TỪNG NHÓM MÔN ĐIỀN KINH
+       ========================================================================= */
+    const SPORT_ICONS = {
+        jump_long: `<svg viewBox="0 0 24 24"><circle cx="15" cy="4.5" r="2.2"/><path d="M12.5,8.2 L16.2,10.2 L13.2,14 L18.5,15.6 L20.8,19.4 L19,20.4 L17,17.2 L10.8,15.8 L6.2,17.8 L3,16 L4,14.2 L6.8,15.5 L10.2,12.8 L8,9.4 L4.6,7.6 L5.6,5.8 L9.8,8 Z"/></svg>`,
+        high_jump: `<svg viewBox="0 0 24 24"><rect x="2" y="13" width="20" height="1.8" rx="0.9"/><circle cx="7.5" cy="7.5" r="2"/><path d="M9.6,6.8 Q13.5,4.2 17.2,7.5 L20.2,12 L18.3,12.6 L16,8.8 Q13.2,6.8 10.2,8.6 L6.2,11.2 L5,9.6 Z"/></svg>`,
+        throw: `<svg viewBox="0 0 24 24"><circle cx="11.5" cy="5.2" r="2.1"/><circle cx="18.2" cy="3.8" r="1.7"/><path d="M9.5,8.2 L14,8.2 L16.5,5.2 L18,6.5 L14.5,10.8 L12.8,14.5 L16.2,21 L14,21.8 L11.2,16.4 L8,21.5 L6,20.5 L9.4,14 L7.2,11.6 L4,13 L3.2,11.2 L7.8,9 Z"/></svg>`,
+        sprint: `<svg viewBox="0 0 24 24"><circle cx="14.5" cy="4.2" r="2.2"/><path d="M11.8,7.4 L16.4,8.8 L13.8,13.8 L18.2,16.8 L16.8,18.8 L11.5,15.2 L9.4,17.8 L5.6,21.5 L3.8,20 L7.6,15.2 L10.2,12.4 L7.8,10.4 L4.2,11.8 L3.4,9.8 L8.4,8 Z"/><path d="M15.8,9.8 L20.5,8 L21.2,9.8 L16.6,11.8 Z"/></svg>`
+    };
+
+    function getSportIconKey(sportKey) {
+        if (sportKey === "nhay_cao") return "high_jump";
+        if (sportKey === "day_ta" || sportKey === "nem_bong") return "throw";
+        if (sportKey.startsWith("chay_")) return "sprint";
+        return "jump_long";
+    }
+
+    function toggleInputPanels() {
+        const wrapper = document.getElementById("inputPanelsWrapper");
+        const btn = document.getElementById("toggleInputBtn");
+        wrapper.classList.toggle("collapsed");
+        if (wrapper.classList.contains("collapsed")) {
+            btn.textContent = "▼ Mở khung nhập";
+        } else {
+            btn.textContent = "▲ Thu gọn nhập";
+        }
+    }
+
+    /* =========================================================================
+       3. ĐỊNH NGHĨA 11 MÔN ĐIỀN KINH & LUẬT THI ĐẤU CHUẨN
+       ========================================================================= */
+    const SPORTS_CONFIG = {
+        bat_xa: {
+            name: "Bật xa tại chỗ",
+            type: "field",
+            unit: "cm",
+            defaultMode: "3_attempts",
+            modes: [
+                { id: "3_attempts", label: "3 lượt nhảy (Tiêu chuẩn)" },
+                { id: "4_attempts", label: "4 lượt nhảy" },
+                { id: "6_attempts", label: "6 lượt (3 Vòng loại + 3 Chung kết)" }
+            ],
+            ruleHint: "Xếp hạng: Lấy thành tích xa nhất (cm). Nếu bằng nhau, xét lần nhảy tốt thứ 2, thứ 3..."
+        },
+        nhay_cao: {
+            name: "Nhảy cao",
+            type: "vertical",
+            unit: "cm",
+            defaultMode: "bars_standard",
+            modes: [
+                { id: "bars_standard", label: "Chuẩn Quốc tế: Nhảy theo từng mức xà (O, X, -)" },
+                { id: "3_attempts", label: "Kiểm tra nhanh: Nhập thẳng thành tích 3 lượt (cm)" }
+            ],
+            ruleHint: "Ký hiệu: O (Qua), X (Hỏng), - (Bỏ qua), XO, XXO, XXX. Đồng hạng: Xét lỗi X mức cuối -> tổng lỗi X."
+        },
+        nhay_xa: {
+            name: "Nhảy xa",
+            type: "field",
+            unit: "cm",
+            defaultMode: "3_attempts",
+            modes: [
+                { id: "3_attempts", label: "3 lượt nhảy (Vòng loại / Học đường)" },
+                { id: "6_attempts", label: "6 lượt (3 Vòng loại + 3 Chung kết chuẩn Điền kinh)" },
+                { id: "4_attempts", label: "4 lượt nhảy" }
+            ],
+            ruleHint: "Xếp hạng: Lấy thành tích xa nhất (cm). Nếu bằng nhau, xét lần nhảy tốt thứ 2, thứ 3..."
+        },
+        day_ta: {
+            name: "Đẩy tạ",
+            type: "field",
+            unit: "m",
+            defaultMode: "3_attempts",
+            modes: [
+                { id: "3_attempts", label: "3 lượt đẩy (Vòng loại / Học đường)" },
+                { id: "6_attempts", label: "6 lượt (3 Vòng loại + 3 Chung kết chuẩn Điền kinh)" },
+                { id: "4_attempts", label: "4 lượt đẩy" }
+            ],
+            ruleHint: "Xếp hạng: Lấy thành tích xa nhất (m). Nếu bằng nhau, xét lần đẩy tốt thứ 2, thứ 3..."
+        },
+        nem_bong: {
+            name: "Ném bóng",
+            type: "field",
+            unit: "m",
+            defaultMode: "3_attempts",
+            modes: [
+                { id: "3_attempts", label: "3 lượt ném (Tiêu chuẩn)" },
+                { id: "4_attempts", label: "4 lượt ném" },
+                { id: "6_attempts", label: "6 lượt (3 Vòng loại + 3 Chung kết)" }
+            ],
+            ruleHint: "Xếp hạng: Lấy thành tích xa nhất (m). Nếu bằng nhau, xét lần ném tốt thứ 2, thứ 3..."
+        },
+        chay_30m: {
+            name: "Chạy 30m",
+            type: "track",
+            unit: "s",
+            defaultMode: "1_run",
+            modes: [
+                { id: "1_run", label: "1 lượt (Chung kết tính giờ trực tiếp)" },
+                { id: "2_runs_best", label: "2 lượt (Lấy thời gian chạy nhanh nhất)" },
+                { id: "2_runs_final", label: "2 vòng (Vòng loại + Chung kết)" }
+            ],
+            ruleHint: "Xếp hạng: Thời gian nhỏ nhất (nhanh nhất) xếp Hạng 1. Nhập giây (VD: 5.12)."
+        },
+        chay_60m: {
+            name: "Chạy 60m",
+            type: "track",
+            unit: "s",
+            defaultMode: "1_run",
+            modes: [
+                { id: "1_run", label: "1 lượt (Chung kết tính giờ trực tiếp)" },
+                { id: "2_runs_final", label: "2 vòng (Vòng loại + Chung kết)" },
+                { id: "2_runs_best", label: "2 lượt (Lấy thời gian chạy nhanh nhất)" }
+            ],
+            ruleHint: "Xếp hạng: Thời gian nhỏ nhất (nhanh nhất) xếp Hạng 1. Nhập giây (VD: 8.45)."
+        },
+        chay_100m: {
+            name: "Chạy 100m",
+            type: "track",
+            unit: "s",
+            defaultMode: "1_run",
+            modes: [
+                { id: "1_run", label: "1 lượt (Chung kết tính giờ trực tiếp)" },
+                { id: "2_runs_final", label: "2 vòng (Vòng loại + Chung kết)" },
+                { id: "2_runs_best", label: "2 lượt (Lấy thời gian chạy nhanh nhất)" }
+            ],
+            ruleHint: "Xếp hạng: Thời gian nhỏ nhất xếp Hạng 1. Chế độ VL + CK ưu tiên xếp hạng theo Chung kết."
+        },
+        chay_200m: {
+            name: "Chạy 200m",
+            type: "track",
+            unit: "s",
+            defaultMode: "1_run",
+            modes: [
+                { id: "1_run", label: "1 lượt (Chung kết tính giờ trực tiếp)" },
+                { id: "2_runs_final", label: "2 vòng (Vòng loại + Chung kết)" }
+            ],
+            ruleHint: "Xếp hạng: Thời gian nhỏ nhất xếp Hạng 1. Nhập giây (VD: 26.80)."
+        },
+        chay_400m: {
+            name: "Chạy 400m",
+            type: "track",
+            unit: "s",
+            defaultMode: "1_run",
+            modes: [
+                { id: "1_run", label: "1 lượt (Chung kết tính giờ trực tiếp)" },
+                { id: "2_runs_final", label: "2 vòng (Vòng loại + Chung kết)" }
+            ],
+            ruleHint: "Xếp hạng: Thời gian nhỏ nhất xếp Hạng 1. Hỗ trợ nhập giây (65.40) hoặc phút:giây (1:05.40)."
+        },
+        chay_800m: {
+            name: "Chạy 800m",
+            type: "track",
+            unit: "phút:giây",
+            defaultMode: "1_run",
+            modes: [
+                { id: "1_run", label: "1 lượt (Chung kết tính giờ trực tiếp)" },
+                { id: "2_runs_final", label: "2 vòng (Vòng loại + Chung kết)" }
+            ],
+            ruleHint: "Xếp hạng: Thời gian nhỏ nhất xếp Hạng 1. Hỗ trợ nhập phút:giây (2:25.50) hoặc tổng giây (145.50)."
+        }
+    };
+
+    let currentSport = "bat_xa";
+    let sportsData = {};
+    let idCounter = Date.now();
+
+    function ensureDataIntegrity() {
+        Object.keys(SPORTS_CONFIG).forEach(key => {
+            if (!sportsData[key]) {
+                sportsData[key] = {
+                    mode: SPORTS_CONFIG[key].defaultMode,
+                    bars: [100, 105, 110, 115, 120, 125],
+                    athletes: []
+                };
+            } else {
+                if (!sportsData[key].mode) sportsData[key].mode = SPORTS_CONFIG[key].defaultMode;
+                if (!sportsData[key].bars || !sportsData[key].bars.length) sportsData[key].bars = [100, 105, 110, 115, 120, 125];
+                if (!sportsData[key].athletes) sportsData[key].athletes = [];
+            }
+        });
+    }
+
+    function saveState() {
+        if (isRemoteUpdating || !currentSession) return;
+        const titleEl = document.getElementById("tournamentTitle");
+        const contentEl = document.getElementById("customContent");
+        cleanEditableEmpty(titleEl);
+        cleanEditableEmpty(contentEl);
+
+        const payload = {
+            sportsData: sportsData,
+            tournamentTitle: titleEl.innerText.trim(),
+            customContent: contentEl.innerText.trim(),
+            logoBase64: rawLogoBase64
+        };
+
+        // Chế độ Khách không lưu dài hạn vào localStorage để đóng trình duyệt là mất hoàn toàn
+        if (currentSession.role !== "guest") {
+            try {
+                localStorage.setItem(getWorkspaceLocalKey(currentSession), JSON.stringify(payload));
+            } catch (e) { console.warn("LocalStorage full:", e); }
+        }
+
+        if (dbRef) {
+            dbRef.set(payload);
+        }
+    }
+
+    function loadStateFromLocal() {
+        if (!currentSession || currentSession.role === "guest") {
+            ensureDataIntegrity();
+            return;
+        }
+        try {
+            const raw = localStorage.getItem(getWorkspaceLocalKey(currentSession));
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                if (parsed.sportsData) sportsData = parsed.sportsData;
+                if (parsed.tournamentTitle !== undefined) setHeaderText(document.getElementById("tournamentTitle"), parsed.tournamentTitle);
+                if (parsed.customContent !== undefined) setHeaderText(document.getElementById("customContent"), parsed.customContent);
+                if (parsed.logoBase64) applyLogoVisualStyle(parsed.logoBase64);
+            }
+        } catch (e) { console.warn("Lỗi đọc LocalStorage:", e); }
+        ensureDataIntegrity();
+    }
+
+    function saveMetaTitle() {
+        cleanEditableEmpty(document.getElementById("tournamentTitle"));
+        cleanEditableEmpty(document.getElementById("customContent"));
+        saveState();
+    }
+
+    function loadLogo(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                applyLogoVisualStyle(e.target.result);
+                saveState();
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+
+    window.addEventListener("beforeprint", () => {
+        const filterVal = document.getElementById("categoryFilter").value;
+        const printSub = document.getElementById("printSub");
+        const sportName = SPORTS_CONFIG[currentSport].name.toUpperCase();
+        if (filterVal === "ALL") printSub.innerText = `KẾT QUẢ MÔN ${sportName} - TẤT CẢ NỘI DUNG`;
+        else printSub.innerText = `KẾT QUẢ MÔN ${sportName} - NỘI DUNG: ${filterVal}`;
+    });
+
+    document.getElementById("athleteName").addEventListener("keypress", e => { if (e.key === "Enter") document.getElementById("athleteUnit").focus(); });
+    document.getElementById("athleteUnit").addEventListener("keypress", e => { if (e.key === "Enter") document.getElementById("athleteCategory").focus(); });
+    document.getElementById("athleteCategory").addEventListener("keypress", e => { if (e.key === "Enter") addAthleteManual(); });
+
+    /* =========================================================================
+       4. CHUYỂN ĐỔI MÔN THI & CẤU HÌNH THỂ THỨC
+       ========================================================================= */
+    function switchSport(sportKey) {
+        currentSport = sportKey;
+        const cfg = SPORTS_CONFIG[sportKey];
+        
+        document.getElementById("eventTitle").innerText = "MÔN THI: " + cfg.name.toUpperCase();
+        document.getElementById("sportEmblem").innerHTML = SPORT_ICONS[getSportIconKey(sportKey)];
+        document.getElementById("currentSportLabel1").innerText = cfg.name;
+        document.getElementById("top3SportName").innerText = cfg.name.toUpperCase();
+        document.getElementById("ruleHintText").innerText = cfg.ruleHint;
+
+        const modeSelect = document.getElementById("modeSelect");
+        modeSelect.innerHTML = "";
+        cfg.modes.forEach(m => {
+            const opt = document.createElement("option");
+            opt.value = m.id;
+            opt.textContent = m.label;
+            modeSelect.appendChild(opt);
+        });
+        modeSelect.value = sportsData[sportKey].mode;
+
+        updateHighJumpButtonsVisibility();
+        updateSystemData(true, false);
+    }
+
+    function changeSportMode(newMode) {
+        sportsData[currentSport].mode = newMode;
+        updateHighJumpButtonsVisibility();
+        updateSystemData(false, true);
+    }
+
+    function updateHighJumpButtonsVisibility() {
+        const hjBtns = document.getElementById("highJumpExtraBtns");
+        if (currentSport === "nhay_cao" && sportsData[currentSport].mode === "bars_standard") {
+            hjBtns.style.display = "flex";
+        } else {
+            hjBtns.style.display = "none";
+        }
+    }
+
+    function addHighJumpBar() {
+        const bars = sportsData[currentSport].bars;
+        const lastBar = bars.length > 0 ? parseFloat(bars[bars.length - 1]) || 100 : 100;
+        bars.push(lastBar + 5);
+        updateSystemData(false, true);
+    }
+
+    function removeHighJumpBar() {
+        const bars = sportsData[currentSport].bars;
+        if (bars.length <= 1) {
+            alert("Cần giữ lại ít nhất 1 cột mức xà!");
+            return;
+        }
+        if (confirm("Xóa cột mức xà cuối cùng?")) {
+            bars.pop();
+            updateSystemData(false, true);
+        }
+    }
+
+    function updateBarHeight(barIndex, val) {
+        let num = parseFloat(String(val).replace(',', '.'));
+        if (!isNaN(num) && num > 0) {
+            sportsData[currentSport].bars[barIndex] = num;
+            updateSystemData(false, true);
+        }
+    }
+
+    /* =========================================================================
+       5. QUẢN LÝ DANH SÁCH VĐV & TỰ ĐỘNG XẾP HẠNG KHI NHẬP XONG HS CUỐI CÙNG
+       ========================================================================= */
+    function getCurrentAthletes() {
+        return sportsData[currentSport].athletes;
+    }
+
+    function addAthleteData(name, unit, category) {
+        getCurrentAthletes().push({
+            id: ++idCounter,
+            name: name,
+            unit: unit,
+            category: category || 'Chung',
+            lane: '',
+            scores: {},
+            best: 0,
+            bestDisplay: '-',
+            rank: '-'
+        });
+    }
+
+    function addAthleteManual() {
+        const name = document.getElementById("athleteName").value.trim();
+        const unit = document.getElementById("athleteUnit").value.trim();
+        const category = document.getElementById("athleteCategory").value.trim();
+        if (!name) { alert("Vui lòng nhập Họ tên VĐV!"); return; }
+        addAthleteData(name, unit || 'Chưa rõ', category || 'Chung');
+        document.getElementById("athleteName").value = '';
+        document.getElementById("athleteName").focus();
+        updateSystemData(true, true);
+    }
+
+    function importSmartList() {
+        const text = document.getElementById("smartListInput").value;
+        const lines = text.split('\n');
+        let addedCount = 0;
+        lines.forEach(line => {
+            if (!line.trim()) return;
+            let parts = line.split('\t');
+            if (parts.length < 2) parts = line.split('-').map(item => item.trim());
+            if (parts.length > 0 && parts[0].trim() !== "") {
+                addAthleteData(
+                    parts[0].trim(),
+                    parts.length > 1 ? parts[1].trim() : 'Chưa rõ',
+                    parts.length > 2 ? parts[2].trim() : 'Chung'
+                );
+                addedCount++;
+            }
+        });
+        if (addedCount > 0) {
+            document.getElementById("smartListInput").value = '';
+            alert(`Đã nạp thành công ${addedCount} VĐV vào môn ${SPORTS_CONFIG[currentSport].name}!`);
+            updateSystemData(true, true);
+        }
+    }
+
+    function checkShouldAutoSortList(editedAthleteId) {
+        const cfg = SPORTS_CONFIG[currentSport];
+        const mode = sportsData[currentSport].mode;
+        const bars = sportsData[currentSport].bars;
+        const filterVal = document.getElementById("categoryFilter").value;
+        const displayList = getCurrentAthletes().filter(a => filterVal === "ALL" || a.category === filterVal);
+
+        if (displayList.length < 2) return false;
+        const lastAthlete = displayList[displayList.length - 1];
+
+        if (cfg.type === "vertical" && mode === "bars_standard") {
+            let maxBarIdx = -1;
+            displayList.forEach(a => {
+                const sc = a.scores || {};
+                bars.forEach((_, idx) => {
+                    if (String(sc[`bar_${idx}`] || '').trim() !== '') {
+                        if (idx > maxBarIdx) maxBarIdx = idx;
+                    }
+                });
+            });
+            if (maxBarIdx === -1) return false;
+
+            const isEliminatedBefore = (a, targetIdx) => {
+                const sc = a.scores || {};
+                for (let i = 0; i < targetIdx; i++) {
+                    if (String(sc[`bar_${i}`] || '').toUpperCase().includes('XXX')) return true;
+                }
+                return false;
+            };
+
+            return displayList.every(a => {
+                const sc = a.scores || {};
+                return String(sc[`bar_${maxBarIdx}`] || '').trim() !== '' || isEliminatedBefore(a, maxBarIdx);
+            });
+        }
+
+        let keys = [];
+        if (cfg.type === "field" || (cfg.type === "vertical" && mode === "3_attempts")) {
+            const numAttempts = mode === "6_attempts" ? 6 : (mode === "4_attempts" ? 4 : 3);
+            for (let i = 1; i <= numAttempts; i++) keys.push(`att_${i}`);
+        } else if (cfg.type === "track") {
+            keys = mode === "1_run" ? ['run_1'] : ['run_1', 'run_2'];
+        }
+
+        const countFilled = (a) => {
+            const sc = a.scores || {};
+            return keys.filter(k => String(sc[k] || '').trim() !== '').length;
+        };
+
+        const counts = displayList.map(countFilled);
+        const maxCount = Math.max(...counts);
+        if (maxCount === 0) return false;
+
+        const allHaveMaxCount = counts.every(c => c === maxCount);
+        const lastJustFinishedMax = (editedAthleteId === lastAthlete.id) && (countFilled(lastAthlete) === maxCount) && (counts.filter(c => c > 0).length >= 2);
+
+        return allHaveMaxCount || lastJustFinishedMax;
+    }
+
+    function updateScore(athleteId, key, rawVal) {
+        const list = getCurrentAthletes();
+        const idx = list.findIndex(a => a.id === athleteId);
+        if (idx === -1) return;
+
+        if (!list[idx].scores) list[idx].scores = {};
+        let val = rawVal.trim().toUpperCase();
+
+        const cfg = SPORTS_CONFIG[currentSport];
+        const mode = sportsData[currentSport].mode;
+
+        if (cfg.type === "vertical" && mode === "bars_standard") {
+            val = val.replace(/[^OX\-]/g, '');
+            if (val.length > 3) val = val.substring(0, 3);
+            list[idx].scores[key] = val;
+        } else {
+            val = val.replace(',', '.');
+            list[idx].scores[key] = val;
+        }
+
+        const shouldSort = checkShouldAutoSortList(athleteId);
+        updateSystemData(false, true, shouldSort);
+    }
+
+    function updateLane(athleteId, val) {
+        const list = getCurrentAthletes();
+        const idx = list.findIndex(a => a.id === athleteId);
+        if (idx !== -1) {
+            list[idx].lane = val.trim();
+            saveState();
+        }
+    }
+
+    function removeAthlete(id) {
+        if (confirm("Xóa VĐV này khỏi môn hiện tại?")) {
+            sportsData[currentSport].athletes = getCurrentAthletes().filter(a => a.id !== id);
+            updateSystemData(true, true);
+        }
+    }
+
+    function deleteAllAthletes() {
+        const list = getCurrentAthletes();
+        if (list.length === 0) return;
+        if (confirm(`⚠ NGUY HIỂM: Xóa toàn bộ ${list.length} VĐV của môn [${SPORTS_CONFIG[currentSport].name}]?\n(Danh sách các môn khác vẫn được giữ nguyên)`)) {
+            sportsData[currentSport].athletes = [];
+            updateSystemData(true, true);
+        }
+    }
+
+    function updateSystemData(rebuildFilter = true, shouldSave = true, autoSortRows = false) {
+        if (rebuildFilter) buildCategoryFilter();
+        renderSystem(autoSortRows);
+        if (shouldSave) saveState();
+    }
+
+    function buildCategoryFilter() {
+        const select = document.getElementById("categoryFilter");
+        const currentValue = select.value;
+        const list = getCurrentAthletes();
+        const categories = [...new Set(list.map(a => a.category))].sort();
+        
+        select.innerHTML = '<option value="ALL">-- Tất cả nội dung --</option>';
+        categories.forEach(cat => {
+            const opt = document.createElement('option');
+            opt.value = cat; opt.textContent = cat;
+            select.appendChild(opt);
+        });
+        if (categories.includes(currentValue) || currentValue === "ALL") select.value = currentValue;
+    }
+
+    /* =========================================================================
+       6. THUẬT TOÁN TÍNH THÀNH TÍCH & XẾP HẠNG CHUẨN CHO TỪNG NHÓM MÔN
+       ========================================================================= */
+    function parseTrackTime(str) {
+        if (!str) return null;
+        let s = String(str).trim().toUpperCase();
+        if (!s || s === "DNF" || s === "DNS" || s === "DQ" || s === "X" || s === "-") return null;
+        s = s.replace(',', '.');
+        if (s.includes(':')) {
+            const parts = s.split(':');
+            if (parts.length === 2) {
+                const mins = parseFloat(parts[0]) || 0;
+                const secs = parseFloat(parts[1]) || 0;
+                const total = mins * 60 + secs;
+                return total > 0 ? total : null;
+            }
+        }
+        const val = parseFloat(s);
+        return (!isNaN(val) && val > 0) ? val : null;
+    }
+
+    function formatTrackDisplay(seconds, originalRaw) {
+        if (seconds === null || seconds === undefined || seconds <= 0) return '-';
+        if (originalRaw && String(originalRaw).includes(':')) return originalRaw;
+        if (currentSport === "chay_800m" && seconds >= 60) {
+            const mins = Math.floor(seconds / 60);
+            const secs = (seconds % 60).toFixed(2).padStart(5, '0');
+            return `${mins}:${secs}`;
+        }
+        return `${seconds}s`;
+    }
+
+    function evaluateHighJumpBars(athlete, bars) {
+        let bestBar = 0;
+        let missesAtBestBar = 0;
+        let totalMisses = 0;
+        const scores = athlete.scores || {};
+
+        const indexedBars = bars.map((h, idx) => ({ height: parseFloat(h) || 0, idx })).sort((a, b) => a.height - b.height);
+
+        indexedBars.forEach(item => {
+            const raw = (scores[`bar_${item.idx}`] || '').toUpperCase();
+            if (raw.includes('O')) {
+                bestBar = item.height;
+                const oPos = raw.indexOf('O');
+                missesAtBestBar = (raw.substring(0, oPos).match(/X/g) || []).length;
+            }
+        });
+
+        if (bestBar > 0) {
+            indexedBars.forEach(item => {
+                if (item.height <= bestBar) {
+                    const raw = (scores[`bar_${item.idx}`] || '').toUpperCase();
+                    const xCount = (raw.match(/X/g) || []).length;
+                    totalMisses += xCount;
+                }
+            });
+        }
+
+        return {
+            best: bestBar,
+            missesAtBest: missesAtBestBar,
+            totalMisses: totalMisses,
+            valid: bestBar > 0
+        };
+    }
+
+    function renderSystem(autoSortRows = false) {
+        const cfg = SPORTS_CONFIG[currentSport];
+        const mode = sportsData[currentSport].mode;
+        const bars = sportsData[currentSport].bars;
+        const filterVal = document.getElementById("categoryFilter").value;
+        
+        const allAthletes = getCurrentAthletes();
+        let displayList = allAthletes.filter(a => filterVal === "ALL" || a.category === filterVal);
+        document.getElementById("statsCount").innerText = `Tổng số: ${displayList.length}`;
+
+        displayList.forEach(a => {
+            if (!a.scores) a.scores = {};
+
+            if (cfg.type === "vertical" && mode === "bars_standard") {
+                const hj = evaluateHighJumpBars(a, bars);
+                a._eval = hj;
+                a.best = hj.best;
+                a.bestDisplay = hj.valid ? `${hj.best} ${cfg.unit}` : '-';
+            } else if (cfg.type === "field" || (cfg.type === "vertical" && mode === "3_attempts")) {
+                const numAttempts = mode === "6_attempts" ? 6 : (mode === "4_attempts" ? 4 : 3);
+                let arr = [];
+                for (let i = 1; i <= numAttempts; i++) {
+                    let v = parseFloat(a.scores[`att_${i}`]);
+                    arr.push((!isNaN(v) && v > 0) ? v : 0);
+                }
+                arr.sort((x, y) => y - x);
+                a._eval = { sortedAttempts: arr, valid: arr[0] > 0 };
+                a.best = arr[0];
+                a.bestDisplay = arr[0] > 0 ? `${arr[0]} ${cfg.unit}` : '-';
+            } else if (cfg.type === "track") {
+                const t1 = parseTrackTime(a.scores['run_1']);
+                const t2 = parseTrackTime(a.scores['run_2']);
+                if (mode === "1_run") {
+                    a._eval = { primary: t1, secondary: null, valid: t1 !== null };
+                    a.best = t1 || 0;
+                    a.bestDisplay = t1 !== null ? formatTrackDisplay(t1, a.scores['run_1']) : '-';
+                } else if (mode === "2_runs_final") {
+                    const hasFinal = t2 !== null;
+                    a._eval = {
+                        inFinal: hasFinal,
+                        primary: hasFinal ? t2 : t1,
+                        secondary: hasFinal ? t1 : null,
+                        valid: (t2 !== null || t1 !== null)
+                    };
+                    const bestVal = hasFinal ? t2 : t1;
+                    const rawRef = hasFinal ? a.scores['run_2'] : a.scores['run_1'];
+                    a.best = bestVal || 0;
+                    a.bestDisplay = bestVal !== null ? formatTrackDisplay(bestVal, rawRef) + (hasFinal ? ' (CK)' : ' (VL)') : '-';
+                } else {
+                    let validTimes = [t1, t2].filter(t => t !== null).sort((x, y) => x - y);
+                    let bestT = validTimes.length > 0 ? validTimes[0] : null;
+                    let secondT = validTimes.length > 1 ? validTimes[1] : null;
+                    a._eval = { primary: bestT, secondary: secondT, valid: bestT !== null };
+                    a.best = bestT || 0;
+                    let rawUsed = (bestT === t1) ? a.scores['run_1'] : a.scores['run_2'];
+                    a.bestDisplay = bestT !== null ? formatTrackDisplay(bestT, rawUsed) : '-';
+                }
+            }
+        });
+
+        let validAthletes = displayList.filter(a => a._eval && a._eval.valid);
+        let invalidAthletes = displayList.filter(a => !a._eval || !a._eval.valid);
+        invalidAthletes.forEach(a => a.rank = '-');
+
+        const compareAthletes = (a, b) => {
+            const ea = a._eval;
+            const eb = b._eval;
+            if (cfg.type === "vertical" && mode === "bars_standard") {
+                if (eb.best !== ea.best) return eb.best - ea.best;
+                if (ea.missesAtBest !== eb.missesAtBest) return ea.missesAtBest - eb.missesAtBest;
+                if (ea.totalMisses !== eb.totalMisses) return ea.totalMisses - eb.totalMisses;
+                return 0;
+            } else if (cfg.type === "field" || (cfg.type === "vertical" && mode === "3_attempts")) {
+                const len = ea.sortedAttempts.length;
+                for (let i = 0; i < len; i++) {
+                    if (eb.sortedAttempts[i] !== ea.sortedAttempts[i]) {
+                        return eb.sortedAttempts[i] - ea.sortedAttempts[i];
+                    }
+                }
+                return 0;
+            } else if (cfg.type === "track") {
+                if (mode === "2_runs_final") {
+                    if (ea.inFinal !== eb.inFinal) return ea.inFinal ? -1 : 1;
+                }
+                if (ea.primary !== eb.primary) return ea.primary - eb.primary;
+                if (ea.secondary !== null && eb.secondary !== null && ea.secondary !== eb.secondary) {
+                    return ea.secondary - eb.secondary;
+                }
+                return 0;
+            }
+            return 0;
+        };
+
+        validAthletes.sort(compareAthletes);
+
+        let currentRank = 1;
+        for (let i = 0; i < validAthletes.length; i++) {
+            if (i > 0) {
+                const cmp = compareAthletes(validAthletes[i - 1], validAthletes[i]);
+                if (cmp !== 0) currentRank = i + 1;
+            }
+            validAthletes[i].rank = currentRank;
+        }
+
+        if (autoSortRows && validAthletes.length > 0) {
+            const sortedDisplayList = [...validAthletes, ...invalidAthletes];
+            displayList = sortedDisplayList;
+
+            if (filterVal === "ALL") {
+                sportsData[currentSport].athletes = sortedDisplayList;
+            } else {
+                let ptr = 0;
+                sportsData[currentSport].athletes = sportsData[currentSport].athletes.map(a => {
+                    if (a.category === filterVal) return sortedDisplayList[ptr++];
+                    return a;
+                });
+            }
+        }
+
+        renderTop3(validAthletes);
+        renderTableHeaders(cfg, mode, bars);
+        renderTableRows(displayList, cfg, mode, bars);
+    }
+
+    function renderTableHeaders(cfg, mode, bars) {
+        const thead = document.getElementById("tableHead");
+        let colsHtml = `
+            <tr>
+                <th width="5%">Hạng</th>
+                <th width="16%">Họ và tên</th>
+                <th width="10%">Lớp/Đơn vị</th>
+                <th width="11%">Nội dung</th>
+        `;
+
+        if (cfg.type === "vertical" && mode === "bars_standard") {
+            bars.forEach((b, idx) => {
+                colsHtml += `
+                    <th>
+                        Mức ${idx + 1} (${cfg.unit})<br>
+                        <input type="number" class="bar-header-input" value="${b}" onchange="updateBarHeight(${idx}, this.value)" title="Click để đổi chiều cao mức xà">
+                    </th>
+                `;
+            });
+            colsHtml += `
+                <th width="8%">Mức đạt</th>
+                <th width="8%">Lỗi (Cuối/Tổng)</th>
+            `;
+        } else if (cfg.type === "field" || (cfg.type === "vertical" && mode === "3_attempts")) {
+            const numAttempts = mode === "6_attempts" ? 6 : (mode === "4_attempts" ? 4 : 3);
+            for (let i = 1; i <= numAttempts; i++) {
+                colsHtml += `<th>Lần ${i} (${cfg.unit})</th>`;
+            }
+            colsHtml += `<th width="9%">Tốt nhất (${cfg.unit})</th>`;
+        } else if (cfg.type === "track") {
+            colsHtml += `<th width="8%">Đợt / Làn</th>`;
+            if (mode === "1_run") {
+                colsHtml += `<th>Thời gian (${cfg.unit})</th>`;
+            } else if (mode === "2_runs_final") {
+                colsHtml += `
+                    <th>Vòng loại (${cfg.unit})</th>
+                    <th>Chung kết (${cfg.unit})</th>
+                `;
+            } else {
+                colsHtml += `
+                    <th>Lần 1 (${cfg.unit})</th>
+                    <th>Lần 2 (${cfg.unit})</th>
+                `;
+            }
+            colsHtml += `<th width="11%">Thành tích xếp hạng</th>`;
+        }
+
+        colsHtml += `<th width="5%">Xóa</th></tr>`;
+        thead.innerHTML = colsHtml;
+    }
+
+    let pendingFocusTarget = null;
+
+    function applyRowHighlight(trEl) {
+        const tbody = document.getElementById("tableBody");
+        if (!tbody) return;
+        tbody.querySelectorAll("tr.row-active-entry").forEach(r => r.classList.remove("row-active-entry"));
+        if (trEl) trEl.classList.add("row-active-entry");
+    }
+
+    function initTableRowHighlightListeners() {
+        const tbody = document.getElementById("tableBody");
+        if (!tbody || tbody.dataset.highlightInit === "true") return;
+        tbody.dataset.highlightInit = "true";
+
+        // Khi thư ký click hoặc Tab vào bất kỳ ô nhập điểm nào -> nổi bật nguyên hàng ngang VĐV đó
+        tbody.addEventListener("focusin", (e) => {
+            if (e.target && e.target.classList && e.target.classList.contains("jump-input")) {
+                applyRowHighlight(e.target.closest("tr"));
+                // Nếu đã focus thành công đúng ô đích mà không bị vẽ lại bảng thì xóa trạng thái chờ
+                if (pendingFocusTarget &&
+                    pendingFocusTarget.athleteId === e.target.dataset.athleteId &&
+                    pendingFocusTarget.fieldKey === e.target.dataset.fieldKey) {
+                    pendingFocusTarget = null;
+                }
+            }
+        });
+
+        tbody.addEventListener("focusout", () => {
+            setTimeout(() => {
+                const active = document.activeElement;
+                if (!active || !tbody.contains(active) || !active.classList.contains("jump-input")) {
+                    applyRowHighlight(null);
+                }
+            }, 0);
+        });
+
+        // Lưu lại ô đích khi thư ký click trực tiếp từ VĐV này sang VĐV khác (tránh mất focus khi onchange vẽ lại bảng)
+        tbody.addEventListener("mousedown", (e) => {
+            const inp = e.target && e.target.closest ? e.target.closest("input.jump-input") : null;
+            if (inp && inp.dataset.athleteId && inp.dataset.fieldKey) {
+                pendingFocusTarget = {
+                    athleteId: inp.dataset.athleteId,
+                    fieldKey: inp.dataset.fieldKey
+                };
+            } else {
+                pendingFocusTarget = null;
+            }
+        });
+
+        // Giữ tiêu điểm & nổi bật hàng mượt mà khi thư ký bấm Tab (sang ô kế) hoặc Enter (xuống VĐV kế cùng lượt)
+        tbody.addEventListener("keydown", (e) => {
+            const inp = e.target;
+            if (!inp || !inp.classList || !inp.classList.contains("jump-input")) return;
+
+            if (e.key === "Tab") {
+                const allInputs = Array.from(tbody.querySelectorAll("input.jump-input"));
+                const idx = allInputs.indexOf(inp);
+                const nextInp = allInputs[idx + (e.shiftKey ? -1 : 1)];
+                if (nextInp && nextInp.dataset.athleteId && nextInp.dataset.fieldKey) {
+                    pendingFocusTarget = {
+                        athleteId: nextInp.dataset.athleteId,
+                        fieldKey: nextInp.dataset.fieldKey
+                    };
+                }
+            } else if (e.key === "Enter") {
+                e.preventDefault();
+                const fieldKey = inp.dataset.fieldKey;
+                const sameColInputs = Array.from(tbody.querySelectorAll(`input.jump-input[data-field-key="${fieldKey}"]`));
+                const colIdx = sameColInputs.indexOf(inp);
+                const nextRowInp = sameColInputs[colIdx + 1];
+                const valueChanged = (inp.value !== inp.defaultValue);
+
+                if (valueChanged) {
+                    if (nextRowInp && nextRowInp.dataset.athleteId) {
+                        pendingFocusTarget = {
+                            athleteId: nextRowInp.dataset.athleteId,
+                            fieldKey: fieldKey
+                        };
+                    }
+                    inp.blur();
+                } else {
+                    pendingFocusTarget = null;
+                    if (nextRowInp) {
+                        nextRowInp.focus();
+                    } else {
+                        inp.blur();
+                    }
+                }
+            }
+        });
+    }
+
+    function renderTableRows(displayList, cfg, mode, bars) {
+        const tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+
+        displayList.forEach(athlete => {
+            let rowClass = "";
+            let rankHtml = athlete.rank;
+            if (athlete.rank === 1) {
+                rowClass = "rank-1";
+                rankHtml = `<span class="rank-badge rank-badge-1">1</span>`;
+            } else if (athlete.rank === 2) {
+                rowClass = "rank-2";
+                rankHtml = `<span class="rank-badge rank-badge-2">2</span>`;
+            } else if (athlete.rank === 3) {
+                rowClass = "rank-3";
+                rankHtml = `<span class="rank-badge rank-badge-3">3</span>`;
+            }
+
+            const tr = document.createElement("tr");
+            tr.className = rowClass;
+            tr.dataset.athleteId = String(athlete.id);
+
+            let cellsHtml = `
+                <td class="rank">${rankHtml}</td>
+                <td style="text-align: left; font-weight: 700; color: #0f172a;">${athlete.name}</td>
+                <td style="font-weight: 600; color: #334155;">${athlete.unit}</td>
+                <td style="font-weight: 600; color: #475569;">${athlete.category}</td>
+            `;
+
+            const sc = athlete.scores || {};
+
+            if (cfg.type === "vertical" && mode === "bars_standard") {
+                bars.forEach((b, idx) => {
+                    const val = sc[`bar_${idx}`] || '';
+                    cellsHtml += `
+                        <td>
+                            <input type="text" class="jump-input hj-input" value="${val}"
+                                data-athlete-id="${athlete.id}" data-field-key="bar_${idx}"
+                                onchange="updateScore(${athlete.id}, 'bar_${idx}', this.value)"
+                                placeholder="O/X/-" title="Nhập O (Qua), X (Hỏng), - (Bỏ qua), XO, XXO, XXX">
+                        </td>
+                    `;
+                });
+                const hj = athlete._eval || { valid: false, missesAtBest: 0, totalMisses: 0 };
+                cellsHtml += `
+                    <td class="best-score">${athlete.bestDisplay}</td>
+                    <td style="font-weight: 600; color: #475569;">${hj.valid ? `${hj.missesAtBest} / ${hj.totalMisses}` : '-'}</td>
+                `;
+            } else if (cfg.type === "field" || (cfg.type === "vertical" && mode === "3_attempts")) {
+                const numAttempts = mode === "6_attempts" ? 6 : (mode === "4_attempts" ? 4 : 3);
+                for (let i = 1; i <= numAttempts; i++) {
+                    const val = sc[`att_${i}`] !== undefined ? sc[`att_${i}`] : '';
+                    cellsHtml += `
+                        <td>
+                            <input type="text" class="jump-input" value="${val}"
+                                data-athlete-id="${athlete.id}" data-field-key="att_${i}"
+                                onchange="updateScore(${athlete.id}, 'att_${i}', this.value)" placeholder="-">
+                        </td>
+                    `;
+                }
+                cellsHtml += `<td class="best-score">${athlete.best > 0 ? athlete.best : '-'}</td>`;
+            } else if (cfg.type === "track") {
+                cellsHtml += `
+                    <td>
+                        <input type="text" class="jump-input lane-input" value="${athlete.lane || ''}"
+                            data-athlete-id="${athlete.id}" data-field-key="lane"
+                            onchange="updateLane(${athlete.id}, this.value)" placeholder="Đ1-L2">
+                    </td>
+                `;
+                if (mode === "1_run") {
+                    const v1 = sc['run_1'] || '';
+                    cellsHtml += `
+                        <td>
+                            <input type="text" class="jump-input" style="width: 95px;" value="${v1}"
+                                data-athlete-id="${athlete.id}" data-field-key="run_1"
+                                onchange="updateScore(${athlete.id}, 'run_1', this.value)" placeholder="VD: 12.45">
+                        </td>
+                    `;
+                } else {
+                    const v1 = sc['run_1'] || '';
+                    const v2 = sc['run_2'] || '';
+                    cellsHtml += `
+                        <td>
+                            <input type="text" class="jump-input" style="width: 90px;" value="${v1}"
+                                data-athlete-id="${athlete.id}" data-field-key="run_1"
+                                onchange="updateScore(${athlete.id}, 'run_1', this.value)" placeholder="-">
+                        </td>
+                        <td>
+                            <input type="text" class="jump-input" style="width: 90px;" value="${v2}"
+                                data-athlete-id="${athlete.id}" data-field-key="run_2"
+                                onchange="updateScore(${athlete.id}, 'run_2', this.value)" placeholder="-">
+                        </td>
+                    `;
+                }
+                cellsHtml += `<td class="best-score">${athlete.bestDisplay}</td>`;
+            }
+
+            cellsHtml += `
+                <td><button class="btn-red" style="padding: 4px 8px; margin: 0 auto; font-size: 12.5px;" onclick="removeAthlete(${athlete.id})">✕</button></td>
+            `;
+
+            tr.innerHTML = cellsHtml;
+            tbody.appendChild(tr);
+        });
+
+        // Khôi phục ô đang nhập & giữ sáng nguyên hàng ngang sau khi bảng cập nhật số liệu
+        if (pendingFocusTarget) {
+            const target = pendingFocusTarget;
+            pendingFocusTarget = null;
+            const targetInp = tbody.querySelector(`input.jump-input[data-athlete-id="${target.athleteId}"][data-field-key="${target.fieldKey}"]`);
+            if (targetInp) {
+                setTimeout(() => {
+                    targetInp.focus();
+                    applyRowHighlight(targetInp.closest("tr"));
+                }, 0);
+            }
+        }
+    }
+
+    function renderTop3(validSortedList) {
+        const top3Content = document.getElementById("top3Content");
+        const medals = [
+            { title: '🥇 HẠNG 1', color: '#9a6b00', bg: 'linear-gradient(180deg, #fffdf0 0%, #fef3c7 100%)', border: '#f5b700', accent: '#f5b700' },
+            { title: '🥈 HẠNG 2', color: '#475569', bg: 'linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%)', border: '#94a3b8', accent: '#94a3b8' },
+            { title: '🥉 HẠNG 3', color: '#9a4a12', bg: 'linear-gradient(180deg, #fffaf5 0%, #ffedd5 100%)', border: '#e07a38', accent: '#e07a38' }
+        ];
+
+        let html = "";
+        for (let i = 0; i < 3; i++) {
+            if (validSortedList[i]) {
+                const a = validSortedList[i];
+                let medalIdx = (typeof a.rank === 'number') ? a.rank - 1 : 2;
+                if (medalIdx > 2) medalIdx = 2;
+                const m = medals[medalIdx];
+
+                html += `
+                    <div class="top3-card" style="border-color: ${m.border}; background: ${m.bg}; --medal-accent: ${m.accent};">
+                        <div class="top3-rank" style="color: ${m.color}">${m.title}</div>
+                        <div class="top3-name">${a.name}</div>
+                        <div class="top3-unit">${a.unit} • ${a.category}</div>
+                        <div class="top3-score">${a.bestDisplay}</div>
+                    </div>
+                `;
+            } else {
+                html += `
+                    <div class="top3-card empty">
+                        <div class="top3-rank" style="color: #94a3b8;">HẠNG ${i + 1}</div>
+                        <div class="top3-name" style="color: #cbd5e1;">--</div>
+                        <div class="top3-unit" style="color: #cbd5e1;">-</div>
+                        <div class="top3-score" style="color: #cbd5e1;">-</div>
+                    </div>
+                `;
+            }
+        }
+        top3Content.innerHTML = html;
+    }
+
+    document.getElementById("loginUsername").addEventListener("keypress", e => {
+        if (e.key === "Enter") document.getElementById("loginPassword").focus();
+    });
+    document.getElementById("loginPassword").addEventListener("keypress", e => {
+        if (e.key === "Enter") handleAccountLogin();
+    });
+
+    window.onload = function() {
+        ensureDataIntegrity();
+        initTableRowHighlightListeners();
+        initFirebase();
+        renderGuestStatusUI();
+
+        // Giữ phiên đăng nhập cho Admin / Giáo viên nếu lỡ F5; chế độ Khách luôn thoát sạch khi tắt/tải lại trang
+        try {
+            const savedSess = sessionStorage.getItem("athletics_active_session_nmq");
+            if (savedSess) {
+                const parsed = JSON.parse(savedSess);
+                if (parsed && (parsed.role === "admin" || parsed.role === "teacher")) {
+                    activateSession(parsed);
+                    return;
+                }
+            }
+        } catch (e) {}
+
+        // Chưa đăng nhập: hiển thị màn hình chọn chế độ Khách 1-3 & Đăng nhập
+        document.getElementById("authOverlay").classList.remove("hidden");
+    };
+</script>
+</body>
+</html>
