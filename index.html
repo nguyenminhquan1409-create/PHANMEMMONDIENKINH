@@ -1086,6 +1086,259 @@
             background: #fff5f5;
         }
 
+
+        /* ================= NÚT CHIA SẺ & CHẾ ĐỘ XEM TRỰC TUYẾN (PHỤ HUYNH / HLV / VĐV) ================= */
+        .btn-share {
+            background: linear-gradient(135deg, #10b981, #047857);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 7px 13px;
+            border-radius: 8px;
+            box-shadow: 0 3px 9px rgba(4, 120, 87, 0.35);
+            display: inline-flex;
+        }
+        .btn-share.copied {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+        .user-role-badge.viewer-badge {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.32), rgba(5, 150, 105, 0.45));
+            border-color: rgba(110, 231, 183, 0.8);
+            color: #ecfdf5;
+            max-width: none;
+            font-size: 12.5px;
+            padding: 6px 12px;
+        }
+        .viewer-mode-text {
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12.5px;
+            color: #fef08a;
+        }
+        .viewer-search-wrap {
+            display: flex;
+            align-items: center;
+        }
+        .viewer-search-input {
+            padding: 5px 10px !important;
+            font-size: 13px !important;
+            border-radius: 6px !important;
+            border: none !important;
+            min-width: 190px;
+            background: #ffffff;
+            color: #0f172a;
+            font-weight: 600;
+        }
+        .readonly-score {
+            display: inline-block;
+            font-weight: 800;
+            font-size: 14px;
+            color: #0f172a;
+            padding: 2px 6px;
+            border-radius: 5px;
+        }
+        .readonly-score.empty {
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        .readonly-score.lane {
+            color: #1557b0;
+            background: #eff6ff;
+        }
+        .readonly-score.hj-pass {
+            color: #15803d;
+            background: #dcfce7;
+        }
+        .readonly-score.hj-fail {
+            color: #dc2626;
+            background: #fee2e2;
+        }
+        .bar-height-readonly {
+            display: inline-block;
+            margin-top: 3px;
+            padding: 2px 7px;
+            border-radius: 4px;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.65);
+            color: #ffd700;
+            font-weight: 800;
+            font-size: 12.5px;
+        }
+        .viewer-empty-row td {
+            padding: 28px 14px !important;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 600;
+            font-style: italic;
+            background: #f8fafc !important;
+        }
+        .share-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: linear-gradient(135deg, #0b2247, #1557b0);
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1.5px solid #ffd700;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);
+            font-size: 13.5px;
+            font-weight: 700;
+            z-index: 10050;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            max-width: 92vw;
+            text-align: center;
+            line-height: 1.45;
+        }
+        .share-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Khóa toàn bộ công cụ chỉnh sửa trong Chế độ Xem trực tuyến */
+        body.viewer-mode #inputPanelsWrapper,
+        body.viewer-mode #toggleInputBtn,
+        body.viewer-mode #btnDeleteSportAthletes,
+        body.viewer-mode #btnAdminPanel,
+        body.viewer-mode #btnShareLink,
+        body.viewer-mode #btnPrintResult,
+        body.viewer-mode #btnLogout,
+        body.viewer-mode #highJumpExtraBtns,
+        body.viewer-mode #modeSelect {
+            display: none !important;
+        }
+        body.viewer-mode #viewerModeLabel {
+            display: inline-block !important;
+        }
+        body.viewer-mode #viewerSearchWrap {
+            display: flex !important;
+        }
+        body.viewer-mode .logo-box {
+            cursor: default !important;
+        }
+        body.viewer-mode .logo-box:hover {
+            transform: none !important;
+            border-color: rgba(255, 255, 255, 0.55) !important;
+            outline: none !important;
+        }
+        body.viewer-mode .header-title,
+        body.viewer-mode .header-content-line,
+        body.viewer-mode .header-subtitle {
+            cursor: default !important;
+        }
+        body.viewer-mode .header-title:hover,
+        body.viewer-mode .header-content-line:hover,
+        body.viewer-mode .header-subtitle:hover {
+            background-color: transparent !important;
+            outline: none !important;
+        }
+
+        /* Tối ưu hiển thị trên Điện thoại cho Phụ huynh, HLV, VĐV khi mở link Zalo */
+        @media (max-width: 768px) {
+            body.viewer-mode {
+                height: auto;
+                min-height: 100vh;
+                overflow-y: auto;
+                padding: 8px;
+            }
+            body.viewer-mode .container {
+                height: auto;
+                overflow: visible;
+                padding: 10px 12px;
+            }
+            body.viewer-mode .header-container {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                gap: 10px;
+            }
+            body.viewer-mode .header-left {
+                gap: 12px;
+            }
+            body.viewer-mode .logo-box {
+                width: 64px;
+                height: 64px;
+            }
+            body.viewer-mode .header-title {
+                font-size: 18px;
+                min-width: 0;
+            }
+            body.viewer-mode .header-content-line,
+            body.viewer-mode .header-subtitle {
+                font-size: 14px;
+                min-width: 0;
+            }
+            body.viewer-mode .header-right {
+                align-items: stretch;
+                min-width: 0;
+                width: 100%;
+            }
+            body.viewer-mode .action-top-row {
+                justify-content: flex-start;
+            }
+            body.viewer-mode .top3-card {
+                min-width: 140px;
+            }
+            body.viewer-mode .table-container {
+                max-height: 68vh;
+            }
+            body.viewer-mode .viewer-search-input {
+                min-width: 140px;
+                width: 100%;
+            }
+        }
+
+
+        /* Nút mũi tên sắp xếp ngay tại cột Hạng */
+        th.th-rank-sort {
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+        th.th-rank-sort:hover {
+            background: linear-gradient(180deg, #255299 0%, #193b70 100%);
+        }
+        th.th-rank-sort.sorted {
+            background: linear-gradient(180deg, #1d4ed8 0%, #1e3a8a 100%);
+            box-shadow: inset 0 -3px 0 #ffd700, 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+        .th-rank-inner {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+        .sort-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 19px;
+            height: 19px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 900;
+            line-height: 1;
+            background: rgba(255, 255, 255, 0.16);
+            color: #e2e8f0;
+            transition: all 0.2s;
+        }
+        th.th-rank-sort:hover .sort-arrow {
+            background: rgba(255, 215, 0, 0.28);
+            color: #ffd700;
+        }
+        th.th-rank-sort.sorted .sort-arrow {
+            background: #ffd700;
+            color: #0b2247;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
         /* ================= CẤU HÌNH BẢN IN A4 CHUẨN SẠCH ================= */
         @media print {
             @page { size: A4 landscape; margin: 12mm; }
@@ -1108,7 +1361,7 @@
                 box-shadow: none !important;
             }
             
-            .auth-overlay, .admin-modal-overlay, .input-panels-wrapper, .panel, .top3-container, .filter-section, .header-right, .header-bg-art, .sport-emblem, .no-print, th:last-child, td:last-child {
+            .sort-arrow, .share-toast, .auth-overlay, .admin-modal-overlay, .input-panels-wrapper, .panel, .top3-container, .filter-section, .header-right, .header-bg-art, .sport-emblem, .no-print, th:last-child, td:last-child {
                 display: none !important;
             }
             
@@ -1180,6 +1433,8 @@
     </style>
 </head>
 <body>
+
+<div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
 <!-- ================= MÀN HÌNH CHỌN CHẾ ĐỘ & ĐĂNG NHẬP ================= -->
 <div id="authOverlay" class="auth-overlay">
@@ -1407,7 +1662,7 @@
 
             <div class="header-left">
                 <input type="file" id="logoUpload" accept="image/*" style="display: none;" onchange="loadLogo(event)">
-                <div id="logoBox" class="logo-box" onclick="document.getElementById('logoUpload').click()" title="Click để tải logo (Tự động tạo viền trắng nếu là logo xóa nền)">
+                <div id="logoBox" class="logo-box" onclick="handleLogoBoxClick()" title="Click để tải logo (Tự động tạo viền trắng nếu là logo xóa nền)">
                     <img id="logoPreview" data-placeholder="true" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='20' font-weight='bold' font-family='sans-serif' fill='%231557b0'>LOGO</text></svg>" alt="Logo">
                 </div>
                 <div class="header-text-group">
@@ -1429,7 +1684,8 @@
                     <span id="cloudStatus" class="status-dot offline" title="Mất kết nối"></span>
                     <span id="currentUserBadge" class="user-role-badge" title="Tài khoản / Chế độ hiện tại">Chưa đăng nhập</span>
                     <button id="btnAdminPanel" class="btn-admin-perm" onclick="openAdminModal()">🔐 Cấp quyền</button>
-                    <button class="btn-print" onclick="window.print()">🖨️ In kết quả</button>
+                    <button id="btnShareLink" class="btn-share" onclick="shareTournamentLink()" title="Copy link xem kết quả trực tuyến gửi cho Phụ huynh, HLV, VĐV">🔗 Chia sẻ</button>
+                    <button id="btnPrintResult" class="btn-print" onclick="window.print()">🖨️ In kết quả</button>
                     <button id="btnLogout" class="btn-logout" onclick="logoutSession()" title="Thoát ra màn hình chọn chế độ">🚪 Thoát</button>
                 </div>
                 <div class="sport-selector-box">
@@ -1502,16 +1758,20 @@
                     <select id="modeSelect" onchange="changeSportMode(this.value)">
                         <!-- Tùy chọn tự động nạp theo từng môn -->
                     </select>
+                    <span id="viewerModeLabel" class="viewer-mode-text" style="display: none;"></span>
                 </div>
                 <div id="highJumpExtraBtns" style="display: none; gap: 6px;">
                     <button class="btn-orange" style="padding: 5px 10px; font-size: 12.5px;" onclick="addHighJumpBar()">+ Thêm mức xà</button>
                     <button class="btn-red" style="padding: 5px 10px; font-size: 12.5px;" onclick="removeHighJumpBar()" title="Xóa cột mức xà cuối">- Bớt mức xà</button>
                 </div>
             </div>
-            <div style="display: flex; gap: 10px; align-items: center;">
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <div id="viewerSearchWrap" class="viewer-search-wrap" style="display: none;">
+                    <input type="text" id="viewerSearchInput" class="viewer-search-input" placeholder="🔍 Tìm tên VĐV / Lớp..." oninput="renderSystem()">
+                </div>
                 <div id="statsCount" style="font-weight: 800; font-size: 13.5px; background: rgba(255,255,255,0.14); padding: 4px 10px; border-radius: 20px;">Tổng số: 0</div>
                 <button id="toggleInputBtn" class="btn-ghost" style="padding: 5px 10px; font-size: 12.5px;" onclick="toggleInputPanels()" title="Ẩn/hiện khu vực thêm VĐV để xem bảng rộng hơn">▲ Thu gọn nhập</button>
-                <button class="btn-red" style="padding: 5px 10px; font-size: 12.5px;" onclick="deleteAllAthletes()">✕ Xóa môn này</button>
+                <button id="btnDeleteSportAthletes" class="btn-red" style="padding: 5px 10px; font-size: 12.5px;" onclick="deleteAllAthletes()">✕ Xóa môn này</button>
             </div>
         </div>
     </div> <!-- Hết vùng cố định -->
@@ -1586,6 +1846,255 @@
     let guestPresenceState = {};
     let adminShowAllPasswords = true;
     let editingAccountKey = null;
+    let shareToastTimer = null;
+    let viewerAutoPickedSport = false;
+
+    function isViewerMode() {
+        return Boolean(currentSession && currentSession.role === "viewer");
+    }
+
+    function handleLogoBoxClick() {
+        if (isViewerMode()) return;
+        document.getElementById("logoUpload").click();
+    }
+
+    function removeVietnameseTones(str) {
+        return String(str || "")
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/đ/g, "d")
+            .replace(/Đ/g, "D")
+            .toLowerCase();
+    }
+
+    function showToast(msg, durationMs = 3600) {
+        const el = document.getElementById("shareToast");
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add("show");
+        if (shareToastTimer) clearTimeout(shareToastTimer);
+        shareToastTimer = setTimeout(() => {
+            el.classList.remove("show");
+        }, durationMs);
+    }
+
+    function getShareTokenForSession(session) {
+        if (!session) return null;
+        if (session.role === "admin") return "admin";
+        if (session.role === "guest") return session.guestSlot;
+        if (session.role === "teacher") return "teacher_" + session.usernameKey;
+        return null;
+    }
+
+    function resolveViewerFirebasePath(rawToken) {
+        const clean = sanitizeKey(rawToken);
+        if (!clean) return null;
+        if (clean === "admin") return { token: "admin", path: "athletics_tournament_nmq" };
+        if (clean === "guest1" || clean === "guest2" || clean === "guest3") {
+            return { token: clean, path: `${APP_ROOT}/workspaces/${clean}` };
+        }
+        if (clean.startsWith("teacher_") && clean.length > 8) {
+            return { token: clean, path: `${APP_ROOT}/workspaces/${clean}` };
+        }
+        return null;
+    }
+
+    async function copyTextToClipboard(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch (e) {}
+        }
+        try {
+            const ta = document.createElement("textarea");
+            ta.value = text;
+            ta.style.position = "fixed";
+            ta.style.left = "-9999px";
+            ta.style.top = "0";
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            const ok = document.execCommand("copy");
+            document.body.removeChild(ta);
+            return ok;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    async function shareTournamentLink() {
+        if (!currentSession || isViewerMode()) return;
+        const token = getShareTokenForSession(currentSession);
+        if (!token) return;
+
+        const baseUrl = (window.location.origin && window.location.origin !== "null")
+            ? (window.location.origin + window.location.pathname)
+            : window.location.href.split("?")[0].split("#")[0];
+        const shareUrl = `${baseUrl}?view=${encodeURIComponent(token)}`;
+
+        const copied = await copyTextToClipboard(shareUrl);
+        const btn = document.getElementById("btnShareLink");
+
+        if (copied) {
+            if (btn) {
+                btn.classList.add("copied");
+                btn.textContent = "✅ Đã copy link";
+                setTimeout(() => {
+                    btn.classList.remove("copied");
+                    btn.textContent = "🔗 Chia sẻ";
+                }, 2600);
+            }
+            const isLocalFile = window.location.protocol === "file:";
+            const msg = isLocalFile
+                ? "✅ Đã copy link chia sẻ! (Lưu ý: Đẩy lên GitHub Pages để Phụ huynh, HLV, VĐV mở được từ điện thoại)"
+                : "✅ Đã copy link xem trực tuyến! Bạn có thể dán gửi qua Zalo cho Phụ huynh, HLV, VĐV.";
+            showToast(msg, 4200);
+        } else {
+            prompt("Copy đường link bên dưới để gửi cho Phụ huynh, HLV, VĐV:", shareUrl);
+        }
+    }
+
+    function applyViewerReadOnlyState(enabled) {
+        document.body.classList.toggle("viewer-mode", enabled);
+        const editableIds = ["tournamentTitle", "customContent", "eventTitle"];
+        editableIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.setAttribute("contenteditable", enabled ? "false" : "true");
+        });
+        const modeSelect = document.getElementById("modeSelect");
+        if (modeSelect) modeSelect.disabled = enabled;
+
+        const logoBox = document.getElementById("logoBox");
+        if (logoBox) {
+            logoBox.title = enabled
+                ? "Logo giải đấu"
+                : "Click để tải logo (Tự động tạo viền trắng nếu là logo xóa nền)";
+        }
+        const badge = document.getElementById("currentUserBadge");
+        if (badge) {
+            badge.classList.toggle("viewer-badge", enabled);
+        }
+    }
+
+    function updateSportDropdownLabels() {
+        const select = document.getElementById("sportSelect");
+        if (!select) return;
+        const keys = Object.keys(SPORTS_CONFIG);
+        const viewer = isViewerMode();
+        Array.from(select.options).forEach((opt, idx) => {
+            const k = opt.value;
+            const cfg = SPORTS_CONFIG[k];
+            if (!cfg) return;
+            const baseLabel = `${idx + 1}. ${cfg.name}`;
+            if (viewer) {
+                const count = (sportsData[k] && Array.isArray(sportsData[k].athletes)) ? sportsData[k].athletes.length : 0;
+                opt.textContent = count > 0 ? `${baseLabel} (${count} VĐV)` : baseLabel;
+            } else {
+                opt.textContent = baseLabel;
+            }
+        });
+    }
+
+    function activateViewerSession(rawToken) {
+        const resolved = resolveViewerFirebasePath(rawToken);
+        if (!resolved) {
+            alert("Đường link xem kết quả không hợp lệ!");
+            document.getElementById("authOverlay").classList.remove("hidden");
+            return;
+        }
+
+        if (dbRef) {
+            dbRef.off();
+            dbRef = null;
+        }
+
+        viewerAutoPickedSport = false;
+        viewerSortOverrideMap = {};
+        currentSession = {
+            role: "viewer",
+            username: "viewer",
+            usernameKey: resolved.token,
+            fullName: "Xem trực tuyến",
+            guestSlot: null,
+            sessionId: "viewer_" + Date.now(),
+            workspaceId: resolved.token
+        };
+
+        resetWorkspaceUI("viewer");
+        applyViewerReadOnlyState(true);
+
+        const userBadge = document.getElementById("currentUserBadge");
+        userBadge.textContent = "👀 Trực tuyến (Chỉ xem)";
+        document.getElementById("authOverlay").classList.add("hidden");
+
+        // Nếu giải chưa có tên tùy chỉnh thì hiển thị tên tiêu đề gọn gàng
+        setHeaderText(document.getElementById("tournamentTitle"), "ĐANG TẢI DỮ LIỆU GIẢI ĐẤU...");
+        setHeaderText(document.getElementById("customContent"), "");
+
+        switchSport("bat_xa");
+
+        if (fbDb) {
+            dbRef = fbDb.ref(resolved.path);
+            dbRef.on("value", (snapshot) => {
+                const data = snapshot.val();
+                isRemoteUpdating = true;
+                if (data) {
+                    sportsData = data.sportsData || {};
+                    setHeaderText(
+                        document.getElementById("tournamentTitle"),
+                        (data.tournamentTitle && String(data.tournamentTitle).trim()) ? data.tournamentTitle : "KẾT QUẢ THI ĐẤU ĐIỀN KINH"
+                    );
+                    setHeaderText(document.getElementById("customContent"), data.customContent || "");
+                    if (data.logoBase64) {
+                        applyLogoVisualStyle(data.logoBase64);
+                    } else {
+                        applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
+                    }
+                    ensureDataIntegrity();
+                    updateSportDropdownLabels();
+
+                    // Lần đầu mở link: nếu môn mặc định chưa có VĐV thì tự động chuyển tới môn đầu tiên đang có VĐV
+                    if (!viewerAutoPickedSport) {
+                        viewerAutoPickedSport = true;
+                        const curCount = (sportsData[currentSport] && sportsData[currentSport].athletes) ? sportsData[currentSport].athletes.length : 0;
+                        if (curCount === 0) {
+                            const firstWithData = Object.keys(SPORTS_CONFIG).find(k => sportsData[k] && sportsData[k].athletes && sportsData[k].athletes.length > 0);
+                            if (firstWithData) {
+                                document.getElementById("sportSelect").value = firstWithData;
+                                switchSport(firstWithData);
+                                isRemoteUpdating = false;
+                                return;
+                            }
+                        }
+                    }
+
+                    // Cập nhật nhãn chế độ thi của môn đang xem
+                    updateViewerModeLabel();
+                    updateSystemData(true, false);
+                } else {
+                    sportsData = {};
+                    ensureDataIntegrity();
+                    updateSportDropdownLabels();
+                    setHeaderText(document.getElementById("tournamentTitle"), "GIẢI ĐẤU CHƯA CÓ DỮ LIỆU");
+                    setHeaderText(document.getElementById("customContent"), "Kết quả sẽ tự động hiển thị ngay khi Ban Tổ chức cập nhật");
+                    applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
+                    updateViewerModeLabel();
+                    updateSystemData(true, false);
+                }
+                isRemoteUpdating = false;
+            });
+        }
+    }
+
+    function updateViewerModeLabel() {
+        const el = document.getElementById("viewerModeLabel");
+        if (!el) return;
+        const cfg = SPORTS_CONFIG[currentSport];
+        const curMode = sportsData[currentSport] ? sportsData[currentSport].mode : cfg.defaultMode;
+        const matched = cfg.modes.find(m => m.id === curMode) || cfg.modes[0];
+        el.textContent = matched ? matched.label : "";
+    }
 
     function getServerNow() {
         return Date.now() + serverTimeOffset;
@@ -2170,6 +2679,10 @@
         }
 
         currentSession = session;
+        applyViewerReadOnlyState(false);
+        updateSportDropdownLabels();
+        const searchInp = document.getElementById("viewerSearchInput");
+        if (searchInp) searchInp.value = "";
         resetWorkspaceUI(session.role);
 
         // Cập nhật giao diện theo vai trò
@@ -2700,24 +3213,76 @@
     let sportsData = {};
     let idCounter = Date.now();
 
+    let viewerSortOverrideMap = {};
+
     function ensureDataIntegrity() {
         Object.keys(SPORTS_CONFIG).forEach(key => {
             if (!sportsData[key]) {
                 sportsData[key] = {
                     mode: SPORTS_CONFIG[key].defaultMode,
                     bars: [100, 105, 110, 115, 120, 125],
-                    athletes: []
+                    athletes: [],
+                    sortByRankMap: {}
                 };
             } else {
                 if (!sportsData[key].mode) sportsData[key].mode = SPORTS_CONFIG[key].defaultMode;
                 if (!sportsData[key].bars || !sportsData[key].bars.length) sportsData[key].bars = [100, 105, 110, 115, 120, 125];
                 if (!sportsData[key].athletes) sportsData[key].athletes = [];
+                if (!sportsData[key].sortByRankMap || typeof sportsData[key].sortByRankMap !== "object") {
+                    sportsData[key].sortByRankMap = {};
+                }
             }
         });
     }
 
+    function getCurrentSortKey() {
+        const filterEl = document.getElementById("categoryFilter");
+        const filterVal = filterEl ? filterEl.value : "ALL";
+        return sanitizeKey(filterVal) || "all";
+    }
+
+    function isCurrentListSortedByRank() {
+        const sortKey = getCurrentSortKey();
+        if (isViewerMode()) {
+            const vKey = `${currentSport}__${sortKey}`;
+            if (viewerSortOverrideMap[vKey] !== undefined) {
+                return Boolean(viewerSortOverrideMap[vKey]);
+            }
+        }
+        const map = (sportsData[currentSport] && sportsData[currentSport].sortByRankMap) || {};
+        return Boolean(map[sortKey]);
+    }
+
+    function setCurrentListSortedByRank(flag) {
+        const sortKey = getCurrentSortKey();
+        if (isViewerMode()) {
+            viewerSortOverrideMap[`${currentSport}__${sortKey}`] = Boolean(flag);
+            return;
+        }
+        if (!sportsData[currentSport].sortByRankMap || typeof sportsData[currentSport].sortByRankMap !== "object") {
+            sportsData[currentSport].sortByRankMap = {};
+        }
+        sportsData[currentSport].sortByRankMap[sortKey] = Boolean(flag);
+    }
+
+    function toggleRankSort() {
+        const nextState = !isCurrentListSortedByRank();
+        setCurrentListSortedByRank(nextState);
+        if (isViewerMode()) {
+            renderSystem();
+        } else {
+            updateSystemData(false, true);
+        }
+        showToast(
+            nextState
+                ? "📊 Đang sắp xếp danh sách theo Hạng (1 → 2 → 3...)"
+                : "↩️ Đã trả về thứ tự thi ban đầu của VĐV",
+            2200
+        );
+    }
+
     function saveState() {
-        if (isRemoteUpdating || !currentSession) return;
+        if (isRemoteUpdating || !currentSession || isViewerMode()) return;
         const titleEl = document.getElementById("tournamentTitle");
         const contentEl = document.getElementById("customContent");
         cleanEditableEmpty(titleEl);
@@ -2761,12 +3326,14 @@
     }
 
     function saveMetaTitle() {
+        if (isViewerMode()) return;
         cleanEditableEmpty(document.getElementById("tournamentTitle"));
         cleanEditableEmpty(document.getElementById("customContent"));
         saveState();
     }
 
     function loadLogo(event) {
+        if (isViewerMode()) return;
         const file = event.target.files[0];
         if (file) {
             const reader = new FileReader();
@@ -2812,20 +3379,26 @@
             modeSelect.appendChild(opt);
         });
         modeSelect.value = sportsData[sportKey].mode;
+        updateViewerModeLabel();
+
+        const searchInp = document.getElementById("viewerSearchInput");
+        if (searchInp && isViewerMode()) searchInp.value = "";
 
         updateHighJumpButtonsVisibility();
         updateSystemData(true, false);
     }
 
     function changeSportMode(newMode) {
+        if (isViewerMode()) return;
         sportsData[currentSport].mode = newMode;
+        updateViewerModeLabel();
         updateHighJumpButtonsVisibility();
         updateSystemData(false, true);
     }
 
     function updateHighJumpButtonsVisibility() {
         const hjBtns = document.getElementById("highJumpExtraBtns");
-        if (currentSport === "nhay_cao" && sportsData[currentSport].mode === "bars_standard") {
+        if (!isViewerMode() && currentSport === "nhay_cao" && sportsData[currentSport].mode === "bars_standard") {
             hjBtns.style.display = "flex";
         } else {
             hjBtns.style.display = "none";
@@ -2833,6 +3406,7 @@
     }
 
     function addHighJumpBar() {
+        if (isViewerMode()) return;
         const bars = sportsData[currentSport].bars;
         const lastBar = bars.length > 0 ? parseFloat(bars[bars.length - 1]) || 100 : 100;
         bars.push(lastBar + 5);
@@ -2840,6 +3414,7 @@
     }
 
     function removeHighJumpBar() {
+        if (isViewerMode()) return;
         const bars = sportsData[currentSport].bars;
         if (bars.length <= 1) {
             alert("Cần giữ lại ít nhất 1 cột mức xà!");
@@ -2852,6 +3427,7 @@
     }
 
     function updateBarHeight(barIndex, val) {
+        if (isViewerMode()) return;
         let num = parseFloat(String(val).replace(',', '.'));
         if (!isNaN(num) && num > 0) {
             sportsData[currentSport].bars[barIndex] = num;
@@ -2881,6 +3457,7 @@
     }
 
     function addAthleteManual() {
+        if (isViewerMode()) return;
         const name = document.getElementById("athleteName").value.trim();
         const unit = document.getElementById("athleteUnit").value.trim();
         const category = document.getElementById("athleteCategory").value.trim();
@@ -2892,6 +3469,7 @@
     }
 
     function importSmartList() {
+        if (isViewerMode()) return;
         const text = document.getElementById("smartListInput").value;
         const lines = text.split('\n');
         let addedCount = 0;
@@ -2915,69 +3493,60 @@
         }
     }
 
-    function checkShouldAutoSortList(editedAthleteId) {
+    // Kiểm tra xem TẤT CẢ VĐV trong danh sách hiện tại đã hoàn thành ĐẦY ĐỦ tất cả các lượt thi chưa
+    function areAllAthletesCompleted(displayList) {
+        if (!displayList || displayList.length < 2) return false;
+
         const cfg = SPORTS_CONFIG[currentSport];
         const mode = sportsData[currentSport].mode;
         const bars = sportsData[currentSport].bars;
-        const filterVal = document.getElementById("categoryFilter").value;
-        const displayList = getCurrentAthletes().filter(a => filterVal === "ALL" || a.category === filterVal);
-
-        if (displayList.length < 2) return false;
-        const lastAthlete = displayList[displayList.length - 1];
 
         if (cfg.type === "vertical" && mode === "bars_standard") {
-            let maxBarIdx = -1;
-            displayList.forEach(a => {
+            if (!bars || bars.length === 0) return false;
+            const lastBarIdx = bars.length - 1;
+            const hasAnyCleared = displayList.some(a => {
                 const sc = a.scores || {};
-                bars.forEach((_, idx) => {
-                    if (String(sc[`bar_${idx}`] || '').trim() !== '') {
-                        if (idx > maxBarIdx) maxBarIdx = idx;
-                    }
-                });
+                return bars.some((_, i) => String(sc[`bar_${i}`] || "").toUpperCase().includes("O"));
             });
-            if (maxBarIdx === -1) return false;
+            if (!hasAnyCleared) return false;
 
-            const isEliminatedBefore = (a, targetIdx) => {
+            const isEliminated = (a) => {
                 const sc = a.scores || {};
-                for (let i = 0; i < targetIdx; i++) {
-                    if (String(sc[`bar_${i}`] || '').toUpperCase().includes('XXX')) return true;
-                }
-                return false;
+                return bars.some((_, i) => String(sc[`bar_${i}`] || "").toUpperCase().includes("XXX"));
             };
 
             return displayList.every(a => {
                 const sc = a.scores || {};
-                return String(sc[`bar_${maxBarIdx}`] || '').trim() !== '' || isEliminatedBefore(a, maxBarIdx);
+                return isEliminated(a) || String(sc[`bar_${lastBarIdx}`] || "").trim() !== "";
             });
         }
 
-        let keys = [];
+        let requiredKeys = [];
         if (cfg.type === "field" || (cfg.type === "vertical" && mode === "3_attempts")) {
             const numAttempts = mode === "6_attempts" ? 6 : (mode === "4_attempts" ? 4 : 3);
-            for (let i = 1; i <= numAttempts; i++) keys.push(`att_${i}`);
+            for (let i = 1; i <= numAttempts; i++) requiredKeys.push(`att_${i}`);
         } else if (cfg.type === "track") {
-            keys = mode === "1_run" ? ['run_1'] : ['run_1', 'run_2'];
+            requiredKeys = mode === "1_run" ? ['run_1'] : ['run_1', 'run_2'];
         }
 
-        const countFilled = (a) => {
+        if (requiredKeys.length === 0) return false;
+
+        // Phải có đủ TẤT CẢ các lượt cho MỌI VĐV mới tự động xếp hạng (không tự sắp xếp khi mới xong lượt 1 hoặc lượt 2)
+        return displayList.every(a => {
             const sc = a.scores || {};
-            return keys.filter(k => String(sc[k] || '').trim() !== '').length;
-        };
-
-        const counts = displayList.map(countFilled);
-        const maxCount = Math.max(...counts);
-        if (maxCount === 0) return false;
-
-        const allHaveMaxCount = counts.every(c => c === maxCount);
-        const lastJustFinishedMax = (editedAthleteId === lastAthlete.id) && (countFilled(lastAthlete) === maxCount) && (counts.filter(c => c > 0).length >= 2);
-
-        return allHaveMaxCount || lastJustFinishedMax;
+            return requiredKeys.every(k => String(sc[k] || "").trim() !== "");
+        });
     }
 
     function updateScore(athleteId, key, rawVal) {
+        if (isViewerMode()) return;
         const list = getCurrentAthletes();
         const idx = list.findIndex(a => a.id === athleteId);
         if (idx === -1) return;
+
+        const filterVal = document.getElementById("categoryFilter").value;
+        const displayList = list.filter(a => filterVal === "ALL" || a.category === filterVal);
+        const wasAllCompleted = areAllAthletesCompleted(displayList);
 
         if (!list[idx].scores) list[idx].scores = {};
         let val = rawVal.trim().toUpperCase();
@@ -2994,11 +3563,17 @@
             list[idx].scores[key] = val;
         }
 
-        const shouldSort = checkShouldAutoSortList(athleteId);
-        updateSystemData(false, true, shouldSort);
+        const isNowAllCompleted = areAllAthletesCompleted(displayList);
+        if (!wasAllCompleted && isNowAllCompleted) {
+            setCurrentListSortedByRank(true);
+            showToast("✅ Đã nhập đủ tất cả lượt thi — Tự động sắp xếp theo Hạng (1 → 2 → 3...)", 3400);
+        }
+
+        updateSystemData(false, true);
     }
 
     function updateLane(athleteId, val) {
+        if (isViewerMode()) return;
         const list = getCurrentAthletes();
         const idx = list.findIndex(a => a.id === athleteId);
         if (idx !== -1) {
@@ -3008,6 +3583,7 @@
     }
 
     function removeAthlete(id) {
+        if (isViewerMode()) return;
         if (confirm("Xóa VĐV này khỏi môn hiện tại?")) {
             sportsData[currentSport].athletes = getCurrentAthletes().filter(a => a.id !== id);
             updateSystemData(true, true);
@@ -3015,17 +3591,19 @@
     }
 
     function deleteAllAthletes() {
+        if (isViewerMode()) return;
         const list = getCurrentAthletes();
         if (list.length === 0) return;
         if (confirm(`⚠ NGUY HIỂM: Xóa toàn bộ ${list.length} VĐV của môn [${SPORTS_CONFIG[currentSport].name}]?\n(Danh sách các môn khác vẫn được giữ nguyên)`)) {
             sportsData[currentSport].athletes = [];
+            sportsData[currentSport].sortByRankMap = {};
             updateSystemData(true, true);
         }
     }
 
-    function updateSystemData(rebuildFilter = true, shouldSave = true, autoSortRows = false) {
+    function updateSystemData(rebuildFilter = true, shouldSave = true) {
         if (rebuildFilter) buildCategoryFilter();
-        renderSystem(autoSortRows);
+        renderSystem();
         if (shouldSave) saveState();
     }
 
@@ -3111,7 +3689,7 @@
         };
     }
 
-    function renderSystem(autoSortRows = false) {
+    function renderSystem() {
         const cfg = SPORTS_CONFIG[currentSport];
         const mode = sportsData[currentSport].mode;
         const bars = sportsData[currentSport].bars;
@@ -3215,47 +3793,70 @@
             validAthletes[i].rank = currentRank;
         }
 
-        if (autoSortRows && validAthletes.length > 0) {
-            const sortedDisplayList = [...validAthletes, ...invalidAthletes];
-            displayList = sortedDisplayList;
-
-            if (filterVal === "ALL") {
-                sportsData[currentSport].athletes = sortedDisplayList;
-            } else {
-                let ptr = 0;
-                sportsData[currentSport].athletes = sportsData[currentSport].athletes.map(a => {
-                    if (a.category === filterVal) return sortedDisplayList[ptr++];
-                    return a;
-                });
-            }
+        // Giữ nguyên mảng gốc (thứ tự thi ban đầu); chỉ sắp xếp danh sách hiển thị khi đang bật chế độ xếp theo Hạng
+        const sortedByRank = isCurrentListSortedByRank();
+        if (sortedByRank) {
+            displayList = [...validAthletes, ...invalidAthletes];
         }
 
         renderTop3(validAthletes);
         renderTableHeaders(cfg, mode, bars);
-        renderTableRows(displayList, cfg, mode, bars);
+
+        let tableRenderList = displayList;
+        if (isViewerMode()) {
+            const searchEl = document.getElementById("viewerSearchInput");
+            const q = searchEl ? removeVietnameseTones(searchEl.value.trim()) : "";
+            if (q) {
+                tableRenderList = displayList.filter(a => {
+                    const haystack = removeVietnameseTones(`${a.name} ${a.unit} ${a.category}`);
+                    return haystack.includes(q);
+                });
+            }
+        }
+        renderTableRows(tableRenderList, cfg, mode, bars);
     }
 
     function renderTableHeaders(cfg, mode, bars) {
         const thead = document.getElementById("tableHead");
+        const readOnly = isViewerMode();
+        const sortedByRank = isCurrentListSortedByRank();
+        const sortTitle = sortedByRank
+            ? "Đang sắp xếp theo Hạng (1 → 2 → 3...). Ấn lại để trả về thứ tự thi ban đầu"
+            : "Đang theo thứ tự thi ban đầu. Ấn để sắp xếp theo Hạng (1 → 2 → 3...)";
+        const sortArrowSymbol = sortedByRank ? "↓" : "⇅";
         let colsHtml = `
             <tr>
-                <th width="5%">Hạng</th>
+                <th width="7%" class="th-rank-sort ${sortedByRank ? 'sorted' : ''}" onclick="toggleRankSort()" title="${sortTitle}">
+                    <div class="th-rank-inner">
+                        <span>Hạng</span>
+                        <span class="sort-arrow">${sortArrowSymbol}</span>
+                    </div>
+                </th>
                 <th width="16%">Họ và tên</th>
-                <th width="10%">Lớp/Đơn vị</th>
+                <th width="11%">Lớp/Đơn vị</th>
                 <th width="11%">Nội dung</th>
         `;
 
         if (cfg.type === "vertical" && mode === "bars_standard") {
             bars.forEach((b, idx) => {
-                colsHtml += `
-                    <th>
-                        Mức ${idx + 1} (${cfg.unit})<br>
-                        <input type="number" class="bar-header-input" value="${b}" onchange="updateBarHeight(${idx}, this.value)" title="Click để đổi chiều cao mức xà">
-                    </th>
-                `;
+                if (readOnly) {
+                    colsHtml += `
+                        <th>
+                            Mức ${idx + 1}<br>
+                            <span class="bar-height-readonly">${escapeHtml(b)} ${cfg.unit}</span>
+                        </th>
+                    `;
+                } else {
+                    colsHtml += `
+                        <th>
+                            Mức ${idx + 1} (${cfg.unit})<br>
+                            <input type="number" class="bar-header-input" value="${b}" onchange="updateBarHeight(${idx}, this.value)" title="Click để đổi chiều cao mức xà">
+                        </th>
+                    `;
+                }
             });
             colsHtml += `
-                <th width="8%">Mức đạt</th>
+                <th width="9%">Mức đạt</th>
                 <th width="8%">Lỗi (Cuối/Tổng)</th>
             `;
         } else if (cfg.type === "field" || (cfg.type === "vertical" && mode === "3_attempts")) {
@@ -3263,9 +3864,9 @@
             for (let i = 1; i <= numAttempts; i++) {
                 colsHtml += `<th>Lần ${i} (${cfg.unit})</th>`;
             }
-            colsHtml += `<th width="9%">Tốt nhất (${cfg.unit})</th>`;
+            colsHtml += `<th width="10%">Tốt nhất (${cfg.unit})</th>`;
         } else if (cfg.type === "track") {
-            colsHtml += `<th width="8%">Đợt / Làn</th>`;
+            colsHtml += `<th width="9%">Đợt / Làn</th>`;
             if (mode === "1_run") {
                 colsHtml += `<th>Thời gian (${cfg.unit})</th>`;
             } else if (mode === "2_runs_final") {
@@ -3279,10 +3880,13 @@
                     <th>Lần 2 (${cfg.unit})</th>
                 `;
             }
-            colsHtml += `<th width="11%">Thành tích xếp hạng</th>`;
+            colsHtml += `<th width="12%">Thành tích xếp hạng</th>`;
         }
 
-        colsHtml += `<th width="5%">Xóa</th></tr>`;
+        if (!readOnly) {
+            colsHtml += `<th width="5%">Xóa</th>`;
+        }
+        colsHtml += `</tr>`;
         thead.innerHTML = colsHtml;
     }
 
@@ -3378,9 +3982,22 @@
         });
     }
 
+    function renderReadonlyCell(val, extraClass = "") {
+        const str = (val !== undefined && val !== null) ? String(val).trim() : "";
+        if (!str) return `<td><span class="readonly-score empty">-</span></td>`;
+        return `<td><span class="readonly-score ${extraClass}">${escapeHtml(str)}</span></td>`;
+    }
+
     function renderTableRows(displayList, cfg, mode, bars) {
         const tbody = document.getElementById("tableBody");
+        const readOnly = isViewerMode();
         tbody.innerHTML = "";
+
+        if (readOnly && displayList.length === 0) {
+            const colCount = document.querySelectorAll("#tableHead th").length || 8;
+            tbody.innerHTML = `<tr class="viewer-empty-row"><td colspan="${colCount}">Chưa có dữ liệu VĐV ở môn / nội dung này. Bảng kết quả sẽ tự động cập nhật trực tuyến khi trọng tài nhập điểm...</td></tr>`;
+            return;
+        }
 
         displayList.forEach(athlete => {
             let rowClass = "";
@@ -3402,9 +4019,9 @@
 
             let cellsHtml = `
                 <td class="rank">${rankHtml}</td>
-                <td style="text-align: left; font-weight: 700; color: #0f172a;">${athlete.name}</td>
-                <td style="font-weight: 600; color: #334155;">${athlete.unit}</td>
-                <td style="font-weight: 600; color: #475569;">${athlete.category}</td>
+                <td style="text-align: left; font-weight: 700; color: #0f172a;">${escapeHtml(athlete.name)}</td>
+                <td style="font-weight: 600; color: #334155;">${escapeHtml(athlete.unit)}</td>
+                <td style="font-weight: 600; color: #475569;">${escapeHtml(athlete.category)}</td>
             `;
 
             const sc = athlete.scores || {};
@@ -3412,14 +4029,22 @@
             if (cfg.type === "vertical" && mode === "bars_standard") {
                 bars.forEach((b, idx) => {
                     const val = sc[`bar_${idx}`] || '';
-                    cellsHtml += `
-                        <td>
-                            <input type="text" class="jump-input hj-input" value="${val}"
-                                data-athlete-id="${athlete.id}" data-field-key="bar_${idx}"
-                                onchange="updateScore(${athlete.id}, 'bar_${idx}', this.value)"
-                                placeholder="O/X/-" title="Nhập O (Qua), X (Hỏng), - (Bỏ qua), XO, XXO, XXX">
-                        </td>
-                    `;
+                    if (readOnly) {
+                        const upper = String(val).toUpperCase();
+                        let cls = "";
+                        if (upper.includes("O")) cls = "hj-pass";
+                        else if (upper.includes("X")) cls = "hj-fail";
+                        cellsHtml += renderReadonlyCell(val, cls);
+                    } else {
+                        cellsHtml += `
+                            <td>
+                                <input type="text" class="jump-input hj-input" value="${val}"
+                                    data-athlete-id="${athlete.id}" data-field-key="bar_${idx}"
+                                    onchange="updateScore(${athlete.id}, 'bar_${idx}', this.value)"
+                                    placeholder="O/X/-" title="Nhập O (Qua), X (Hỏng), - (Bỏ qua), XO, XXO, XXX">
+                            </td>
+                        `;
+                    }
                 });
                 const hj = athlete._eval || { valid: false, missesAtBest: 0, totalMisses: 0 };
                 cellsHtml += `
@@ -3430,54 +4055,73 @@
                 const numAttempts = mode === "6_attempts" ? 6 : (mode === "4_attempts" ? 4 : 3);
                 for (let i = 1; i <= numAttempts; i++) {
                     const val = sc[`att_${i}`] !== undefined ? sc[`att_${i}`] : '';
-                    cellsHtml += `
-                        <td>
-                            <input type="text" class="jump-input" value="${val}"
-                                data-athlete-id="${athlete.id}" data-field-key="att_${i}"
-                                onchange="updateScore(${athlete.id}, 'att_${i}', this.value)" placeholder="-">
-                        </td>
-                    `;
+                    if (readOnly) {
+                        cellsHtml += renderReadonlyCell(val);
+                    } else {
+                        cellsHtml += `
+                            <td>
+                                <input type="text" class="jump-input" value="${val}"
+                                    data-athlete-id="${athlete.id}" data-field-key="att_${i}"
+                                    onchange="updateScore(${athlete.id}, 'att_${i}', this.value)" placeholder="-">
+                            </td>
+                        `;
+                    }
                 }
                 cellsHtml += `<td class="best-score">${athlete.best > 0 ? athlete.best : '-'}</td>`;
             } else if (cfg.type === "track") {
-                cellsHtml += `
-                    <td>
-                        <input type="text" class="jump-input lane-input" value="${athlete.lane || ''}"
-                            data-athlete-id="${athlete.id}" data-field-key="lane"
-                            onchange="updateLane(${athlete.id}, this.value)" placeholder="Đ1-L2">
-                    </td>
-                `;
-                if (mode === "1_run") {
-                    const v1 = sc['run_1'] || '';
+                if (readOnly) {
+                    cellsHtml += renderReadonlyCell(athlete.lane || '', 'lane');
+                } else {
                     cellsHtml += `
                         <td>
-                            <input type="text" class="jump-input" style="width: 95px;" value="${v1}"
-                                data-athlete-id="${athlete.id}" data-field-key="run_1"
-                                onchange="updateScore(${athlete.id}, 'run_1', this.value)" placeholder="VD: 12.45">
+                            <input type="text" class="jump-input lane-input" value="${athlete.lane || ''}"
+                                data-athlete-id="${athlete.id}" data-field-key="lane"
+                                onchange="updateLane(${athlete.id}, this.value)" placeholder="Đ1-L2">
                         </td>
                     `;
+                }
+                if (mode === "1_run") {
+                    const v1 = sc['run_1'] || '';
+                    if (readOnly) {
+                        cellsHtml += renderReadonlyCell(v1);
+                    } else {
+                        cellsHtml += `
+                            <td>
+                                <input type="text" class="jump-input" style="width: 95px;" value="${v1}"
+                                    data-athlete-id="${athlete.id}" data-field-key="run_1"
+                                    onchange="updateScore(${athlete.id}, 'run_1', this.value)" placeholder="VD: 12.45">
+                            </td>
+                        `;
+                    }
                 } else {
                     const v1 = sc['run_1'] || '';
                     const v2 = sc['run_2'] || '';
-                    cellsHtml += `
-                        <td>
-                            <input type="text" class="jump-input" style="width: 90px;" value="${v1}"
-                                data-athlete-id="${athlete.id}" data-field-key="run_1"
-                                onchange="updateScore(${athlete.id}, 'run_1', this.value)" placeholder="-">
-                        </td>
-                        <td>
-                            <input type="text" class="jump-input" style="width: 90px;" value="${v2}"
-                                data-athlete-id="${athlete.id}" data-field-key="run_2"
-                                onchange="updateScore(${athlete.id}, 'run_2', this.value)" placeholder="-">
-                        </td>
-                    `;
+                    if (readOnly) {
+                        cellsHtml += renderReadonlyCell(v1);
+                        cellsHtml += renderReadonlyCell(v2);
+                    } else {
+                        cellsHtml += `
+                            <td>
+                                <input type="text" class="jump-input" style="width: 90px;" value="${v1}"
+                                    data-athlete-id="${athlete.id}" data-field-key="run_1"
+                                    onchange="updateScore(${athlete.id}, 'run_1', this.value)" placeholder="-">
+                            </td>
+                            <td>
+                                <input type="text" class="jump-input" style="width: 90px;" value="${v2}"
+                                    data-athlete-id="${athlete.id}" data-field-key="run_2"
+                                    onchange="updateScore(${athlete.id}, 'run_2', this.value)" placeholder="-">
+                            </td>
+                        `;
+                    }
                 }
                 cellsHtml += `<td class="best-score">${athlete.bestDisplay}</td>`;
             }
 
-            cellsHtml += `
-                <td><button class="btn-red" style="padding: 4px 8px; margin: 0 auto; font-size: 12.5px;" onclick="removeAthlete(${athlete.id})">✕</button></td>
-            `;
+            if (!readOnly) {
+                cellsHtml += `
+                    <td><button class="btn-red" style="padding: 4px 8px; margin: 0 auto; font-size: 12.5px;" onclick="removeAthlete(${athlete.id})">✕</button></td>
+                `;
+            }
 
             tr.innerHTML = cellsHtml;
             tbody.appendChild(tr);
@@ -3547,6 +4191,16 @@
         initTableRowHighlightListeners();
         initFirebase();
         renderGuestStatusUI();
+
+        // Kiểm tra link xem kết quả trực tuyến (?view=...) dành cho Phụ huynh, HLV, VĐV
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const viewToken = urlParams.get("view");
+            if (viewToken && viewToken.trim() !== "") {
+                activateViewerSession(viewToken.trim());
+                return;
+            }
+        } catch (e) {}
 
         // Giữ phiên đăng nhập cho Admin / Giáo viên nếu lỡ F5; chế độ Khách luôn thoát sạch khi tắt/tải lại trang
         try {
