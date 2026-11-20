@@ -1213,6 +1213,23 @@
         body.viewer-mode #modeSelect {
             display: none !important;
         }
+        .btn-viewer-refresh {
+            background: linear-gradient(135deg, #0ea5e9, #0369a1);
+            color: #ffffff;
+            font-size: 12.5px;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(3, 105, 161, 0.35);
+            display: none;
+        }
+        .btn-viewer-refresh.loading {
+            opacity: 0.78;
+            cursor: wait;
+        }
+        body.viewer-mode #btnViewerRefresh {
+            display: inline-flex !important;
+        }
         body.viewer-mode #viewerModeLabel {
             display: inline-block !important;
         }
@@ -1684,6 +1701,7 @@
                     <span id="cloudStatus" class="status-dot offline" title="Mất kết nối"></span>
                     <span id="currentUserBadge" class="user-role-badge" title="Tài khoản / Chế độ hiện tại">Chưa đăng nhập</span>
                     <button id="btnAdminPanel" class="btn-admin-perm" onclick="openAdminModal()">🔐 Cấp quyền</button>
+                    <button id="btnViewerRefresh" class="btn-viewer-refresh" onclick="forceRefreshViewer()" title="Tự động kiểm tra mỗi 15 giây (Nhấn để làm mới ngay)">🔄 Cập nhật</button>
                     <button id="btnShareLink" class="btn-share" onclick="shareTournamentLink()" title="Copy link xem kết quả trực tuyến gửi cho Phụ huynh, HLV, VĐV">🔗 Chia sẻ</button>
                     <button id="btnPrintResult" class="btn-print" onclick="window.print()">🖨️ In kết quả</button>
                     <button id="btnLogout" class="btn-logout" onclick="logoutSession()" title="Thoát ra màn hình chọn chế độ">🚪 Thoát</button>
@@ -1846,8 +1864,19 @@
     let guestPresenceState = {};
     let adminShowAllPasswords = true;
     let editingAccountKey = null;
+    const VIEWER_POLL_INTERVAL_MS = 15000; // Tự động kiểm tra cập nhật mỗi 15 giây qua REST API (0 kết nối WebSocket)
     let shareToastTimer = null;
     let viewerAutoPickedSport = false;
+    let workspaceLogoSyncedOnce = false;
+    let viewerFirebasePath = null;
+    let viewerPollTimer = null;
+    let viewerLastUpdatedAt = null;
+    let viewerLastLogoUpdatedAt = null;
+    let viewerLogoLoaded = false;
+    let viewerLastCheckTime = 0;
+    let viewerIsFetching = false;
+    let viewerHadData = false;
+    let viewerVisibilityBound = false;
 
     function isViewerMode() {
         return Boolean(currentSession && currentSession.role === "viewer");
@@ -1996,21 +2025,290 @@
         });
     }
 
+    function stopViewerPolling() {
+        if (viewerPollTimer) {
+            clearInterval(viewerPollTimer);
+            viewerPollTimer = null;
+        }
+    }
+
+    function formatClockHHMMSS(dateObj = new Date()) {
+        const hh = String(dateObj.getHours()).padStart(2, "0");
+        const mm = String(dateObj.getMinutes()).padStart(2, "0");
+        const ss = String(dateObj.getSeconds()).padStart(2, "0");
+        return `${hh}:${mm}:${ss}`;
+    }
+
+    async function fetchFirebaseRestNode(subPath = "") {
+        const base = String(firebaseConfig.databaseURL || "").replace(/\/+$/, "");
+        if (!base || !viewerFirebasePath) return null;
+        const url = subPath
+            ? `${base}/${viewerFirebasePath}/${subPath}.json`
+            : `${base}/${viewerFirebasePath}.json`;
+
+        const controller = (typeof AbortController !== "undefined") ? new AbortController() : null;
+        const timeoutId = controller ? setTimeout(() => controller.abort(), 8000) : null;
+        try {
+            const resp = await fetch(url, {
+                method: "GET",
+                cache: "no-store",
+                signal: controller ? controller.signal : undefined
+            });
+            if (!resp.ok) {
+                throw new Error("HTTP " + resp.status);
+            }
+            return await resp.json();
+        } finally {
+            if (timeoutId) clearTimeout(timeoutId);
+        }
+    }
+
+    function applyViewerDataToUI(payload, logoSrcOrUndefined) {
+        isRemoteUpdating = true;
+        const hasAnyContent = Boolean(
+            payload && (
+                payload.sportsData ||
+                (payload.tournamentTitle && String(payload.tournamentTitle).trim() !== "") ||
+                (payload.customContent && String(payload.customContent).trim() !== "")
+            )
+        );
+
+        if (hasAnyContent) {
+            viewerHadData = true;
+            sportsData = payload.sportsData || {};
+            setHeaderText(
+                document.getElementById("tournamentTitle"),
+                (payload.tournamentTitle && String(payload.tournamentTitle).trim()) ? payload.tournamentTitle : "KẾT QUẢ THI ĐẤU ĐIỀN KINH"
+            );
+            setHeaderText(document.getElementById("customContent"), payload.customContent || "");
+
+            if (logoSrcOrUndefined !== undefined) {
+                if (logoSrcOrUndefined) {
+                    applyLogoVisualStyle(logoSrcOrUndefined);
+                } else {
+                    applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
+                }
+            }
+
+            ensureDataIntegrity();
+            updateSportDropdownLabels();
+
+            // Lần đầu mở link: nếu môn mặc định chưa có VĐV thì tự động chuyển tới môn đầu tiên đang có VĐV
+            if (!viewerAutoPickedSport) {
+                viewerAutoPickedSport = true;
+                const curCount = (sportsData[currentSport] && sportsData[currentSport].athletes) ? sportsData[currentSport].athletes.length : 0;
+                if (curCount === 0) {
+                    const firstWithData = Object.keys(SPORTS_CONFIG).find(k => sportsData[k] && sportsData[k].athletes && sportsData[k].athletes.length > 0);
+                    if (firstWithData) {
+                        document.getElementById("sportSelect").value = firstWithData;
+                        switchSport(firstWithData);
+                        isRemoteUpdating = false;
+                        return;
+                    }
+                }
+            }
+
+            updateViewerModeLabel();
+            updateSystemData(true, false);
+        } else {
+            viewerHadData = false;
+            sportsData = {};
+            ensureDataIntegrity();
+            updateSportDropdownLabels();
+            setHeaderText(document.getElementById("tournamentTitle"), "GIẢI ĐẤU CHƯA CÓ DỮ LIỆU");
+            setHeaderText(document.getElementById("customContent"), "Kết quả sẽ tự động hiển thị ngay khi Ban Tổ chức cập nhật");
+            applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
+            updateViewerModeLabel();
+            updateSystemData(true, false);
+        }
+        isRemoteUpdating = false;
+    }
+
+    function updateViewerBadgeTimestamp() {
+        const badge = document.getElementById("currentUserBadge");
+        if (!badge || !isViewerMode()) return;
+        const timeStr = formatClockHHMMSS();
+        badge.textContent = "👀 Chỉ xem • Tự động 15s";
+        badge.title = `Chế độ Xem trực tuyến qua REST API (không chiếm suất 100 kết nối). Kiểm tra gần nhất lúc ${timeStr}`;
+    }
+
+    // Tải dữ liệu cho chế độ Xem qua REST API (tách Logo & kiểm tra cờ updatedAt cực nhẹ ~13 byte)
+    async function pollViewerViaRest(forceFull = false, showFeedback = false) {
+        if (!isViewerMode() || !viewerFirebasePath || viewerIsFetching) return;
+        if (!forceFull && document.hidden) return; // Tự tạm dừng khi khóa màn hình hoặc chuyển sang ứng dụng khác
+
+        if (!navigator.onLine) {
+            updateConnectionDot(false);
+            if (showFeedback) showToast("⚠ Thiết bị đang mất kết nối mạng!", 2600);
+            return;
+        }
+
+        viewerIsFetching = true;
+        const refreshBtn = document.getElementById("btnViewerRefresh");
+        if (showFeedback && refreshBtn) {
+            refreshBtn.classList.add("loading");
+            refreshBtn.textContent = "⏳ Đang tải...";
+        }
+
+        try {
+            // 1. Lần tải đầu tiên hoặc người dùng bấm "Cập nhật ngay": tải tách phần bảng điểm + logo 1 lần
+            if (forceFull || !viewerLogoLoaded) {
+                const needLogoNow = !viewerLogoLoaded;
+                const reqs = [
+                    fetchFirebaseRestNode("sportsData"),
+                    fetchFirebaseRestNode("tournamentTitle"),
+                    fetchFirebaseRestNode("customContent"),
+                    fetchFirebaseRestNode("updatedAt"),
+                    fetchFirebaseRestNode("logoUpdatedAt")
+                ];
+                if (needLogoNow) {
+                    reqs.push(fetchFirebaseRestNode("logoBase64"));
+                }
+
+                const results = await Promise.all(reqs);
+                const [remoteSports, remoteTitle, remoteContent, remoteUpdatedAt, remoteLogoUpdatedAt] = results;
+                let remoteLogo = needLogoNow ? results[5] : undefined;
+
+                // Nếu người dùng bấm làm mới thủ công và giáo viên có đổi logo mới -> tải lại logo mới
+                if (!needLogoNow && remoteLogoUpdatedAt && remoteLogoUpdatedAt !== viewerLastLogoUpdatedAt) {
+                    remoteLogo = await fetchFirebaseRestNode("logoBase64");
+                }
+
+                viewerLastUpdatedAt = remoteUpdatedAt || null;
+                viewerLastLogoUpdatedAt = remoteLogoUpdatedAt || null;
+                viewerLogoLoaded = true;
+                viewerLastCheckTime = Date.now();
+
+                updateConnectionDot(true);
+                applyViewerDataToUI(
+                    {
+                        sportsData: remoteSports,
+                        tournamentTitle: remoteTitle,
+                        customContent: remoteContent
+                    },
+                    remoteLogo
+                );
+                updateViewerBadgeTimestamp();
+                if (showFeedback) showToast("✅ Đã cập nhật kết quả mới nhất!", 2000);
+                return;
+            }
+
+            // 2. Các lần kiểm tra định kỳ mỗi 15 giây: chỉ tải 1 số duy nhất updatedAt.json (~13 byte)
+            const remoteUpdatedAt = await fetchFirebaseRestNode("updatedAt");
+            viewerLastCheckTime = Date.now();
+            updateConnectionDot(true);
+
+            // Trường hợp dữ liệu vừa bị xóa (VD: phòng Khách thoát)
+            if (remoteUpdatedAt === null) {
+                if (viewerLastUpdatedAt !== null) {
+                    viewerLastUpdatedAt = null;
+                    viewerLastLogoUpdatedAt = null;
+                    applyViewerDataToUI(null, DEFAULT_LOGO_PLACEHOLDER);
+                }
+                updateViewerBadgeTimestamp();
+                return;
+            }
+
+            // Không có thay đổi nào từ trọng tài -> bỏ qua hoàn toàn để tiết kiệm tối đa băng thông
+            if (remoteUpdatedAt === viewerLastUpdatedAt) {
+                updateViewerBadgeTimestamp();
+                return;
+            }
+
+            // Có điểm mới hoặc tiêu đề mới -> chỉ tải phần dữ liệu nhẹ (KHÔNG tải lại logoBase64 trừ khi logo đổi)
+            const [remoteSports, remoteTitle, remoteContent, remoteLogoUpdatedAt] = await Promise.all([
+                fetchFirebaseRestNode("sportsData"),
+                fetchFirebaseRestNode("tournamentTitle"),
+                fetchFirebaseRestNode("customContent"),
+                fetchFirebaseRestNode("logoUpdatedAt")
+            ]);
+
+            let remoteLogo = undefined;
+            if (remoteLogoUpdatedAt && remoteLogoUpdatedAt !== viewerLastLogoUpdatedAt) {
+                remoteLogo = await fetchFirebaseRestNode("logoBase64");
+                viewerLastLogoUpdatedAt = remoteLogoUpdatedAt;
+            }
+
+            viewerLastUpdatedAt = remoteUpdatedAt;
+            applyViewerDataToUI(
+                {
+                    sportsData: remoteSports,
+                    tournamentTitle: remoteTitle,
+                    customContent: remoteContent
+                },
+                remoteLogo
+            );
+            updateViewerBadgeTimestamp();
+        } catch (err) {
+            console.warn("Lỗi tải REST API chế độ xem:", err);
+            updateConnectionDot(false);
+            if (showFeedback) showToast("⚠ Không thể kết nối máy chủ. Vui lòng thử lại!", 2800);
+        } finally {
+            viewerIsFetching = false;
+            if (showFeedback && refreshBtn) {
+                refreshBtn.classList.remove("loading");
+                refreshBtn.textContent = "🔄 Cập nhật";
+            }
+        }
+    }
+
+    function forceRefreshViewer() {
+        if (!isViewerMode()) return;
+        pollViewerViaRest(true, true);
+    }
+
+    function bindViewerLifecycleEvents() {
+        if (viewerVisibilityBound) return;
+        viewerVisibilityBound = true;
+
+        // Tự động tạm dừng khi tắt màn hình / chuyển tab; khi quay lại màn hình thì kiểm tra ngay
+        document.addEventListener("visibilitychange", () => {
+            if (!document.hidden && isViewerMode()) {
+                if (Date.now() - viewerLastCheckTime >= 4000) {
+                    pollViewerViaRest(false, false);
+                }
+            }
+        });
+
+        window.addEventListener("online", () => {
+            if (isViewerMode()) {
+                updateConnectionDot(true);
+                pollViewerViaRest(false, false);
+            }
+        });
+
+        window.addEventListener("offline", () => {
+            if (isViewerMode()) {
+                updateConnectionDot(false);
+            }
+        });
+    }
+
     function activateViewerSession(rawToken) {
         const resolved = resolveViewerFirebasePath(rawToken);
         if (!resolved) {
             alert("Đường link xem kết quả không hợp lệ!");
+            initFirebase();
+            renderGuestStatusUI();
             document.getElementById("authOverlay").classList.remove("hidden");
             return;
         }
 
+        stopViewerPolling();
         if (dbRef) {
             dbRef.off();
             dbRef = null;
         }
 
+        viewerFirebasePath = resolved.path;
         viewerAutoPickedSport = false;
         viewerSortOverrideMap = {};
+        viewerLastUpdatedAt = null;
+        viewerLastLogoUpdatedAt = null;
+        viewerLogoLoaded = false;
+        viewerLastCheckTime = 0;
+        viewerHadData = false;
+
         currentSession = {
             role: "viewer",
             username: "viewer",
@@ -2023,68 +2321,24 @@
 
         resetWorkspaceUI("viewer");
         applyViewerReadOnlyState(true);
+        bindViewerLifecycleEvents();
 
         const userBadge = document.getElementById("currentUserBadge");
-        userBadge.textContent = "👀 Trực tuyến (Chỉ xem)";
+        userBadge.textContent = "👀 Chỉ xem • Tự động 15s";
         document.getElementById("authOverlay").classList.add("hidden");
 
-        // Nếu giải chưa có tên tùy chỉnh thì hiển thị tên tiêu đề gọn gàng
         setHeaderText(document.getElementById("tournamentTitle"), "ĐANG TẢI DỮ LIỆU GIẢI ĐẤU...");
         setHeaderText(document.getElementById("customContent"), "");
 
         switchSport("bat_xa");
 
-        if (fbDb) {
-            dbRef = fbDb.ref(resolved.path);
-            dbRef.on("value", (snapshot) => {
-                const data = snapshot.val();
-                isRemoteUpdating = true;
-                if (data) {
-                    sportsData = data.sportsData || {};
-                    setHeaderText(
-                        document.getElementById("tournamentTitle"),
-                        (data.tournamentTitle && String(data.tournamentTitle).trim()) ? data.tournamentTitle : "KẾT QUẢ THI ĐẤU ĐIỀN KINH"
-                    );
-                    setHeaderText(document.getElementById("customContent"), data.customContent || "");
-                    if (data.logoBase64) {
-                        applyLogoVisualStyle(data.logoBase64);
-                    } else {
-                        applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
-                    }
-                    ensureDataIntegrity();
-                    updateSportDropdownLabels();
+        // Tải lần đầu ngay lập tức qua REST API (không mở WebSocket Firebase SDK)
+        pollViewerViaRest(true, false);
 
-                    // Lần đầu mở link: nếu môn mặc định chưa có VĐV thì tự động chuyển tới môn đầu tiên đang có VĐV
-                    if (!viewerAutoPickedSport) {
-                        viewerAutoPickedSport = true;
-                        const curCount = (sportsData[currentSport] && sportsData[currentSport].athletes) ? sportsData[currentSport].athletes.length : 0;
-                        if (curCount === 0) {
-                            const firstWithData = Object.keys(SPORTS_CONFIG).find(k => sportsData[k] && sportsData[k].athletes && sportsData[k].athletes.length > 0);
-                            if (firstWithData) {
-                                document.getElementById("sportSelect").value = firstWithData;
-                                switchSport(firstWithData);
-                                isRemoteUpdating = false;
-                                return;
-                            }
-                        }
-                    }
-
-                    // Cập nhật nhãn chế độ thi của môn đang xem
-                    updateViewerModeLabel();
-                    updateSystemData(true, false);
-                } else {
-                    sportsData = {};
-                    ensureDataIntegrity();
-                    updateSportDropdownLabels();
-                    setHeaderText(document.getElementById("tournamentTitle"), "GIẢI ĐẤU CHƯA CÓ DỮ LIỆU");
-                    setHeaderText(document.getElementById("customContent"), "Kết quả sẽ tự động hiển thị ngay khi Ban Tổ chức cập nhật");
-                    applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
-                    updateViewerModeLabel();
-                    updateSystemData(true, false);
-                }
-                isRemoteUpdating = false;
-            });
-        }
+        // Tự động kiểm tra cập nhật mỗi 15 giây (chỉ đọc updatedAt ~13 byte)
+        viewerPollTimer = setInterval(() => {
+            pollViewerViaRest(false, false);
+        }, VIEWER_POLL_INTERVAL_MS);
     }
 
     function updateViewerModeLabel() {
@@ -2678,6 +2932,8 @@
             dbRef = null;
         }
 
+        stopViewerPolling();
+        workspaceLogoSyncedOnce = false;
         currentSession = session;
         applyViewerReadOnlyState(false);
         updateSportDropdownLabels();
@@ -2731,6 +2987,7 @@
                         setHeaderText(document.getElementById("customContent"), data.customContent);
                     }
                     if (data.logoBase64) {
+                        workspaceLogoSyncedOnce = true;
                         applyLogoVisualStyle(data.logoBase64);
                     } else {
                         applyLogoVisualStyle(DEFAULT_LOGO_PLACEHOLDER);
@@ -3281,29 +3538,43 @@
         );
     }
 
-    function saveState() {
+    function saveState(includeLogo = false) {
         if (isRemoteUpdating || !currentSession || isViewerMode()) return;
         const titleEl = document.getElementById("tournamentTitle");
         const contentEl = document.getElementById("customContent");
         cleanEditableEmpty(titleEl);
         cleanEditableEmpty(contentEl);
 
-        const payload = {
+        const nowTs = Date.now();
+        const localPayload = {
             sportsData: sportsData,
             tournamentTitle: titleEl.innerText.trim(),
             customContent: contentEl.innerText.trim(),
-            logoBase64: rawLogoBase64
+            logoBase64: rawLogoBase64,
+            updatedAt: nowTs
         };
 
         // Chế độ Khách không lưu dài hạn vào localStorage để đóng trình duyệt là mất hoàn toàn
         if (currentSession.role !== "guest") {
             try {
-                localStorage.setItem(getWorkspaceLocalKey(currentSession), JSON.stringify(payload));
+                localStorage.setItem(getWorkspaceLocalKey(currentSession), JSON.stringify(localPayload));
             } catch (e) { console.warn("LocalStorage full:", e); }
         }
 
+        // Cập nhật Firebase: chỉ ghi logoBase64 khi đổi logo hoặc lần đầu, tránh đẩy lại ảnh logo mỗi khi nhập điểm
         if (dbRef) {
-            dbRef.set(payload);
+            const fbUpdate = {
+                sportsData: sportsData,
+                tournamentTitle: localPayload.tournamentTitle,
+                customContent: localPayload.customContent,
+                updatedAt: nowTs
+            };
+            if (includeLogo || !workspaceLogoSyncedOnce) {
+                fbUpdate.logoBase64 = rawLogoBase64;
+                fbUpdate.logoUpdatedAt = nowTs;
+                workspaceLogoSyncedOnce = true;
+            }
+            dbRef.update(fbUpdate);
         }
     }
 
@@ -3329,7 +3600,50 @@
         if (isViewerMode()) return;
         cleanEditableEmpty(document.getElementById("tournamentTitle"));
         cleanEditableEmpty(document.getElementById("customContent"));
-        saveState();
+        saveState(false);
+    }
+
+    // Tự động nén nhỏ kích thước logo (tối đa 240x240) để tiết kiệm tối đa băng thông Firebase cho người xem
+    function compressLogoDataUrl(dataUrl, callback) {
+        try {
+            if (!dataUrl || dataUrl.startsWith("data:image/svg")) {
+                callback(dataUrl);
+                return;
+            }
+            const img = new Image();
+            img.onload = function() {
+                try {
+                    const maxDim = 240;
+                    const scale = Math.min(1, maxDim / Math.max(img.naturalWidth || 1, img.naturalHeight || 1));
+                    const w = Math.max(1, Math.round((img.naturalWidth || maxDim) * scale));
+                    const h = Math.max(1, Math.round((img.naturalHeight || maxDim) * scale));
+
+                    const canvas = document.createElement("canvas");
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+                    ctx.clearRect(0, 0, w, h);
+                    ctx.drawImage(img, 0, 0, w, h);
+
+                    // Kiểm tra có kênh trong suốt (logo xóa nền) hay không để chọn PNG hoặc JPEG nén gọn
+                    const data = ctx.getImageData(0, 0, w, h).data;
+                    let hasAlpha = false;
+                    for (let i = 3; i < data.length; i += 4) {
+                        if (data[i] < 245) { hasAlpha = true; break; }
+                    }
+                    const compressed = hasAlpha
+                        ? canvas.toDataURL("image/png")
+                        : canvas.toDataURL("image/jpeg", 0.85);
+                    callback(compressed.length < dataUrl.length ? compressed : dataUrl);
+                } catch (e) {
+                    callback(dataUrl);
+                }
+            };
+            img.onerror = function() { callback(dataUrl); };
+            img.src = dataUrl;
+        } catch (e) {
+            callback(dataUrl);
+        }
     }
 
     function loadLogo(event) {
@@ -3338,9 +3652,11 @@
         if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-                applyLogoVisualStyle(e.target.result);
-                saveState();
-            }
+                compressLogoDataUrl(e.target.result, (optimizedSrc) => {
+                    applyLogoVisualStyle(optimizedSrc);
+                    saveState(true);
+                });
+            };
             reader.readAsDataURL(file);
         }
     }
@@ -4189,10 +4505,9 @@
     window.onload = function() {
         ensureDataIntegrity();
         initTableRowHighlightListeners();
-        initFirebase();
-        renderGuestStatusUI();
 
-        // Kiểm tra link xem kết quả trực tuyến (?view=...) dành cho Phụ huynh, HLV, VĐV
+        // Kiểm tra link xem kết quả trực tuyến (?view=...) TRƯỚC khi gọi initFirebase()
+        // -> Chế độ xem dùng hoàn toàn REST API (tự kiểm tra mỗi 15 giây), KHÔNG tốn giới hạn 100 kết nối của Firebase
         try {
             const urlParams = new URLSearchParams(window.location.search);
             const viewToken = urlParams.get("view");
@@ -4201,6 +4516,9 @@
                 return;
             }
         } catch (e) {}
+
+        initFirebase();
+        renderGuestStatusUI();
 
         // Giữ phiên đăng nhập cho Admin / Giáo viên nếu lỡ F5; chế độ Khách luôn thoát sạch khi tắt/tải lại trang
         try {
