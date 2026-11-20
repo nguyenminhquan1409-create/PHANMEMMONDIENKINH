@@ -2128,7 +2128,7 @@
         const badge = document.getElementById("currentUserBadge");
         if (!badge || !isViewerMode()) return;
         const timeStr = formatClockHHMMSS();
-        badge.textContent = "👀 Chỉ xem • Tự động 15s";
+        badge.textContent = "Tự động cập nhật sau 15s";
         badge.title = `Chế độ Xem trực tuyến qua REST API (không chiếm suất 100 kết nối). Kiểm tra gần nhất lúc ${timeStr}`;
     }
 
@@ -2324,7 +2324,7 @@
         bindViewerLifecycleEvents();
 
         const userBadge = document.getElementById("currentUserBadge");
-        userBadge.textContent = "👀 Chỉ xem • Tự động 15s";
+        userBadge.textContent = "Tự động cập nhật sau 15s";
         document.getElementById("authOverlay").classList.add("hidden");
 
         setHeaderText(document.getElementById("tournamentTitle"), "ĐANG TẢI DỮ LIỆU GIẢI ĐẤU...");
